@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1544394203 source:/home/user/BattleShipGame/main.cpp
+	<iostream>
+	"include/BotAi.h"
+	"include/GameMech.h"
+
+1544411417 /home/user/BattleShipGame/include/BotAi.h
+	"Player.h"
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1544401439 /home/user/BattleShipGame/include/Player.h
+	"Ship.h"
+	"Grid.h"
+
+1544401322 /home/user/BattleShipGame/include/Ship.h
+
+1544410777 /home/user/BattleShipGame/include/Grid.h
+	"Square.h"
+
+1544410402 /home/user/BattleShipGame/include/Square.h
+
+1544411449 /home/user/BattleShipGame/include/GameMech.h
+	"User.h"
+
+1544411042 /home/user/BattleShipGame/include/User.h
+	"Player.h"
+

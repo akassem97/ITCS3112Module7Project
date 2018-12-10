@@ -32,6 +32,16 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/BotAi.h" />
+		<Unit filename="include/Client.h" />
+		<Unit filename="include/GameMech.h" />
+		<Unit filename="include/Grid.h" />
+		<Unit filename="include/Gui.h" />
+		<Unit filename="include/Player.h" />
+		<Unit filename="include/Server.h" />
+		<Unit filename="include/Ship.h" />
+		<Unit filename="include/Square.h" />
+		<Unit filename="include/User.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

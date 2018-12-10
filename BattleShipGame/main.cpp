@@ -1,9 +1,10 @@
 #include <iostream>
-
+#include "include/BotAi.h"
+#include "include/GameMech.h"
 using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    GameMech g = GameMech();
     return 0;
 }

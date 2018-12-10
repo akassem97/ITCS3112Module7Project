@@ -1,15 +1,23 @@
 #ifndef PLAYER_H
 #define PLAYER_H
-
-
+#include "Ship.h"
+#include "Grid.h"
 class Player
 {
     public:
         Player(int p) {
-            player = p;
+            playerNum = p;
             shipCount = 0;
             score = 0;
-            Ship = new Ship[7];
+            ships = new Ship[7];
+            g = Grid();
+        }
+        Player()
+        {
+            shipCount = 0;
+            score = 0;
+            ships = new Ship[7];
+            g = Grid();
         }
         virtual ~Player() {}
         Ship* getShips()

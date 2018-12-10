@@ -1,6 +1,6 @@
 #ifndef SHIP_H
 #define SHIP_H
-
+using namespace std;
 
 class Ship
 {
@@ -11,12 +11,17 @@ class Ship
     int x,y;
 
     public:
+        Ship()
+        {
 
+        }
         Ship(int s, int d, int x, int y)
         {
+            cout << "in ship" << endl;
             sizeOfShip = s;
             direction = d;
-        };
+            cout << "in ship" << endl;
+        }
 
         int getDirection()
         {
@@ -36,6 +41,16 @@ class Ship
         void setSize(int s)
         {
             sizeOfShip = s;
+        }
+
+        int getX()
+        {
+            return x;
+        }
+
+        int getY()
+        {
+            return y;
         }
 
 

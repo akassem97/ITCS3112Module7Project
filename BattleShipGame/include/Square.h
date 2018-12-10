@@ -11,6 +11,11 @@ class Square
             y = y1;
         }
 
+        Square()
+        {
+
+        }
+
         int getSquareValue()
         {
             return squareValue;
@@ -38,7 +43,7 @@ class Square
 
         void setY(int y1)
         {
-            y = y2;
+            y = y1;
         }
 
     protected:
@@ -46,6 +51,7 @@ class Square
     private:
         int squareValue;
         int x,y;
+        char xc,yc;
 };
 
 #endif // SQUARE_H
