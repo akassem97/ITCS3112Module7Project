@@ -13,7 +13,7 @@ class Square
 
         Square()
         {
-
+            squareValue = 0;
         }
 
         int getSquareValue()
@@ -23,6 +23,7 @@ class Square
 
         void setSquareValue(int s)
         {
+
             squareValue = s;
         }
 

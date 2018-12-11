@@ -7,36 +7,48 @@ class Grid
     public:
         Grid(int p)
          {
+
+            for(int i = 0; i < 10; i++)
+                grid[i] = new int[10];
+
+
             player = p;
 
             for(int i = 0; i < 10; i++)
                 for(int j = 0; j < 10; j++)
-                    grid[i][j] = Square(0,i,j);
+                    grid[i][j] = 0;
+
+                    cout << "it worked" << endl;
          }
 
          Grid()
          {
 
-
+            for(int i = 0; i < 10; i++)
+                grid[i] = new int[10];
             for(int i = 0; i < 10; i++)
                 for(int j = 0; j < 10; j++)
-                    grid[i][j] = Square(0,i,j);
+                    grid[i][j] = 0;
          }
-        void addShip(Ship s)
+        void addShip(int s, int d, int x, int y)
             {
-                for(int i = 0; i < s.getSize(); i++)
+                for(int i = 0; i < s; i++)
                 {
-                    if(s.getDirection() == 1)
-                            getSquare(s.getX()-1, s.getY()-i-1).setSquareValue(1);
-                    else if(s.getDirection() == 2)
-                        getSquare(s.getX()-1, s.getY()+i-1).setSquareValue(1);
-                    else if(s.getDirection() == 3)
-                        getSquare(s.getX()-i-1, s.getY()-1).setSquareValue(1);
-                    else if(s.getDirection() == 4)
-                        getSquare(s.getX()+i-1, s.getY()-1).setSquareValue(1);
+
+                    if(d == 1)
+                        //getSquare(x-1, y-i-1).setSquareValue(1);
+                        grid[y-i-1][x-1] = 1;
+                    else if(d == 2)
+                        grid[y+i-1][x-1] = 1;
+                    else if(d == 3)
+                        grid[y-1][x-1-i] = 1;
+                    else if(d == 4)
+                        grid[y-1][x-1+i] = 1;
                 }
+
+
             }
-         Square getSquare(int x, int y)
+         int getSquare(int x, int y)
          {
             return grid[x][y];
          }
@@ -51,8 +63,8 @@ class Grid
                 {
                     s.append("| ");
                    // s.append(getSquare(i, j).getSquareValue());
-                    s+=to_string(getSquare(i, j).getSquareValue());
-                    cout << getSquare(i, j).getSquareValue();
+                    s+=to_string(grid[i][j]);
+                    cout << grid[i][j];
                     s.append(" ");
 
                 }
@@ -66,7 +78,9 @@ class Grid
     protected:
 
     private:
-        Square grid[10][10];
+        //Square** grid = new Square*[10];
+        //Square** grid = new Square*[10];
+        int** grid = new int*[10];
         int player;
 };
 

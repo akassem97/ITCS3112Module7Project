@@ -15,12 +15,14 @@ class Ship
         {
 
         }
-        Ship(int s, int d, int x, int y)
+        Ship(int s, int d, int x1, int y1)
         {
-            cout << "in ship" << endl;
+
             sizeOfShip = s;
             direction = d;
-            cout << "in ship" << endl;
+            x = x1;
+            y = y1;
+
         }
 
         int getDirection()

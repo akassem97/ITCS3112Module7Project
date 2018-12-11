@@ -6,6 +6,7 @@ class GameMech
 {
     public:
         GameMech() {
+        cout << "hallo" << endl;
         //initialize game here
         getUserInput();
 
@@ -20,21 +21,22 @@ class GameMech
 
         void getShipsFromUserConsole()
         {
-            User u;
-            p1 = &u;
+
+
             for(int i = 0; i < 7; )
             {
 
                 int x,y;
                 char dir;
+                int d, s;
                 cout << "Enter x coordinate of the face of ship" << (i+1) << endl;
                 cin >> x;
                 cout << "Enter y coordinate of the face of ship" << (i+1) << endl;
                 cin >> y;
-                cout << "Enter direction its facing (N,S,E,W)" << endl;
-                cin >> dir;
-                int d, s;
+                cout << "Enter direction its facing (N = 1,S = 2,E = 3,W = 4)" << endl;
+                cin >> d;
 
+/*
                 switch(dir)
                 {
                     case 'n':
@@ -54,7 +56,7 @@ class GameMech
                     case 'W':
                         d = 2;
                 }
-
+*/
                 if(i < 3)
                     s = 2;
                 else if(i < 5)
@@ -62,13 +64,13 @@ class GameMech
                 else
                     s = 5;
 
-                if((u.checkIfValid(x,y,d,s)))
+                if((u.checkIfValid(y-1,x-1,d,s)))
                 {
-                 cout << "Hello!" << endl;
-                 u.getShips()[i] = Ship(s,d,x,y);
-                  cout << "Hellow!" << endl;
-                 u.getGrid().addShip(u.getShips()[i]);
 
+                 u.getShips()[i] = Ship(s,d,x,y);
+
+                 u.getGrid().addShip(s,d,y,x);
+                 cout << u.getGrid().toString() << endl;
                  i++;
                 }
                 else
@@ -84,12 +86,13 @@ class GameMech
         void getUserInput()
         {
 
+
             //see if user wants pvb or pvp
             //
             getShipsFromUserConsole();
+            b.generateAiShips();
             //TEST FOR PvB
-            b = BotAi(2);
-            cout << p1->getGrid().toString();
+            cout << u.getGrid().toString();
             cout << endl << endl << endl;
             cout << b.getGrid().toString();
 
