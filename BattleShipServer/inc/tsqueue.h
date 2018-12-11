@@ -1,13 +1,10 @@
-/*
- tsqueue.h
- */
-
 #ifndef BATTLESHIP_TS_QUEUE_H_
 #define BATTLESHIP_TS_QUEUE_H_
 
+// standard library headers
+#include <condition_variable>
 #include <list>
 #include <mutex>
-#include <condition_variable>
 
 namespace battleship {
 
@@ -15,17 +12,17 @@ namespace battleship {
  * @brief A thread safe queue implementation.
  *
  * @author Jonathan Henly
+ * @author Adham Kassem
  * @version 12-3-2018
  */
 template<typename T> class ts_queue {
 
 private:
-    std::list<T> queue;
-    mutable std::mutex queue_mutex;
-    mutable std::condition_variable condv;
+    std::list<T> queue; // the item queue
+    mutable std::mutex queue_mutex; // handles queue mutual exclusion
+    mutable std::condition_variable condv; // used to notify waiting threads
 
 public:
-
     /**
      * Default constructor.
      */
@@ -54,8 +51,9 @@ public:
     }
 
     /**
-     * Thread safe method that pops and returns the front of this queue. If the
-     * queue is empty, then this method will block until the queue is not empty.
+     * Thread safe remove method that pops and returns the front of this queue.
+     * If the queue is empty, then this method will block until the queue is not
+     * empty.
      *
      * @return the item at the front of the queue.
      */

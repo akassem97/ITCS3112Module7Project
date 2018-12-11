@@ -4,7 +4,7 @@
  Test client for Battleship server.
  */
 
-#include <message.h>
+#include "message.h"
 #include <iostream>
 #include <string>
 
@@ -14,14 +14,13 @@ using namespace std;
 
 using namespace battleship;
 
-typedef battleship::message message;
+typedef const std::unique_ptr<const network_message::message> message;
 
-namespace client {
 
-void outputSending(message& msg) {
-    cout << "Sending message [" << static_cast<int>(msg.signal())
-        << static_cast<int>(msg.from()) << static_cast<int>(msg.to())
-        << msg.msg() + 3 << "]." << endl;
+void outputSending(message&& msg) {
+    cout << "Sending message [" << static_cast<int>(msg->signal())
+        << static_cast<int>(msg->from()) << static_cast<int>(msg->to())
+        << msg->msg() + 3 << "]." << endl;
 }
 
 void outputReceived(char* line, ssize_t len) {
@@ -64,7 +63,7 @@ int main(int argc, char* argv[]) {
     cout << "Enter your username:" << endl;
 
     cin >> message;
-    battleship::message msg = message::build_message(signal::CLIENT_JOIN, -1,
+    auto msg = message::build_message(type::SERVER, signal::CLIENT_JOIN, -1,
         -1, message);
 
     // output message to send
@@ -148,4 +147,3 @@ int main(int argc, char* argv[]) {
     exit(0);
 }
 
-}

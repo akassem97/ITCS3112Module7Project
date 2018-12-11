@@ -1,13 +1,13 @@
-/*
- * ClientPool.cpp
- *
- *  Created on: Dec 2, 2018
- *      Author: henly
- */
+// source header
+#include "clientpool.h"
 
-#include <clientpool.h>
 
-using namespace battleship::server;
+namespace battleship {
+
+namespace game_server {
+
+// private const static member
+const std::string client_pool::EMPTY_STRING = "";
 
 /**
  * Creates a client pool with a maximum number of allowed clients.
@@ -25,10 +25,15 @@ client_pool::client_pool(const unsigned char max_size)
     // '\0' - the terminating char in most, basic string representations
     for (unsigned char i = 1; i < max_client_count + 1; i++) {
         empty_queue.push_back(i);
+        cl_cache.push_back("");
     }
 
-    // request that client list cache preallocate enough memory
-    cl_cache.reserve(max_client_count + 1);
+    cl_cache.push_back("");
+}
+
+//
+client* client_pool::create_tmp_client(tcp_stream* const connection) {
+    return new client(0, EMPTY_STRING, connection);
 }
 
 /**
@@ -41,7 +46,7 @@ client_pool::client_pool(const unsigned char max_size)
  *         pool is full or an exception is thrown.
  */
 std::shared_ptr<client> client_pool::create_and_add_client(
-    const std::string client_name, tcp_stream* connection)
+    const std::string client_name, tcp_stream* const connection)
 {
     // writer threads wait for reader threads to finish then acquire lock
     std::unique_lock<std::mutex> write_lock(writer_mutex);
@@ -57,16 +62,19 @@ std::shared_ptr<client> client_pool::create_and_add_client(
     empty_queue.pop_front();
 
     // create the client in a shared pointer to store and return
-    std::shared_ptr<client> new_client = std::make_shared<client>(client_id,
-        client_name, connection);
+    std::shared_ptr<client> new_client = std::shared_ptr<client>(
+        new client(client_id, client_name, connection));
+    //std::make_shared<client>(client_id,
+    //client_name, connection);
 
     // put the client in the empty pool index
     pool[client_id] = new_client;
     client_count += 1;
 
+    cout << "This far!" << endl;
     // cache new client's listing
     cl_cache[client_id] = new_client->get_listing();
-
+    cout << "MOBY DICK!" << endl;
     // unlock not needed, writerLock 'unlocks' when it goes out of scope
     // writeLock.unlock();
 
@@ -106,15 +114,16 @@ bool client_pool::remove(const unsigned char client_id) {
     client_count -= 1;
 
     // remove client listing from cache
-    cl_cache[client_id] = "";
+    cl_cache[client_id] = EMPTY_STRING;
 
-    //
+    // decrease the reference count of the shared pointer by one, hopefully
+    // leading to the 'delete'ion of the raw client pointer
     removed.reset();
 
     // recycle client_id
     empty_queue.push_back(client_id);
 
-    // unlock not needed, writerLock 'unlocks' when it goes out of scope
+    // unlock not needed, writerLock "unlocks" when it goes out of scope
     // writeLock.unlock();
 
     return true;
@@ -223,6 +232,8 @@ std::string client_pool::get_client_listings() {
     std::string listings;
     for (auto cl_iter = cl_cache.begin(); cl_iter != cl_cache.end();
         ++cl_iter) {
+        if (*cl_iter == EMPTY_STRING) continue;
+
         listings += *cl_iter + ',';
     }
 
@@ -231,3 +242,7 @@ std::string client_pool::get_client_listings() {
 
     return listings;
 }
+
+} // namespace server
+
+} // namespace battleship

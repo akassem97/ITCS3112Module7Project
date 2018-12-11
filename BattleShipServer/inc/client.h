@@ -1,15 +1,16 @@
 #ifndef BATTLESHIP_CLIENT_H_
 #define BATTLESHIP_CLIENT_H_
 
-#include <message.h> // enum class signal
 #include <iostream> // DEBUG
+#include <mutex> // std::mutex, std::lock_gaurd
 #include <string>
 
+#include "message.h" // enum class signal
 #include "tcpstream.h"
 
 namespace battleship {
 
-namespace server {
+namespace game_server {
 
 /**
  * @brief Represents a client connected to the server.
@@ -20,58 +21,67 @@ namespace server {
  */
 class client {
 private:
-    // constant private members
-    const unsigned char id; // id of this client
-    const std::string name; // name of client
+    typedef network_message::message message;
+    typedef network_message::game_message game_message;
 
-    // mutable private members
-    mutable tcp_stream* stream; // communication channel
-    mutable int tout_count; // number of times client has timed out
-
-    // private members
-    unsigned char status; // status of client
-    char* l_cache;
-
-    /* Disallow Copy Operations */
-    client(const client&) = delete; // don't implement copy constructor
-    client& operator=(const client&) = delete; // don't implement copy
-                                               // assignment oper.
-    client() = delete; // don't implement default constructor
-
-    /*
-     *
-     */
-    inline unsigned char get_status() {
-        return status;
-    }
-
-    /*
-     *
-     */
-    inline const unsigned char get_status() const {
-        return status;
-    }
-
-public:
-
+    static const unsigned char SERVER_ID = 255;
+    // static const members
     static const unsigned char STATUS_IDLE = (1u << 0);
     static const unsigned char STATUS_BUSY = (1u << 1);
     static const unsigned char STATUS_WAITING = (1u << 2);
     static const unsigned char STATUS_IN_GAME = (1u << 3);
 
-    explicit client(const unsigned char id, const std::string name,
-        tcp_stream* stream)
-        : id(id), name(name), stream(stream), tout_count(0),
-            status(STATUS_IDLE), l_cache(nullptr)
-    {
+    // const private members
+    const unsigned char id; // id of this client
+    const std::string name; // name of client
+    // mutable private members
+    mutable tcp_stream* stream; // communication channel
+    mutable int tout_count; // number of times client has timed out
+    // private members
+    unsigned char status; // status of client
+    char l_cache[32];
+    // private synchronization members
+    mutable std::mutex stream_mux; // stream ::send and ::receive synchronization
+
+    // returns the status of this client
+    inline unsigned char get_status() {
+        return status;
     }
 
+    // const version of client::get_status
+    inline const unsigned char get_status() const {
+        return status;
+    }
+
+    // client_pool should be the only class that can create clients
+    friend class client_pool;
+
+    /*
+     * Used by client_pool to create client instances
+     */
+    explicit client(const unsigned char id, const std::string name,
+        tcp_stream* const stream)
+        : id(id), name(name), stream(stream), tout_count(0), status(STATUS_IDLE)
+    {
+        l_cache[0] = '\0';
+    }
+
+    // don't implement default constructor
+    client() = delete;
+    /* Disallow Copy Operations */
+    client(const client&) = delete; // don't implement copy constructor
+    client& operator=(const client&) = delete; // don't implement copy
+                                               // assignment oper.
+
+public:
+
     /**
-     * Default destructor.
+     * Destructor that deletes the {@code tcp_stream} connection associated with
+     * this server client.
      */
     ~client() {
         // DEBUG
-        // std::cout << "Deleting client with id [" << id << "]." << std::endl;
+        std::cout << "Deleting client with id [" << id << "]." << std::endl;
 
         delete stream;
     }
@@ -80,72 +90,156 @@ public:
      *
      * @return
      */
-    inline tcp_stream* get_stream() const {
-        return stream;
-    }
+    std::unique_ptr<message> receive(const int tout_s = 0,
+        const int tout_us = 0) const
+    {
+        char rec_buffer[255]; // receiving by buffer
+        ssize_t len; // holds bytes sent or errors
 
-    /**
-     *
-     * @return
-     */
-    message receive(int timeout = 0) const {
-        char rec_buffer[256];
+        // begin synchronization critical section
+        {
+            // threads block until lock acquired
+            std::lock_guard<std::mutex> stream_lock(stream_mux);
 
-        // fill buffer with bytes from client
-        ssize_t len = stream->receive(rec_buffer, sizeof(rec_buffer) - 1,
-            timeout);
+            // fill buffer with bytes from client
+            len = stream->receive(rec_buffer, sizeof(rec_buffer) - 1, tout_s,
+                tout_us);
+
+            // stream lock unlocks
+        }
+        // end synchronization critical section
 
         // check for the different errors TCPStream#receive can return
         switch (len) {
             case stream->CONNECTION_CLOSED:
-                return message::build_error_message(signal::CONNECTION_CLOSED);
+                return std::unique_ptr<message>(
+                    message::create_message(network_message::type::ERROR,
+                        network_message::signal::CONNECTION_CLOSED, get_id(),
+                        SERVER_ID));
 
             case stream->CONNECTION_TIMEOUT:
-                return message::build_error_message(
-                    signal::CONNECTION_TIMED_OUT);
+                return std::unique_ptr<message>(
+                    message::create_message(network_message::type::ERROR,
+                        network_message::signal::CONNECTION_TIMED_OUT, get_id(),
+                        SERVER_ID));
 
             default: // no errors, return received message
-                return message::build_message(rec_buffer, len);
+                switch (static_cast<network_message::type>(rec_buffer[0])) {
+                    default:
+                        return std::unique_ptr<message>(
+                            message::parse_message(rec_buffer, len));
+                        break;
+
+                    case network_message::type::GAME:
+                        return std::unique_ptr<game_message>(
+                            game_message::parse_message(rec_buffer, len));
+                        break;
+                }
         }
 
+        }
+
+    /**
+     * Sends a message over the network to a client.
+     *
+     * @param msg - a pointer to the message to send to the client.
+     *
+     * @return the number of bytes sent to the client, or if negative, an error
+     *         value.
+     */
+    ssize_t send(const network_message::message* msg) {
+        ssize_t len; // holds bytes sent or errors
+
+        // begin synchronization critical section
+        {
+            // threads block until lock acquired
+            std::lock_guard<std::mutex> stream_lock(stream_mux);
+
+            // fill buffer with bytes from client
+            len = stream->send(msg->msg(), msg->length());
+
+            // stream lock unlocks
+        }
+        // end synchronization critical section
+
+        return len;
     }
 
     /**
+     * Sends a message over the network to a client.
      *
-     * @param message
-     * @return
+     * @param msg - the message to send to the client.
+     *
+     * @return the number of bytes sent to the client, or if negative, an error
+     *         value.
      */
-    ssize_t send(const message message) {
-        return stream->send(message.msg(), message.length());
+    ssize_t send(const network_message::message&& msg) {
+        ssize_t len; // holds bytes sent or errors
+
+        // begin synchronization critical section
+        {
+            // threads block until lock acquired
+            std::lock_guard<std::mutex> stream_lock(stream_mux);
+
+            // fill buffer with bytes from client
+            len = stream->send(msg.msg(), msg.length());
+
+            // stream lock unlocks
+        }
+        // end synchronization critical section
+
+        return len;
     }
 
     /**
+     * Sends a message over the network to a client.
      *
-     * @return this clients ID.
+     * @param msg - the message to send to the client.
+     *
+     * @return the number of bytes sent to the client, or if negative, an error
+     *         value.
      */
-    inline char get_id() {
+    ssize_t send(const network_message::message& msg) {
+        ssize_t len; // holds bytes sent or errors
+
+        // begin synchronization critical section
+        {
+            // threads block until lock acquired
+            std::lock_guard<std::mutex> stream_lock(stream_mux);
+
+            // fill buffer with bytes from client
+            len = stream->send(msg.msg(), msg.length());
+
+            // stream lock unlocks
+        }
+        // end synchronization critical section
+
+        return len;
+    }
+
+    /**
+     * @return this client's ID.
+     */
+    inline unsigned char get_id() {
         return id;
     }
 
     /**
-     *
-     * @return
+     * @return this client's ID.
      */
-    inline const char get_id() const {
+    inline const unsigned char get_id() const {
         return id;
     }
 
     /**
-     *
-     * @return
+     * @return this client's name.
      */
     inline std::string get_name() {
         return name;
     }
 
     /**
-     *
-     * @return
+     * @return this client's name.
      */
     inline const std::string get_name() const {
         return name;
@@ -159,7 +253,6 @@ public:
     }
 
     /**
-     *
      * @return true if the status of this client is in-game, false otherwise.
      */
     inline bool is_in_game() {
@@ -167,7 +260,6 @@ public:
     }
 
     /**
-     *
      * @return true if the status of this client is in-game, false otherwise.
      */
     inline const bool is_in_game() const {
@@ -218,8 +310,10 @@ public:
 
     /**
      *
-     * @param max_touts
-     * @return
+     * @param max_touts - the number of allowed timeouts before action should be
+     * taken.
+     * @return true if this client's timeout count is greater than
+     *         {@code max_touts}, otherwise false.
      */
     inline bool timed_out(const int max_touts) {
         tout_count += 1;
@@ -228,44 +322,47 @@ public:
     }
 
     /**
-     *
+     * Resets this client's timeout count to zero.
      */
     inline void reset_timeouts() {
         tout_count = 0;
     }
 
     /**
+     * Returns this client's listing as an {@code std::string}. The first
+     * {@code char} is the client's ID, the second is the client's status and
      *
      * @return
      */
     std::string get_listing() {
-        if (!l_cache) {
+        const int L_CACHE_STATUS_OFFSET = 1;
+
+        // create client listing on first call to get_listing, all subsequent
+        // calls just update the listing with the client's status
+        if (l_cache[0] == '\0') {
+            const int L_CACHE_ID_OFFSET = 0;
+
+            // listing bytes: 1 byte(<client id>) + 1 byte(<client status>) +
+            // [n < 30] bytes(<client name>)
             const size_t listing_length = 2 + get_name().length();
-            char listing[listing_length + 1];
-
-            listing[listing_length] = '\0';
-
-            // put id byte in listing first
-            listing[0] = id;
-
-            // then put status byte in listing
-            listing[1] = status;
+            l_cache[listing_length] = '\0';
+            l_cache[L_CACHE_ID_OFFSET] = id;
+            l_cache[L_CACHE_STATUS_OFFSET] = status;
 
             // finally copy name bytes to listing
             const char* tmp_name = get_name().c_str();
-            for (size_t i = 2; i < listing_length; ++i) {
-                listing[i] = tmp_name[i];
+            for (size_t i = 0; i < listing_length; ++i) {
+                l_cache[i + 2] = tmp_name[i];
             }
-
-            l_cache = listing;
         } else {
-            l_cache[1] = status;
+            l_cache[L_CACHE_STATUS_OFFSET] = status;
         }
 
         return std::string(l_cache);
-    }
+        }
 
-};
+    }
+;
 
 } // namespace server
 

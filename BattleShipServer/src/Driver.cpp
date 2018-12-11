@@ -6,12 +6,12 @@
  */
 
 
+#include <server.h>
 #include <iostream>
-#include "Server.h"
 
 using namespace std;
 
-using namespace battleship::server;
+using namespace battleship;
 
 int main(int argc, char* argv[]) {
     // process command line arguments
@@ -28,10 +28,10 @@ int main(int argc, char* argv[]) {
         ip = argv[3];
     }
 
-    std::cout << "Creating server with " << maxConnections
-              << " max connections." << std::endl;
+    std::cout << "Creating server with a maximum of " << maxConnections
+        << " connections." << std::endl;
 
-    Server server(maxConnections, port, ip);
+    game_server::server server(maxConnections, port, ip);
 
     std::cout << "Starting Server ..." << std::endl;
 

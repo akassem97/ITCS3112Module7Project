@@ -1,10 +1,11 @@
 #ifndef BATTLESHIP_CLIENT_POOL_H_
 #define BATTLESHIP_CLIENT_POOL_H_
 
-#include <client.h>
+#include "client.h"
+
+
 #include <atomic>
 #include <condition_variable>
-#include <cstdint> // std::unsigned char
 #include <list>
 #include <mutex>
 #include <vector>
@@ -12,7 +13,7 @@
 
 namespace battleship {
 
-namespace server {
+namespace game_server {
 
 /**
  * @brief A thread safe client pool for holding server clients.
@@ -38,6 +39,8 @@ private:
                                                   // thread that readers are
                                                   // done
 
+    static const std::string EMPTY_STRING; // ""
+
     /*
      * Reader threads wait if pool is being written. Once a reader thread
      * acquires the lock, it then increases readerCount in order to make
@@ -61,14 +64,16 @@ private:
         }
     }
 
+    // don't implement default constructor
+    client_pool() = delete;
     /* Disallow Copy Operations */
     client_pool(const client_pool&) = delete; // don't implement copy c'tor
-    client_pool& operator=(const client_pool& rhs) = delete; // don't implement
-                                                             // copy assignment
+    client_pool& operator=(const client_pool&) = delete; // don't implement copy
+                                                         // assignment
 
 public:
 
-    //
+    // create a client pool with a specified max_size
     explicit client_pool(const unsigned char max_size);
 
     /**
@@ -78,8 +83,11 @@ public:
     }
 
     //
+    client* create_tmp_client(tcp_stream* const connection);
+
+    //
     std::shared_ptr<client> create_and_add_client(const std::string client_name,
-        tcp_stream* connection);
+        tcp_stream* const connection);
 
     //
     bool remove(const unsigned char clientId);
