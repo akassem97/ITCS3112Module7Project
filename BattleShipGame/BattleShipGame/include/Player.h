@@ -34,6 +34,19 @@ class Player
         {
             return g;
         }
+
+        bool didLose()
+        {
+            int counter = 0;
+            for(int i = 0; i < 10; i++)
+                for(int j = 0; j < 10; j++)
+                    if(getGrid().getSquare(i,j) == 1)
+                        counter++;
+            if(counter == 0)
+            return true;
+            else
+            return false;
+        }
     protected:
 
     private:

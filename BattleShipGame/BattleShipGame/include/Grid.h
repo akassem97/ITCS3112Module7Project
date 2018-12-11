@@ -7,41 +7,68 @@ class Grid
     public:
         Grid(int p)
          {
+
+            for(int i = 0; i < 10; i++)
+                grid[i] = new int[10];
+
+
             player = p;
 
             for(int i = 0; i < 10; i++)
                 for(int j = 0; j < 10; j++)
-                    grid[i][j] = Square(0,i,j);
+                    grid[i][j] = 0;
+
+                    cout << "it worked" << endl;
          }
 
          Grid()
          {
 
-
+            for(int i = 0; i < 10; i++)
+                grid[i] = new int[10];
             for(int i = 0; i < 10; i++)
                 for(int j = 0; j < 10; j++)
-                    grid[i][j] = Square(0,i,j);
+                    grid[i][j] = 0;
          }
-        void addShip(int s, int d, int x, int y)
+        void addShip(int s, int d, int y, int x)
             {
                 for(int i = 0; i < s; i++)
                 {
 
                     if(d == 1)
-                            getSquare(x-1, y-i-1).setSquareValue(1);
+                        //getSquare(x-1, y-i-1).setSquareValue(1);
+                        grid[y-i-1][x-1] = 1;
                     else if(d == 2)
-                        getSquare(x-1, y+i-1).setSquareValue(1);
+                        grid[y+i-1][x-1] = 1;
                     else if(d == 3)
-                        getSquare(x-i-1, y-1).setSquareValue(1);
+                        grid[y-1][x-1-i] = 1;
                     else if(d == 4)
-                        getSquare(x+i-1, y-1).setSquareValue(1);
+                        grid[y-1][x-1+i] = 1;
                 }
 
-                cout << "Square " << getSquare(x-1, y-1).getSquareValue() << endl;
+
             }
-         Square getSquare(int x, int y)
+         int getSquare(int y, int x)
          {
-            return grid[x][y];
+            return grid[y][x];
+         }
+
+         void hit(int x, int y)
+         {
+            grid[y-1][x-1] = 2;
+         }
+
+         string dropBomb(int x, int y)
+         {
+            string s;
+            if(getSquare(y-1,x-1) == 1)
+            {
+                hit(x,y);
+                s = "Hit!";
+
+            }
+            else
+            s = "Miss..";
          }
 
         string toString()
@@ -54,8 +81,8 @@ class Grid
                 {
                     s.append("| ");
                    // s.append(getSquare(i, j).getSquareValue());
-                    s+=to_string(getSquare(i, j).getSquareValue());
-                    cout << getSquare(i, j).getSquareValue();
+                    s+=to_string(grid[i][j]);
+                    cout << grid[i][j];
                     s.append(" ");
 
                 }
@@ -69,7 +96,9 @@ class Grid
     protected:
 
     private:
-        Square grid[10][10];
+        //Square** grid = new Square*[10];
+        //Square** grid = new Square*[10];
+        int** grid = new int*[10];
         int player;
 };
 
