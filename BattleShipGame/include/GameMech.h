@@ -1,12 +1,14 @@
 #ifndef GAMEMECH_H
 #define GAMEMECH_H
 #include "User.h"
-
+#include "BotAi.h"
+#include <iostream>
+using namespace std;
 class GameMech
 {
     public:
         GameMech() {
-        cout << "hallo" << endl;
+
         //initialize game here
         getUserInput();
 
@@ -120,9 +122,13 @@ class GameMech
 
                 cout << "It was a " << s << "\nBots turn..." << endl;
 
-                b.dropRandomBomb();
+                int* coords = b.dropRandomBomb();
+
+                s = u.getGrid().dropBomb(coords[0], coords[1]);
 
                 cout << "It was a " << s << endl;
+
+                cout  << "Your board:\n" << u.getGrid().toString() << endl;
 
 
 
@@ -156,9 +162,9 @@ class GameMech
 
 
             //TEST FOR PvB
-            cout << u.getGrid().toString();
-            cout << endl << endl << endl;
-            cout << b.getGrid().toString();
+            //cout << u.getGrid().toString();
+            //cout << endl << endl << endl;
+            //cout << b.getGrid().toString();
 
 
 

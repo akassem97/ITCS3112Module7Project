@@ -1,9 +1,16 @@
 #ifndef GRID_H
 #define GRID_H
 #include "Square.h"
+#include <iostream>
 using namespace std;
 class Grid
 {
+    private:
+        //Square** grid = new Square*[10];
+        //Square** grid = new Square*[10];
+        int** grid = new int*[10];
+        int player;
+
     public:
         Grid(int p)
          {
@@ -18,7 +25,7 @@ class Grid
                 for(int j = 0; j < 10; j++)
                     grid[i][j] = 0;
 
-                    cout << "it worked" << endl;
+                    //cout << "it worked" << endl;
          }
 
          Grid()
@@ -37,9 +44,9 @@ class Grid
 
                     if(d == 1)
                         //getSquare(x-1, y-i-1).setSquareValue(1);
-                        grid[y-i-1][x-1] = 1;
-                    else if(d == 2)
                         grid[y+i-1][x-1] = 1;
+                    else if(d == 2)
+                        grid[y-i-1][x-1] = 1;
                     else if(d == 3)
                         grid[y-1][x-1-i] = 1;
                     else if(d == 4)
@@ -69,6 +76,8 @@ class Grid
             }
             else
             s = "Miss..";
+
+            return s;
          }
 
         string toString()
@@ -82,11 +91,11 @@ class Grid
                     s.append("| ");
                    // s.append(getSquare(i, j).getSquareValue());
                     s+=to_string(grid[i][j]);
-                    cout << grid[i][j];
+                    //cout << grid[i][j];
                     s.append(" ");
 
                 }
-                cout << endl;
+                //cout << endl;
                 s.append("\n");
                 }
 
@@ -95,11 +104,7 @@ class Grid
         }
     protected:
 
-    private:
-        //Square** grid = new Square*[10];
-        //Square** grid = new Square*[10];
-        int** grid = new int*[10];
-        int player;
+
 };
 
 #endif // GRID_H
