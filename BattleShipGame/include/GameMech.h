@@ -29,9 +29,9 @@ class GameMech
                 int x,y;
                 char dir;
                 int d, s;
-                cout << "Enter x coordinate of the face of ship" << (i+1) << endl;
+                cout << "Enter x coordinate of the face of ship " << (i+1) << endl;
                 cin >> x;
-                cout << "Enter y coordinate of the face of ship" << (i+1) << endl;
+                cout << "Enter y coordinate of the face of ship " << (i+1) << endl;
                 cin >> y;
                 cout << "Enter direction its facing (N = 1,S = 2,E = 3,W = 4)" << endl;
                 cin >> d;
@@ -64,7 +64,7 @@ class GameMech
                 else
                     s = 5;
 
-                if((u.checkIfValid(y-1,x-1,d,s)))
+                if((u.checkIfValid(y,x,d,s)))
                 {
 
                  u.getShips()[i] = Ship(s,d,x,y);
@@ -82,15 +82,79 @@ class GameMech
 
         }
 
+        void startPvp(){
+        //launch client and connect to server
 
+        //get user input
+            getShipsFromUserConsole();
+
+        //game loop!
+
+        //wait for server instruction (either your turn or wait)
+
+        //if wait, keep listening, if play then execute function where use selects a place to drop bomb
+
+        //once turn is over, send coordinates to server and go back to listening
+        }
+
+        void startPvBot()
+        {
+            b.generateAiShips();
+            getShipsFromUserConsole();
+
+            while(!u.didLose() || !b.didLose())
+            {
+                int x,y;
+                do
+                {
+                cout << "Your turn, type in coordinates to drop bomb\nEnter x:" << endl;
+                cin >> x;
+                cout << "Enter y: " << endl;
+                cin >> y;
+                if(x <= 0 || x > 10 || y <= 0 || y > 10)
+                cout << "Invalid Entry.. Re Enter" << endl;
+                }
+                while(x <= 0 || x > 10 || y <= 0 || y > 10);
+
+                string s = b.getGrid().dropBomb(x,y);
+
+                cout << "It was a " << s << "\nBots turn..." << endl;
+
+                b.dropRandomBomb();
+
+                cout << "It was a " << s << endl;
+
+
+
+            }
+
+
+
+        }
         void getUserInput()
         {
 
 
             //see if user wants pvb or pvp
+            cout << "Welcome to Battleship!\nDo you want to play 1. PvP or 2. PVBot?" << endl;
+            int choice = 0;
+            while(choice != 2 && choice != 1)
+            {
+            cin >> choice;
+            switch(choice){
+            case 1:
+            startPvp();
+            break;
+            case 2:
+            startPvBot();
+            break;
+            default:
+            cout << "Invalid choice... Re Enter" << endl;
+            }
+            }
             //
-            getShipsFromUserConsole();
-            b.generateAiShips();
+
+
             //TEST FOR PvB
             cout << u.getGrid().toString();
             cout << endl << endl << endl;
@@ -108,7 +172,7 @@ class GameMech
     private:
         Player* p1,p2;
         BotAi b;
-        User u;
+        User u, o;
         bool isDone;
 
 };

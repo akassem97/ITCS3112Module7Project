@@ -30,7 +30,7 @@ class Grid
                 for(int j = 0; j < 10; j++)
                     grid[i][j] = 0;
          }
-        void addShip(int s, int d, int x, int y)
+        void addShip(int s, int d, int y, int x)
             {
                 for(int i = 0; i < s; i++)
                 {
@@ -48,9 +48,27 @@ class Grid
 
 
             }
-         int getSquare(int x, int y)
+         int getSquare(int y, int x)
          {
-            return grid[x][y];
+            return grid[y][x];
+         }
+
+         void hit(int x, int y)
+         {
+            grid[y-1][x-1] = 2;
+         }
+
+         string dropBomb(int x, int y)
+         {
+            string s;
+            if(getSquare(y-1,x-1) == 1)
+            {
+                hit(x,y);
+                s = "Hit!";
+
+            }
+            else
+            s = "Miss..";
          }
 
         string toString()

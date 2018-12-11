@@ -44,7 +44,7 @@ class BotAi : public Player
                 getShips()[i] = Ship(s, d, x, y);
                 i++;
                 cout <<"adding "<< endl;
-                getGrid().addShip(s,d,x,y);
+                getGrid().addShip(s,d,y,x);
             }
 
         }
@@ -70,28 +70,28 @@ class BotAi : public Player
                     {
                         if(y-i <= 0 || y-i >= 10)
                             isValid = false;
-                        else if(getGrid().getSquare(y, x-i) == 1)
+                        else if(getGrid().getSquare(y-i, x) == 1)
                             isValid = false;
                     }
                     else if(d == 2)
                     {
                         if(y+i <= 0 || y+i >= 10)
                             isValid = false;
-                        else if(getGrid().getSquare(y, x+i) == 1)
+                        else if(getGrid().getSquare(y+i, x) == 1)
                             isValid = false;
                     }
                     else if(d == 3)
                     {
                         if(x-i <= 0 || x-i >= 10)
                             isValid = false;
-                        else if(getGrid().getSquare(y-i, x) == 1)
+                        else if(getGrid().getSquare(y, x-i) == 1)
                             isValid = false;
                     }
                     else if(d == 4)
                     {
                         if(x+i <= 0 || x+i >= 10)
                             isValid = false;
-                        else if(getGrid().getSquare(y+i, x) == 1)
+                        else if(getGrid().getSquare(y, x+i) == 1)
                             isValid = false;
                     }
 
@@ -116,8 +116,8 @@ class BotAi : public Player
         coords[1] = y;
 
         if(getGrid().getSquare(x,y) == 2)
-        dropRandomBomb();
-        else
+        coords = dropRandomBomb();
+
         return coords;
 
         }
