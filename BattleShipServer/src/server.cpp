@@ -1,31 +1,29 @@
-/*
- * Server.cpp
- *
- *  Created on: Dec 1, 2018
- *      Author: henly
- */
-
 // source header
-#include <server.h>
+#include "server.h"
+
+// standard library headers
 #include <iostream> // std::cerr
 #include <memory> // std::shared_ptr
 
+// battleship headers
 #include "game.h"
-#include "message.h" // enum class Signal
+#include "message.h"
 #include "msgconsumer.h"
 #include "msgproducer.h"
 #include "thread.h"
 
 /* DEBUG  beg debugout.h */
 #include "debugout.h"
-using namespace debug_out;
 /* DEBUG  end debugout.h*/
 
 namespace battleship {
 
+using namespace network_message;
+
 namespace game_server {
 
-using namespace network_message;
+using namespace debug_out;
+
 
 /**
  *
@@ -40,7 +38,7 @@ server::server(const unsigned char max_connections, const int port,
 {
     // create the client pool
     c_pool = new client_pool(max_connections);
-    games.reserve(max_connections / 2);
+    g_pool = new game_pool(max_connections / 2);
 }
 
 /**
@@ -62,7 +60,7 @@ int server::start() {
     // create the message consumer threads
     for (int i = 0; i < consumer_count; i++) {
         message_consumer* m_consumer = new message_consumer(msg_queue, *c_pool,
-            games);
+            *g_pool);
         if (!m_consumer) {
             std::cerr << "Could not create ConnectionHandler thread " << i
                 << std::endl;
@@ -106,9 +104,7 @@ int server::start() {
     return 0;
 }
 
-/*
- *
- */
+// main server loop
 void server::run() {
 
     // add a client to the pool for each connection, unless pool is full
@@ -120,7 +116,7 @@ void server::run() {
         thread_println(std::cout, SERVER_TID,
             "Receiving new connection attempt.");
 
-        // check if connection is functional
+        // check if tcp stream 'connection' is functional
         if (!connection) {
             // DEBUG
             thread_println(std::cout, SERVER_TID,
@@ -140,7 +136,7 @@ void server::run() {
                 "Server is full, deleting connection.");
 
             // send server-full message to client
-            auto server_full = message::create_message(type::SERVER,
+            const message* server_full = message::create_message(type::SERVER,
                 signal::SERVER_FULL, SERVER_ID, 0);
             connection->send(server_full->msg(), server_full->length());
 
@@ -172,7 +168,7 @@ bool server::perform_handshake_procedure(tcp_stream* const connection) {
     thread_println(std::cout, SERVER_TID, "Beginning handshake.");
 
     // create temporary client for the handshake procedure
-    client* tmp_handshake_client = c_pool->create_tmp_client(connection);
+    auto tmp_handshake_client = c_pool->create_tmp_client(connection);
     // receive client's join request message, including client's name
     auto client_join_request_msg = tmp_handshake_client->receive(5);
 
@@ -191,7 +187,7 @@ bool server::perform_handshake_procedure(tcp_stream* const connection) {
                 // send connection request denial message to client
                 tmp_handshake_client->send(
                     message::create_message(type::ERROR, signal::CLIENT_DENY,
-                        SERVER_ID, 0,
+                        SERVER_ID, tmp_handshake_client->get_id(),
                         "Connection denied, did not receive proper CLIENT_JOIN signal."));
 
         } // end switch
@@ -212,8 +208,8 @@ bool server::perform_handshake_procedure(tcp_stream* const connection) {
 
     // create a client with this connection, through client pool, which also
     // assigns a unique id to the client
-    std::shared_ptr<client> client = c_pool->create_and_add_client(client_name,
-        std::move(tmp_handshake_client->get_stream()));
+    std::shared_ptr<client> client = c_pool->add_handshake_client(client_name,
+        tmp_handshake_client.get());
 
     // DEBUG
     thread_println(std::cout, SERVER_TID, "Sending client id [",

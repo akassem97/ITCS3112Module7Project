@@ -7,6 +7,7 @@
 #include "client.h"
 #include "clientpool.h"
 #include "game.h"
+#include "gamepool.h"
 #include "tcpacceptor.h"
 #include "tsqueue.h"
 
@@ -34,10 +35,10 @@ private:
     bool running; // the state of this server
     ts_queue<std::shared_ptr<client>> c_queue; // client message producer thread
                                                // queue
-    ts_queue<network_message::message> msg_queue; // message consumer thread queue
+    ts_queue<network_message::message*> msg_queue; // message consumer thread queue
     client_pool* c_pool; // pool of clients
+    game_pool* g_pool;
     tcp_acceptor* connection_acceptor; // used to listen for client connections
-    vector<std::shared_ptr<game>> games;
 
     // no default constructor
     server() = delete;

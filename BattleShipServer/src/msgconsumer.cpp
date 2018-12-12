@@ -7,9 +7,9 @@ using namespace debug_out;
 
 namespace battleship {
 
-namespace game_server {
-
 using namespace network_message;
+
+namespace game_server {
 
 /*
  *
@@ -35,10 +35,11 @@ void message_consumer::handle_server_msg(const message* msg) {
             thread_println(std::cout, tid, "[ ", client->get_name(),
                 " ] has requested the client lobby list.");
 
+            /*
             auto reply = message::create_message(type::SERVER,
                 signal::CLIENT_LOBBY_LIST, 255, client->get_id(),
                 c_pool.get_client_listings());
-
+             */
             // DEBUG
             thread_println(std::cout, tid, "Sending message [",
                 static_cast<int>(msg->signal()), static_cast<int>(msg->from()),
@@ -90,7 +91,8 @@ void* message_consumer::run() {
         thread_loop_println(std::cout, tid, i, " - consumer idle.");
 
         // get next item from the queue or block
-        std::unique_ptr<const message> msg = m_queue.remove();
+        auto msg = std::unique_ptr<const message>(
+            m_queue.remove());
 
         // DEBUG
         thread_loop_println(std::cout, tid, i, " - Consuming message [ ",

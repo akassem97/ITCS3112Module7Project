@@ -1,12 +1,15 @@
 #ifndef BATTLESHIP_MESSAGE_CONSUMER_H_
 #define BATTLESHIP_MESSAGE_CONSUMER_H_
 
+// standard library headers
 #include <iostream>
 #include <memory>
 
+// battleship headers
 #include "client.h"
 #include "clientpool.h"
 #include "game.h"
+#include "gamepool.h"
 #include "message.h"
 #include "thread.h"
 #include "tsqueue.h"
@@ -16,7 +19,7 @@ namespace battleship {
 namespace game_server {
 
 /**
- * @brief
+ * @brief A message consuming thread.
  *
  * @author Jonathan Henly
  * @author Adham Kassem
@@ -27,9 +30,9 @@ private:
     typedef network_message::message message; // namespace network_message from
                                               // "message.h"
 
-    ts_queue<std::unique_ptr<const message>>& m_queue;
+    ts_queue<message*>& m_queue;
     client_pool& c_pool;
-    vector<shared_ptr<game>>& games;
+    game_pool& g_pool;
 
     /* Message Consumer message-type handler helper methods. */
     void handle_server_msg(const message* msg);
@@ -43,9 +46,10 @@ public:
      * @param pool - the thread safe pool of clients.
      * @param games - the thread safe pool of games.
      */
-    message_consumer(ts_queue<std::unique_ptr<const message>>& msg_queue,
-        client_pool& pool, vector<std::shared_ptr<game>>& games)
-        : m_queue(msg_queue), c_pool(pool), games(games)
+    message_consumer(ts_queue<message*>& m_queue,
+        client_pool& c_pool,
+        game_pool& g_pool)
+        : m_queue(m_queue), c_pool(c_pool), g_pool(g_pool)
     {
     }
 

@@ -1,24 +1,26 @@
 #ifndef BATTLESHIP_DEBUGOUT_H_
-#define BATTLEHSIP_DEBUGOUT_H_
-
-#include <iostream>
-#include <memory>
-
-namespace debug_out {
+#define BATTLESHIP_DEBUGOUT_H_
 
 /* DEBUG  includes */
+#include <iostream>
+#include <memory>
 #include <mutex> // DEBUG  std::mutex, std::lock_guard
 /* DEBUG  end includes */
 
-/* DEBUG  Thread Safe Variadic Output Functions */
+namespace debug_out {
+
 const unsigned long SERVER_TID = 0UL;
-std::mutex ostream_mutex;
+// std::mutex out_mux;
+/* DEBUG  Thread Safe Variadic Output Functions */
+
+
 
 template<typename Arg, typename ... Args>
-void thread_loop_println(std::ostream& out, unsigned long int tid, int i,
-    Arg&& arg, Args&&... args)
+void thread_loop_println(std::ostream& out, unsigned long int tid,
+    int i, Arg&& arg, Args&&... args)
 {
-    std::lock_guard<std::mutex> lock(ostream_mutex); // unlocks once scope ends
+    static std::mutex out_mux;
+    std::lock_guard<std::mutex> lock(out_mux); // unlocks once scope ends
 
     out << "Thread [" << tid << "]: Loop " << i;
     out << std::forward<Arg>(arg);
@@ -31,10 +33,11 @@ void thread_loop_println(std::ostream& out, unsigned long int tid, int i,
 }
 
 template<typename Arg, typename ... Args>
-void thread_println(std::ostream& out, unsigned long int tid, Arg&& arg,
-    Args&&... args)
+void thread_println(std::ostream& out, unsigned long int tid,
+    Arg&& arg, Args&&... args)
 {
-    std::lock_guard<std::mutex> lock(ostream_mutex); // unlocks once scope ends
+    static std::mutex out_mux;
+    std::lock_guard<std::mutex> lock(out_mux); // unlocks once scope ends
 
     out << "Thread [" << tid << "]: ";
     out << std::forward<Arg>(arg);
@@ -48,7 +51,8 @@ void thread_println(std::ostream& out, unsigned long int tid, Arg&& arg,
 
 template<typename Arg, typename ... Args>
 void println(std::ostream& out, Arg&& arg, Args&&... args) {
-    std::lock_guard<std::mutex> lock(ostream_mutex); // unlocks once scope ends
+    static std::mutex out_mux;
+    std::lock_guard<std::mutex> lock(out_mux); // unlocks once scope ends
 
     out << std::forward<Arg>(arg);
     using expander = int[];

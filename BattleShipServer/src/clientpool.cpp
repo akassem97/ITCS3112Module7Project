@@ -1,7 +1,6 @@
 // source header
 #include "clientpool.h"
 
-
 namespace battleship {
 
 namespace game_server {
@@ -32,8 +31,10 @@ client_pool::client_pool(const unsigned char max_size)
 }
 
 //
-client* client_pool::create_tmp_client(tcp_stream* const connection) {
-    return new client(0, EMPTY_STRING, connection);
+std::unique_ptr<client> client_pool::create_tmp_client(
+    tcp_stream* const connection)
+{
+    return std::unique_ptr<client>(new client(0, EMPTY_STRING, connection));
 }
 
 /**
@@ -53,7 +54,7 @@ std::shared_ptr<client> client_pool::create_and_add_client(
     writer_condv.wait(write_lock, [this]() {return reader_count == 0;});
 
     // signal server that it's reached max clients
-    if (client_count == max_client_count) {
+    if (client_count >= max_client_count) {
         return nullptr;
     }
 
@@ -62,23 +63,35 @@ std::shared_ptr<client> client_pool::create_and_add_client(
     empty_queue.pop_front();
 
     // create the client in a shared pointer to store and return
-    std::shared_ptr<client> new_client = std::shared_ptr<client>(
+    auto new_client = std::shared_ptr<client>(
         new client(client_id, client_name, connection));
-    //std::make_shared<client>(client_id,
-    //client_name, connection);
 
     // put the client in the empty pool index
     pool[client_id] = new_client;
     client_count += 1;
 
-    cout << "This far!" << endl;
     // cache new client's listing
     cl_cache[client_id] = new_client->get_listing();
-    cout << "MOBY DICK!" << endl;
+
     // unlock not needed, writerLock 'unlocks' when it goes out of scope
     // writeLock.unlock();
 
     return new_client;
+}
+
+/**
+ * Creates a {@code client} with a unique id and a passed in {@code tcp_stream*}.
+ * The created {@code client} is then wrapped in an
+ * {@code std::shared_ptr<client>} smart pointer and added to the pool.
+ *
+ * @param connection - the TCP stream of the new client.
+ * @return a smart pointer to the created client, or {@code nullptr} if this
+ *         pool is full or an exception is thrown.
+ */
+std::shared_ptr<client> client_pool::add_handshake_client(
+    const std::string client_name, client* hshake_client)
+{
+    return create_and_add_client(client_name, hshake_client->move_stream());
 }
 
 /**
@@ -87,12 +100,12 @@ std::shared_ptr<client> client_pool::create_and_add_client(
  * Finally, it makes the specified client ID available for re-use and decreases
  * the client count by one.
  *
- * @param clientId - the ID of the client to remove.
+ * @param client_id - the ID of the client to remove.
  * @return true if the client with matching specified ID was removed from this
  *         pool, otherwise false.
  */
 bool client_pool::remove(const unsigned char client_id) {
-    // bounds checking on clientId, account for 1, not 0, indexed
+    // bounds checking on client_id, account for 1, not 0, indexed
     if (client_id < 1 || client_id > max_client_count + 1) {
         return false;
     }
@@ -138,13 +151,13 @@ bool client_pool::remove(const unsigned char client_id) {
  * Note: this method will return {@code nullptr} if the specified client ID is
  * not found in this client pool.
  *
- * @param clientId - the ID of the client to retrieve.
- * @return the client whose ID is {@code clientId} or {@code nullptr}.
+ * @param client_id - the ID of the client to retrieve.
+ * @return the client whose ID is {@code client_id} or {@code nullptr}.
  */
 const std::shared_ptr<client> client_pool::get(
     const unsigned char client_id) const
 {
-    // bounds checking on clientId, account for 1, not 0, indexed
+    // bounds checking on client_id, account for 1, not 0, indexed
     if (client_id < 1 || client_id > max_client_count + 1) {
         return nullptr;
     }
@@ -189,7 +202,7 @@ std::unique_lock<std::mutex> client_pool::get_lock() {
  * not found in this client pool.
  *
  * @param lock - the writer lock obtained from {@code client_pool::get_lock}.
- * @param clientId - the ID of the client to get.
+ * @param client_id - the ID of the client to get.
  *
  * @return a safe pointer with the client matching the specified client ID, or
  *         {@code nullptr}.
@@ -200,7 +213,7 @@ std::unique_lock<std::mutex> client_pool::get_lock() {
 const std::shared_ptr<client> client_pool::get_with_lock(
     std::unique_lock<std::mutex>& lock, const unsigned char client_id)
 {
-    // bounds checking on clientId, account for 1, not 0, indexed
+    // bounds checking on client_id, account for 1, not 0, indexed
     if (client_id < 1 || client_id > max_client_count + 1) {
         return nullptr;
     }

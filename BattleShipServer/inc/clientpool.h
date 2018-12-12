@@ -83,24 +83,29 @@ public:
     }
 
     //
-    client* create_tmp_client(tcp_stream* const connection);
+    unique_ptr<client> create_tmp_client(tcp_stream* const connection);
 
     //
-    std::shared_ptr<client> create_and_add_client(const std::string client_name,
+    std::shared_ptr<client> create_and_add_client(
+        const std::string client_name,
         tcp_stream* const connection);
 
     //
-    bool remove(const unsigned char clientId);
+    std::shared_ptr<client> add_handshake_client(const std::string client_name,
+        client* hshake_client);
 
     //
-    const std::shared_ptr<client> get(const unsigned char clientId) const;
+    bool remove(const unsigned char client_id);
+
+    //
+    const std::shared_ptr<client> get(const unsigned char client_id) const;
 
     //
     std::unique_lock<std::mutex> get_lock();
 
     //
     const std::shared_ptr<client> get_with_lock(
-        std::unique_lock<std::mutex>& lock, const unsigned char clientId);
+        std::unique_lock<std::mutex>& lock, const unsigned char client_id);
 
     //
     std::string get_client_listings();
@@ -130,6 +135,7 @@ public:
     }
 
 };
+// class lient_pool
 
 } // namespace server
 
