@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/imgs">
+        <file>Title.png</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>Pvp.qml</file>
+        <file>PvpForm.ui.qml</file>
+    </qresource>
+</RCC>
