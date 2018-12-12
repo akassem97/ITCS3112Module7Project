@@ -2,6 +2,11 @@
 #define PLAYER_H
 #include "Ship.h"
 #include "Grid.h"
+/**
+* This class implements Player functionalities
+*@author Adham Kassem
+*@author Jonathon Henly
+*/
 class Player
 {
     private:
@@ -46,7 +51,7 @@ class Player
         {
             //cout << "checking" << endl;
             bool isValid = true;
-            if(y <= 0 || y >= 10 || x <= 0 || x >= 10)
+            if(y <= 0 || y > 10 || x <= 0 || x > 10)
                 isValid = false;
             else if(d < 1 || d > 4)
                 isValid = false;
@@ -57,30 +62,30 @@ class Player
                 {
                     if(d == 1)
                     {
-                        if(y+i <= 0 || y+i >= 10)
+                        if(y+i <= 0 || y+i > 10)
                             isValid = false;
-                        else if(getGrid().getSquare(y+i, x) == 1)
+                        else if(getGrid().getSquare(y+i-1, x-1) == 1)
                             isValid = false;
                     }
                     else if(d == 2)
                     {
-                        if(y-i <= 0 || y-i >= 10)
+                        if(y-i <= 0 || y-i > 10)
                             isValid = false;
-                        else if(getGrid().getSquare(y-i, x) == 1)
+                        else if(getGrid().getSquare(y-i-1, x-1) == 1)
                             isValid = false;
                     }
                     else if(d == 3)
                     {
-                        if(x-i <= 0 || x-i >= 10)
+                        if(x-i <= 0 || x-i > 10)
                             isValid = false;
-                        else if(getGrid().getSquare(y, x-i) == 1)
+                        else if(getGrid().getSquare(y-1, x-i-1) == 1)
                             isValid = false;
                     }
                     else if(d == 4)
                     {
-                        if(x+i <= 0 || x+i >= 10)
+                        if(x+i <= 0 || x+i > 10)
                             isValid = false;
-                        else if(getGrid().getSquare(y, x+i) == 1)
+                        else if(getGrid().getSquare(y-1, x+i-1) == 1)
                             isValid = false;
                     }
 

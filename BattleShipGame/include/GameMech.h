@@ -4,6 +4,12 @@
 #include "BotAi.h"
 #include <iostream>
 using namespace std;
+
+/**
+* This class implements the game mechanics
+*@author Adham Kassem
+*@author Jonathon Henly
+*/
 class GameMech
 {
     public:
@@ -43,44 +49,27 @@ class GameMech
 
             for(int i = 0; i < 7; )
             {
-
-                int x,y;
-                char dir;
                 int d, s;
-                cout << "Enter x coordinate of the face of ship " << (i+1) << endl;
-                cin >> x;
-                cout << "Enter y coordinate of the face of ship " << (i+1) << endl;
-                cin >> y;
-                cout << "Enter direction its facing (N = 1,S = 2,E = 3,W = 4)" << endl;
-                cin >> d;
-
-/*
-                switch(dir)
-                {
-                    case 'n':
-                        d = 1;
-                    case 'N':
-                        d = 1;
-                    case 's':
-                        d = 2;
-                    case 'S':
-                        d = 2;
-                    case 'e':
-                        d = 3;
-                    case 'E':
-                        d = 2;
-                    case 'w':
-                        d = 2;
-                    case 'W':
-                        d = 2;
-                }
-*/
                 if(i < 3)
                     s = 2;
                 else if(i < 5)
                     s = 3;
                 else
                     s = 5;
+
+                int x,y;
+                char dir;
+
+                cout << "Enter x coordinate of the face of ship " << (i+1) << ":        ship size: " << s << endl;
+                cin >> x;
+                cout << "Enter y coordinate of the face of ship " << (i+1) << endl;
+                cin >> y;
+                cout << "Enter direction its facing (N = 1,S = 2,E = 3,W = 4)" << endl;
+                cin >> d;
+
+
+
+
 
                 if((u.checkIfValid(y,x,d,s)))
                 {
@@ -109,9 +98,13 @@ class GameMech
         */
         void startPvp(){
         //launch client and connect to server
+        unsigned char c = 'e';
+
 
         //get user input
-            getShipsFromUserConsole();
+        getShipsFromUserConsole();
+
+
 
         //game loop!
 
@@ -138,24 +131,19 @@ class GameMech
             while(!u.didLose() || !b.didLose())
             {
                 int x,y;
-                do
-                {
-                cout << "Your turn, type in coordinates to drop bomb\nEnter x:" << endl;
-                cin >> x;
-                cout << "Enter y: " << endl;
-                cin >> y;
-                if(x <= 0 || x > 10 || y <= 0 || y > 10)
-                cout << "Invalid Entry.. Re Enter" << endl;
-                }
-                while(x <= 0 || x > 10 || y <= 0 || y > 10);
+                int* coordsI = getTurnInput();
+                x = coordsI[0];
+                y = coordsI[1];
 
                 string s = b.getGrid().dropBomb(x,y);
+                delete coordsI;
 
                 cout << "It was a " << s << "\nBots turn..." << endl;
 
                 int* coords = b.dropRandomBomb();
 
                 s = u.getGrid().dropBomb(coords[0], coords[1]);
+                delete coords;
 
                 cout << "It was a " << s << endl;
 
@@ -205,6 +193,28 @@ class GameMech
             //cout << b.getGrid().toString();
 
 
+
+        }
+
+        int* getTurnInput()
+        {
+                int x,y;
+                do
+                {
+                cout << "Your turn, type in coordinates to drop bomb\nEnter x:" << endl;
+                cin >> x;
+                cout << "Enter y: " << endl;
+                cin >> y;
+                if(x <= 0 || x > 10 || y <= 0 || y > 10)
+                cout << "Invalid Entry.. Re Enter" << endl;
+                }
+                while(x <= 0 || x > 10 || y <= 0 || y > 10);
+
+                int* coords = new int[2];
+                coords[0] = x;
+                coords[1] = y;
+
+                return coords;
 
         }
 

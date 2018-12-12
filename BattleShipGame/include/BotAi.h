@@ -6,6 +6,11 @@
 #include <stdlib.h>
 #include <time.h>
 
+/**
+* This class inherits all Player methods and is used to create a bot
+*@author Adham Kassem
+*@author Jonathon Henly
+*/
 class BotAi : public Player
 {
     public:

@@ -1,7 +1,11 @@
 #ifndef SQUARE_H
 #define SQUARE_H
 
-
+/**
+* This class stores information for each square in a grid
+*@author Adham Kassem
+*@author Jonathon Henly
+*/
 class Square
 {
     public:

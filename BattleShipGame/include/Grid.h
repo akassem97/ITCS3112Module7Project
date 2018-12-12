@@ -3,6 +3,11 @@
 #include "Square.h"
 #include <iostream>
 using namespace std;
+/**
+* This class implements the grid and grid functionalities used in game
+*@author Adham Kassem
+*@author Jonathon Henly
+*/
 class Grid
 {
     private:
@@ -127,6 +132,37 @@ class Grid
 
             return s;
          }
+         /**
+         * Returns a flat stream of unsigned char values that defines the grid state
+         *@author Adham Kassem
+         *@author Jonathon Henly
+         *@param none
+         *@return stream unsigned char*
+         */
+         unsigned char* getGridStream()
+         {
+            unsigned char* stream = new unsigned char[100];
+
+            for(int i = 0; i < 10; i++)
+                for(int j = 0; j < 10; j++)
+                    {
+                    unsigned char c;
+                    if(grid[i][j] == 1)
+                    c = '2';
+                    else if(grid[i][j] == 0)
+                    c = '1';
+                    else
+                    c = '3';
+
+
+                    stream[i*10+j] = c;
+                    }
+
+                    return stream;
+
+         }
+
+
         /**
         * Drops a bomb on this grid
         *@author Adham Kassem
@@ -136,7 +172,7 @@ class Grid
         */
         string toString()
         {
-            string s = "";
+            string s = "  1   2   3   4   5   6   7   8   9   10\n";
 
             for(int i = 0; i < 10; i++)
             {
@@ -144,17 +180,38 @@ class Grid
                 {
                     s.append("| ");
                    // s.append(getSquare(i, j).getSquareValue());
-                    s+=to_string(grid[i][j]);
+                    if(grid[i][j] == 0)
+                    s.append(" ");
+                    else if(grid[i][j] == 1)
+                    s.append("'");
+                    else
+                    s.append("X");
                     //cout << grid[i][j];
                     s.append(" ");
 
                 }
                 //cout << endl;
+                s.append(" ");
+                s.append(to_string(i+1));
                 s.append("\n");
                 }
 
             //Console based UI output of grid, used for testing
             return s;
+        }
+
+    /**
+    *This method is meant for user objects that represent the opponent user locally. When the server informs client that the clients turn was a hit, this method will change the local
+    *state of the grid for proper local visualization
+    *@author Adham Kassem
+    *@author Jonathon Henly
+    *@param x int
+    *@param y int
+    *@return none
+    */
+        void addHit(int x, int y)
+        {
+            grid[y][x] = 2;
         }
     protected:
 
