@@ -4,6 +4,14 @@
 #include "Grid.h"
 class Player
 {
+    private:
+        Ship* ships;
+        int playerNum;
+        int shipCount;
+        int score;
+        Grid g;
+
+
     public:
         Player(int p) {
             playerNum = p;
@@ -24,6 +32,16 @@ class Player
         {
             return ships;
         }
+        /**
+        * Checks to see if ship placement is valid
+        *@author Adham Kassem
+        *@author Jonathon Henly
+        *@param y coordinate int
+        *@param x coordinate int
+        *@param d direction int
+        *@param s size int
+        *@return isValid boolean (returns whether or not the placement is valid)
+        */
          bool checkIfValid(int y, int x, int d, int s)
         {
             //cout << "checking" << endl;
@@ -73,16 +91,49 @@ class Player
                 //cout << "end checking" << endl;
                 return isValid;
         }
+        /**
+        * setter for ships
+        *@author Adham Kassem
+        *@author Jonathon Henly
+        *@param s Ship
+        *@return none
+        */
         void setShips(Ship* s)
         {
             ships = s;
         }
 
+        /**
+        * getter for grid
+        *@author Adham Kassem
+        *@author Jonathon Henly
+        *@param none
+        *@return g Grid
+        */
         Grid getGrid()
         {
             return g;
         }
 
+        /**
+        * setter for grid
+        *@author Adham Kassem
+        *@author Jonathon Henly
+        *@param g1 Grid
+        *@return none
+        */
+        void setGrid(Grid g1)
+        {
+            g = g1;
+        }
+
+        /**
+        * Returns a boolean value on whether or not the player lost.
+        *@author Adham Kassem
+        *@author Jonathon Henly
+        *@param none
+        *@return didLose boolean
+        */
         bool didLose()
         {
             int counter = 0;
@@ -97,12 +148,7 @@ class Player
         }
     protected:
 
-    private:
-        Ship* ships;
-        int playerNum;
-        int shipCount;
-        int score;
-        Grid g;
+
 
 };
 

@@ -7,6 +7,13 @@ using namespace std;
 class GameMech
 {
     public:
+        /**
+        * Constructor for game mechanics.
+        *@author Adham Kassem
+        *@author Jonathon Henly
+        *@param none
+        *@return none
+        */
         GameMech() {
 
         //initialize game here
@@ -21,6 +28,15 @@ class GameMech
         }
         virtual ~GameMech() {}
 
+        /**
+        * This asks user for input in placing their ships on the Grid. The coordinates inputted correspond to the coordinates of the face of the ship.
+        * The size will be specified and the user will be able to choose the direction the ship faces.
+        *
+        *@author Adham Kassem
+        *@author Jonathon Henly
+        *@param none
+        *@return none
+        */
         void getShipsFromUserConsole()
         {
 
@@ -84,6 +100,13 @@ class GameMech
 
         }
 
+        /**
+        * This starts a Player vs Player game. This calls client functionality that connects to the server and performs pvp functionality.
+        *@author Adham Kassem
+        *@author Jonathon Henly
+        *@param none
+        *@return none
+        */
         void startPvp(){
         //launch client and connect to server
 
@@ -99,6 +122,14 @@ class GameMech
         //once turn is over, send coordinates to server and go back to listening
         }
 
+        /**
+        * This starts a Player vs Bot game. All of the game mechanics and processing is done locally thru the client.
+        *
+        *@author Adham Kassem
+        *@author Jonathon Henly
+        *@param none
+        *@return none
+        */
         void startPvBot()
         {
             b.generateAiShips();
@@ -137,6 +168,13 @@ class GameMech
 
 
         }
+        /**
+        * This starts a Player vs Bot game. All of the game mechanics and processing is done locally thru the client.
+        *@author Adham Kassem
+        *@author Jonathon Henly
+        *@param none
+        *@return none
+        */
         void getUserInput()
         {
 

@@ -12,6 +12,14 @@ class Grid
         int player;
 
     public:
+
+        /**
+        * Grid constructor that instantiates a players grid and add ships to the grid.
+        *@author Adham Kassem
+        *@author Jonathon Henly
+        *@param none
+        *@return playerNum int
+        */
         Grid(int p)
          {
 
@@ -28,6 +36,13 @@ class Grid
                     //cout << "it worked" << endl;
          }
 
+         /**
+        * Grid constructor that instantiates a players grid which adds ships to the grid.
+        *@author Adham Kassem
+        *@author Jonathon Henly
+        *@param none
+        *@return none
+        */
          Grid()
          {
 
@@ -37,6 +52,17 @@ class Grid
                 for(int j = 0; j < 10; j++)
                     grid[i][j] = 0;
          }
+
+         /**
+        * Adds a ship to the grid
+        *@author Adham Kassem
+        *@author Jonathon Henly
+        *@param size int
+        *@param direction int
+        *@param y coordinate int
+        *@param x coordinate int
+        *@return none
+        */
         void addShip(int s, int d, int y, int x)
             {
                 for(int i = 0; i < s; i++)
@@ -55,16 +81,38 @@ class Grid
 
 
             }
+        /**
+        * gets the square value of a specified coordinate in the grid.
+        *@author Adham Kassem
+        *@author Jonathon Henly
+        *@param y coordinate int
+        *@param x coordinate int
+        *@return none
+        */
          int getSquare(int y, int x)
          {
             return grid[y][x];
          }
-
+        /**
+        * If a part of a ship is hit, this method sets the square value to hit aka 2.
+        *@author Adham Kassem
+        *@author Jonathon Henly
+        *@param y coordinate int
+        *@param x coordinate int
+        *@return none
+        */
          void hit(int x, int y)
          {
             grid[y-1][x-1] = 2;
          }
-
+        /**
+        * Drops a bomb on this grid
+        *@author Adham Kassem
+        *@author Jonathon Henly
+        *@param y coordinate int
+        *@param x coordinate int
+        *@return outcome string (returns a string representation of outcome of this move "hit" or "miss")
+        */
          string dropBomb(int x, int y)
          {
             string s;
@@ -79,7 +127,13 @@ class Grid
 
             return s;
          }
-
+        /**
+        * Drops a bomb on this grid
+        *@author Adham Kassem
+        *@author Jonathon Henly
+        *@param none
+        *@return string (returns a string representation of the grid for visualization)
+        */
         string toString()
         {
             string s = "";

@@ -9,6 +9,13 @@
 class BotAi : public Player
 {
     public:
+        /**
+        * This is the constructor that instantiates a bot into the game
+        *@author Adham Kassem
+        *@author Jonathon Henly
+        *@param p int (player number)
+        *@return none
+        */
         BotAi(int p):Player(p) {
 
             //generate bot ships
@@ -17,6 +24,13 @@ class BotAi : public Player
 
 
         }
+        /**
+        * This is the constructor that instantiates a bot into the game
+        *@author Adham Kassem
+        *@author Jonathon Henly
+        *@param none
+        *@return none
+        */
         BotAi() {
 
             //generate bot ships
@@ -26,6 +40,13 @@ class BotAi : public Player
 
         }
 
+        /**
+        * This randomly generates the ships for the bot.
+        *@author Adham Kassem
+        *@author Jonathon Henly
+        *@param none
+        *@return none
+        */
         void generateAiShips()
         {
             srand (time(NULL));
@@ -54,7 +75,13 @@ class BotAi : public Player
 
 
 
-
+        /**
+        * This drops a bomb at random coordinates against the user.
+        *@author Adham Kassem
+        *@author Jonathon Henly
+        *@param none
+        *@return coordinates int*
+        */
         int* dropRandomBomb()
         {
 
@@ -68,13 +95,20 @@ class BotAi : public Player
         coords[1] = y;
         cout << x << " " << y << endl;
 
-        if(getGrid().getSquare(x-1,y-1) == 2)
-        coords = dropRandomBomb();
+        //if(getGrid().getSquare(x-1,y-1) == 2)
+        //coords = dropRandomBomb();
 
         return coords;
 
         }
 
+        /**
+        * This drops a bomb at random coordinates against the user. This is smarter and implements a hueristic to influence drop location.
+        *@author Adham Kassem
+        *@author Jonathon Henly
+        *@param none
+        *@return coordinates int*
+        */
         int* dropBombAi()
         {
         //will make smarter using a hueristic later
