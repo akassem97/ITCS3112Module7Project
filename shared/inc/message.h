@@ -32,10 +32,10 @@ enum class signal
     CLIENT_EXIT = 0x01,  //!< CLIENT_EXIT
     CLIENT_JOIN,      //!< CLIENT_JOIN
     CLIENT_LOBBY_LIST,      //!< CLIENT_LOBBY_LIST
-    CLIENT_CHALLENGE, //!< CLIENT_CHALLENGE
     CLIENT_BUSY,     //!< CLIENT_BUSY
-    CLIENT_ACCEPT,    //!< CLIENT_ACCEPT
-    CLIENT_DENY,      //!< CLIENT_DENY
+    CLIENT_ACCEPT,
+    CLIENT_DENY,
+    CLIENT_MATCHMAKING,
     GAME_CREATED,
     GAME_READY,
     GAME_COORDINATES,      //!< GAME_COORDINATES
@@ -378,8 +378,8 @@ public:
     static game_message* create_message(
         const network_message::signal msg_signal,
         const unsigned char from, const unsigned char to,
-        const unsigned char game_id, const char* payload,
-        const unsigned char payload_length)
+        const unsigned char game_id,
+        const char* payload = nullptr, const unsigned char payload_length = 0)
     {
         return create_message_helper(msg_signal, from, to, game_id, payload,
             payload_length);
