@@ -1,0 +1,92 @@
+\hypertarget{classbattleship_1_1game__server_1_1message__consumer}{}\section{battleship\+:\+:game\+\_\+server\+:\+:message\+\_\+consumer Class Reference}
+\label{classbattleship_1_1game__server_1_1message__consumer}\index{battleship\+::game\+\_\+server\+::message\+\_\+consumer@{battleship\+::game\+\_\+server\+::message\+\_\+consumer}}
+
+
+A message consuming thread.  
+
+
+
+
+{\ttfamily \#include $<$msgconsumer.\+h$>$}
+
+
+
+Inheritance diagram for battleship\+:\+:game\+\_\+server\+:\+:message\+\_\+consumer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{classbattleship_1_1game__server_1_1message__consumer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for battleship\+:\+:game\+\_\+server\+:\+:message\+\_\+consumer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{classbattleship_1_1game__server_1_1message__consumer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classbattleship_1_1game__server_1_1message__consumer_a266c52a9e282be54a95c1338432ead58}{message\+\_\+consumer} (\hyperlink{classbattleship_1_1ts__queue}{ts\+\_\+queue}$<$ \hyperlink{classbattleship_1_1network__message_1_1message}{message} $\ast$$>$ \&m\+\_\+queue, \hyperlink{classbattleship_1_1game__server_1_1client__pool}{client\+\_\+pool} \&c\+\_\+pool, \hyperlink{classbattleship_1_1game__server_1_1game__pool}{game\+\_\+pool} \&g\+\_\+pool)
+\item 
+void $\ast$ \hyperlink{classbattleship_1_1game__server_1_1message__consumer_ad4c9cb302cbaaa1e6c336499a218e105}{run} () override
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A message consuming thread. 
+
+\begin{DoxyAuthor}{Author}
+Jonathan Henly 
+
+Adham Kassem 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+12-\/01-\/2018 
+\end{DoxyVersion}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1message__consumer_a266c52a9e282be54a95c1338432ead58}\label{classbattleship_1_1game__server_1_1message__consumer_a266c52a9e282be54a95c1338432ead58}} 
+\index{battleship\+::game\+\_\+server\+::message\+\_\+consumer@{battleship\+::game\+\_\+server\+::message\+\_\+consumer}!message\+\_\+consumer@{message\+\_\+consumer}}
+\index{message\+\_\+consumer@{message\+\_\+consumer}!battleship\+::game\+\_\+server\+::message\+\_\+consumer@{battleship\+::game\+\_\+server\+::message\+\_\+consumer}}
+\subsubsection{\texorpdfstring{message\+\_\+consumer()}{message\_consumer()}}
+{\footnotesize\ttfamily battleship\+::game\+\_\+server\+::message\+\_\+consumer\+::message\+\_\+consumer (\begin{DoxyParamCaption}\item[{\hyperlink{classbattleship_1_1ts__queue}{ts\+\_\+queue}$<$ \hyperlink{classbattleship_1_1network__message_1_1message}{message} $\ast$$>$ \&}]{m\+\_\+queue,  }\item[{\hyperlink{classbattleship_1_1game__server_1_1client__pool}{client\+\_\+pool} \&}]{c\+\_\+pool,  }\item[{\hyperlink{classbattleship_1_1game__server_1_1game__pool}{game\+\_\+pool} \&}]{g\+\_\+pool }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em queue} & -\/ the thread safe message queue. \\
+\hline
+{\em pool} & -\/ the thread safe pool of clients. \\
+\hline
+{\em games} & -\/ the thread safe pool of games. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1message__consumer_ad4c9cb302cbaaa1e6c336499a218e105}\label{classbattleship_1_1game__server_1_1message__consumer_ad4c9cb302cbaaa1e6c336499a218e105}} 
+\index{battleship\+::game\+\_\+server\+::message\+\_\+consumer@{battleship\+::game\+\_\+server\+::message\+\_\+consumer}!run@{run}}
+\index{run@{run}!battleship\+::game\+\_\+server\+::message\+\_\+consumer@{battleship\+::game\+\_\+server\+::message\+\_\+consumer}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void $\ast$ battleship\+::game\+\_\+server\+::message\+\_\+consumer\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Where this
+\begin{DoxyCode}
+\hyperlink{classbattleship_1_1game__server_1_1message__consumer_a266c52a9e282be54a95c1338432ead58}{message\_consumer} 
+\end{DoxyCode}
+ thread does all of the work. 
+
+Implements \hyperlink{classThread}{Thread}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+inc/msgconsumer.\+h\item 
+src/msgconsumer.\+cpp\end{DoxyCompactItemize}

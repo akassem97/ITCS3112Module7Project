@@ -1,0 +1,103 @@
+\hypertarget{classbattleship_1_1ts__queue}{}\section{battleship\+:\+:ts\+\_\+queue$<$ T $>$ Class Template Reference}
+\label{classbattleship_1_1ts__queue}\index{battleship\+::ts\+\_\+queue$<$ T $>$@{battleship\+::ts\+\_\+queue$<$ T $>$}}
+
+
+A thread safe queue implementation.  
+
+
+
+
+{\ttfamily \#include $<$tsqueue.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classbattleship_1_1ts__queue_a8c5d650bd3c8da2226a93ef16eddf259}{ts\+\_\+queue} ()
+\item 
+\hyperlink{classbattleship_1_1ts__queue_ad1dcfe27a6218886353c17c9334a4232}{$\sim$ts\+\_\+queue} ()
+\item 
+void \hyperlink{classbattleship_1_1ts__queue_accbd5de0ef9994e7b99f2e9113a36677}{add} (T item)
+\item 
+T \hyperlink{classbattleship_1_1ts__queue_aa6ec6739ad7f1768068cb1f7d5957b2f}{remove} ()
+\item 
+size\+\_\+t \hyperlink{classbattleship_1_1ts__queue_a45ee4b66d4e5da270559887775659c6f}{size} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class battleship\+::ts\+\_\+queue$<$ T $>$}
+
+A thread safe queue implementation. 
+
+\begin{DoxyAuthor}{Author}
+Jonathan Henly 
+
+Adham Kassem 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+12-\/3-\/2018 
+\end{DoxyVersion}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbattleship_1_1ts__queue_a8c5d650bd3c8da2226a93ef16eddf259}\label{classbattleship_1_1ts__queue_a8c5d650bd3c8da2226a93ef16eddf259}} 
+\index{battleship\+::ts\+\_\+queue@{battleship\+::ts\+\_\+queue}!ts\+\_\+queue@{ts\+\_\+queue}}
+\index{ts\+\_\+queue@{ts\+\_\+queue}!battleship\+::ts\+\_\+queue@{battleship\+::ts\+\_\+queue}}
+\subsubsection{\texorpdfstring{ts\+\_\+queue()}{ts\_queue()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\hyperlink{classbattleship_1_1ts__queue}{battleship\+::ts\+\_\+queue}$<$ T $>$\+::\hyperlink{classbattleship_1_1ts__queue}{ts\+\_\+queue} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default constructor. \mbox{\Hypertarget{classbattleship_1_1ts__queue_ad1dcfe27a6218886353c17c9334a4232}\label{classbattleship_1_1ts__queue_ad1dcfe27a6218886353c17c9334a4232}} 
+\index{battleship\+::ts\+\_\+queue@{battleship\+::ts\+\_\+queue}!````~ts\+\_\+queue@{$\sim$ts\+\_\+queue}}
+\index{````~ts\+\_\+queue@{$\sim$ts\+\_\+queue}!battleship\+::ts\+\_\+queue@{battleship\+::ts\+\_\+queue}}
+\subsubsection{\texorpdfstring{$\sim$ts\+\_\+queue()}{~ts\_queue()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\hyperlink{classbattleship_1_1ts__queue}{battleship\+::ts\+\_\+queue}$<$ T $>$\+::$\sim$\hyperlink{classbattleship_1_1ts__queue}{ts\+\_\+queue} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default destructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbattleship_1_1ts__queue_accbd5de0ef9994e7b99f2e9113a36677}\label{classbattleship_1_1ts__queue_accbd5de0ef9994e7b99f2e9113a36677}} 
+\index{battleship\+::ts\+\_\+queue@{battleship\+::ts\+\_\+queue}!add@{add}}
+\index{add@{add}!battleship\+::ts\+\_\+queue@{battleship\+::ts\+\_\+queue}}
+\subsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+void \hyperlink{classbattleship_1_1ts__queue}{battleship\+::ts\+\_\+queue}$<$ T $>$\+::add (\begin{DoxyParamCaption}\item[{T}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hyperlink{classThread}{Thread} safe method that adds a passed in item to the end of this queue.
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & -\/ the item to add to the end of the queue. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbattleship_1_1ts__queue_aa6ec6739ad7f1768068cb1f7d5957b2f}\label{classbattleship_1_1ts__queue_aa6ec6739ad7f1768068cb1f7d5957b2f}} 
+\index{battleship\+::ts\+\_\+queue@{battleship\+::ts\+\_\+queue}!remove@{remove}}
+\index{remove@{remove}!battleship\+::ts\+\_\+queue@{battleship\+::ts\+\_\+queue}}
+\subsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+T \hyperlink{classbattleship_1_1ts__queue}{battleship\+::ts\+\_\+queue}$<$ T $>$\+::remove (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hyperlink{classThread}{Thread} safe remove method that pops and returns the front of this queue. If the queue is empty, then this method will block until the queue is not empty.
+
+\begin{DoxyReturn}{Returns}
+the item at the front of the queue. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1ts__queue_a45ee4b66d4e5da270559887775659c6f}\label{classbattleship_1_1ts__queue_a45ee4b66d4e5da270559887775659c6f}} 
+\index{battleship\+::ts\+\_\+queue@{battleship\+::ts\+\_\+queue}!size@{size}}
+\index{size@{size}!battleship\+::ts\+\_\+queue@{battleship\+::ts\+\_\+queue}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+size\+\_\+t \hyperlink{classbattleship_1_1ts__queue}{battleship\+::ts\+\_\+queue}$<$ T $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hyperlink{classThread}{Thread} safe method that gets the size of this queue.
+
+\begin{DoxyReturn}{Returns}
+the size of this queue. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inc/tsqueue.\+h\end{DoxyCompactItemize}

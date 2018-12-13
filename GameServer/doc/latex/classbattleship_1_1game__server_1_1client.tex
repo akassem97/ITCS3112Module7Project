@@ -1,0 +1,345 @@
+\hypertarget{classbattleship_1_1game__server_1_1client}{}\section{battleship\+:\+:game\+\_\+server\+:\+:client Class Reference}
+\label{classbattleship_1_1game__server_1_1client}\index{battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}}
+
+
+Represents a client connected to the server.  
+
+
+
+
+{\ttfamily \#include $<$client.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classbattleship_1_1game__server_1_1client_ac64f89eb976af431e4822dd777bdf320}{$\sim$client} ()
+\item 
+\hyperlink{classbattleship_1_1network__message_1_1message}{message} $\ast$ \hyperlink{classbattleship_1_1game__server_1_1client_a9824ce38f2f62979bd307487c862db9f}{receive} (const int tout\+\_\+s=0, const int tout\+\_\+us=0) const
+\item 
+ssize\+\_\+t \hyperlink{classbattleship_1_1game__server_1_1client_a9595ac710bf75e615afeee2a463a0872}{send} (const \hyperlink{classbattleship_1_1network__message_1_1message}{network\+\_\+message\+::message} $\ast$msg)
+\item 
+ssize\+\_\+t \hyperlink{classbattleship_1_1game__server_1_1client_a53b00e5370ae2f161784172eab1a9fdc}{send} (const \hyperlink{classbattleship_1_1network__message_1_1message}{network\+\_\+message\+::message} \&\&msg)
+\item 
+ssize\+\_\+t \hyperlink{classbattleship_1_1game__server_1_1client_a1aec51b5386354c5acd2b7a45486f7cc}{send} (const \hyperlink{classbattleship_1_1network__message_1_1message}{network\+\_\+message\+::message} \&msg)
+\item 
+unsigned char \hyperlink{classbattleship_1_1game__server_1_1client_ac1427b1a3a9dd9f2a0185b6c0d36e1c5}{get\+\_\+id} ()
+\item 
+const unsigned char \hyperlink{classbattleship_1_1game__server_1_1client_a2829c94437fea654b900dc801750d8ef}{get\+\_\+id} () const
+\item 
+std\+::string \hyperlink{classbattleship_1_1game__server_1_1client_abb6392156781049b20f0e7490da49840}{get\+\_\+name} ()
+\item 
+const std\+::string \hyperlink{classbattleship_1_1game__server_1_1client_ab10f638915409ca61ee52838c476e89c}{get\+\_\+name} () const
+\item 
+unsigned char \hyperlink{classbattleship_1_1game__server_1_1client_a232605975d752a2d5a30a606c5b890c6}{get\+\_\+game\+\_\+id} ()
+\item 
+const unsigned char \hyperlink{classbattleship_1_1game__server_1_1client_a6152f49fe5202ff8b9bd249071c03406}{get\+\_\+game\+\_\+id} () const
+\item 
+void \hyperlink{classbattleship_1_1game__server_1_1client_adfd1858da78c5ad2aba9a5528190882b}{set\+\_\+in\+\_\+game} (const char g\+\_\+id)
+\item 
+bool \hyperlink{classbattleship_1_1game__server_1_1client_ad985a33f008c3c16dbb1a244cabe32db}{is\+\_\+in\+\_\+game} ()
+\item 
+const bool \hyperlink{classbattleship_1_1game__server_1_1client_a3d2b688869f4470381cd47f09d8a6239}{is\+\_\+in\+\_\+game} () const
+\item 
+void \hyperlink{classbattleship_1_1game__server_1_1client_a106984508ae941fa5a88dbe066214ad4}{set\+\_\+idle} ()
+\item 
+bool \hyperlink{classbattleship_1_1game__server_1_1client_a0f8168fdcc8e5ff4daa41eb208173a1a}{is\+\_\+idle} ()
+\item 
+const bool \hyperlink{classbattleship_1_1game__server_1_1client_a996d6df89391d08aa4b02d7a2ae77322}{is\+\_\+idle} () const
+\item 
+void \hyperlink{classbattleship_1_1game__server_1_1client_abee4c579c35854d0a79a1f0dbc712006}{set\+\_\+searching} ()
+\item 
+bool \hyperlink{classbattleship_1_1game__server_1_1client_a0a95758fec7cd830ca19278a2b619e92}{is\+\_\+searching} ()
+\item 
+const bool \hyperlink{classbattleship_1_1game__server_1_1client_a6438e71d667d166f663d8d7e67ff7d38}{is\+\_\+searching} () const
+\item 
+bool \hyperlink{classbattleship_1_1game__server_1_1client_a3975d4198aa55bdf690e2268b3f76080}{timed\+\_\+out} (const int max\+\_\+touts)
+\item 
+void \hyperlink{classbattleship_1_1game__server_1_1client_a8f594fcecac15941f7fee46a0340bfe4}{reset\+\_\+timeouts} ()
+\item 
+std\+::string \hyperlink{classbattleship_1_1game__server_1_1client_a828c6732dc5e35bd2cfd1f73d69a54a9}{get\+\_\+listing} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1client_ab170f98a853909cd44b3f981a3c3aff5}\label{classbattleship_1_1game__server_1_1client_ab170f98a853909cd44b3f981a3c3aff5}} 
+class {\bfseries client\+\_\+pool}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a client connected to the server. 
+
+\begin{DoxyAuthor}{Author}
+Jonathan Henly 
+
+Adham Kassem 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+11-\/27-\/2018 
+\end{DoxyVersion}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1client_ac64f89eb976af431e4822dd777bdf320}\label{classbattleship_1_1game__server_1_1client_ac64f89eb976af431e4822dd777bdf320}} 
+\index{battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}!````~client@{$\sim$client}}
+\index{````~client@{$\sim$client}!battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}}
+\subsubsection{\texorpdfstring{$\sim$client()}{~client()}}
+{\footnotesize\ttfamily virtual battleship\+::game\+\_\+server\+::client\+::$\sim$client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Destructor that deletes the
+\begin{DoxyCode}
+\hyperlink{classtcp__stream}{tcp\_stream} 
+\end{DoxyCode}
+ connection associated with this server client. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1client_a232605975d752a2d5a30a606c5b890c6}\label{classbattleship_1_1game__server_1_1client_a232605975d752a2d5a30a606c5b890c6}} 
+\index{battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}!get\+\_\+game\+\_\+id@{get\+\_\+game\+\_\+id}}
+\index{get\+\_\+game\+\_\+id@{get\+\_\+game\+\_\+id}!battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}}
+\subsubsection{\texorpdfstring{get\+\_\+game\+\_\+id()}{get\_game\_id()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned char battleship\+::game\+\_\+server\+::client\+::get\+\_\+game\+\_\+id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the ID of the game this client is in, or 0. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1client_a6152f49fe5202ff8b9bd249071c03406}\label{classbattleship_1_1game__server_1_1client_a6152f49fe5202ff8b9bd249071c03406}} 
+\index{battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}!get\+\_\+game\+\_\+id@{get\+\_\+game\+\_\+id}}
+\index{get\+\_\+game\+\_\+id@{get\+\_\+game\+\_\+id}!battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}}
+\subsubsection{\texorpdfstring{get\+\_\+game\+\_\+id()}{get\_game\_id()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const unsigned char battleship\+::game\+\_\+server\+::client\+::get\+\_\+game\+\_\+id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the ID of the game this client is in, or 0. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1client_ac1427b1a3a9dd9f2a0185b6c0d36e1c5}\label{classbattleship_1_1game__server_1_1client_ac1427b1a3a9dd9f2a0185b6c0d36e1c5}} 
+\index{battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}!get\+\_\+id@{get\+\_\+id}}
+\index{get\+\_\+id@{get\+\_\+id}!battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}}
+\subsubsection{\texorpdfstring{get\+\_\+id()}{get\_id()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned char battleship\+::game\+\_\+server\+::client\+::get\+\_\+id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+this client\textquotesingle{}s ID. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1client_a2829c94437fea654b900dc801750d8ef}\label{classbattleship_1_1game__server_1_1client_a2829c94437fea654b900dc801750d8ef}} 
+\index{battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}!get\+\_\+id@{get\+\_\+id}}
+\index{get\+\_\+id@{get\+\_\+id}!battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}}
+\subsubsection{\texorpdfstring{get\+\_\+id()}{get\_id()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const unsigned char battleship\+::game\+\_\+server\+::client\+::get\+\_\+id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+this client\textquotesingle{}s ID. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1client_a828c6732dc5e35bd2cfd1f73d69a54a9}\label{classbattleship_1_1game__server_1_1client_a828c6732dc5e35bd2cfd1f73d69a54a9}} 
+\index{battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}!get\+\_\+listing@{get\+\_\+listing}}
+\index{get\+\_\+listing@{get\+\_\+listing}!battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}}
+\subsubsection{\texorpdfstring{get\+\_\+listing()}{get\_listing()}}
+{\footnotesize\ttfamily std\+::string battleship\+::game\+\_\+server\+::client\+::get\+\_\+listing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns this client\textquotesingle{}s listing as an
+\begin{DoxyCode}
+std::string 
+\end{DoxyCode}
+ . The first 
+\begin{DoxyCode}
+\textcolor{keywordtype}{char} 
+\end{DoxyCode}
+ is the client\textquotesingle{}s ID, the second is the client\textquotesingle{}s status and
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1client_abb6392156781049b20f0e7490da49840}\label{classbattleship_1_1game__server_1_1client_abb6392156781049b20f0e7490da49840}} 
+\index{battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}!get\+\_\+name@{get\+\_\+name}}
+\index{get\+\_\+name@{get\+\_\+name}!battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}}
+\subsubsection{\texorpdfstring{get\+\_\+name()}{get\_name()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string battleship\+::game\+\_\+server\+::client\+::get\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+this client\textquotesingle{}s name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1client_ab10f638915409ca61ee52838c476e89c}\label{classbattleship_1_1game__server_1_1client_ab10f638915409ca61ee52838c476e89c}} 
+\index{battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}!get\+\_\+name@{get\+\_\+name}}
+\index{get\+\_\+name@{get\+\_\+name}!battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}}
+\subsubsection{\texorpdfstring{get\+\_\+name()}{get\_name()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::string battleship\+::game\+\_\+server\+::client\+::get\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+this client\textquotesingle{}s name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1client_a0f8168fdcc8e5ff4daa41eb208173a1a}\label{classbattleship_1_1game__server_1_1client_a0f8168fdcc8e5ff4daa41eb208173a1a}} 
+\index{battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}!is\+\_\+idle@{is\+\_\+idle}}
+\index{is\+\_\+idle@{is\+\_\+idle}!battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}}
+\subsubsection{\texorpdfstring{is\+\_\+idle()}{is\_idle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool battleship\+::game\+\_\+server\+::client\+::is\+\_\+idle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+true if the status of this client is idle, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1client_a996d6df89391d08aa4b02d7a2ae77322}\label{classbattleship_1_1game__server_1_1client_a996d6df89391d08aa4b02d7a2ae77322}} 
+\index{battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}!is\+\_\+idle@{is\+\_\+idle}}
+\index{is\+\_\+idle@{is\+\_\+idle}!battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}}
+\subsubsection{\texorpdfstring{is\+\_\+idle()}{is\_idle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const bool battleship\+::game\+\_\+server\+::client\+::is\+\_\+idle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+true if the status of this client is idle, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1client_ad985a33f008c3c16dbb1a244cabe32db}\label{classbattleship_1_1game__server_1_1client_ad985a33f008c3c16dbb1a244cabe32db}} 
+\index{battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}!is\+\_\+in\+\_\+game@{is\+\_\+in\+\_\+game}}
+\index{is\+\_\+in\+\_\+game@{is\+\_\+in\+\_\+game}!battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}}
+\subsubsection{\texorpdfstring{is\+\_\+in\+\_\+game()}{is\_in\_game()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool battleship\+::game\+\_\+server\+::client\+::is\+\_\+in\+\_\+game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+true if the status of this client is in-\/game, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1client_a3d2b688869f4470381cd47f09d8a6239}\label{classbattleship_1_1game__server_1_1client_a3d2b688869f4470381cd47f09d8a6239}} 
+\index{battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}!is\+\_\+in\+\_\+game@{is\+\_\+in\+\_\+game}}
+\index{is\+\_\+in\+\_\+game@{is\+\_\+in\+\_\+game}!battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}}
+\subsubsection{\texorpdfstring{is\+\_\+in\+\_\+game()}{is\_in\_game()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const bool battleship\+::game\+\_\+server\+::client\+::is\+\_\+in\+\_\+game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+true if the status of this client is in-\/game, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1client_a0a95758fec7cd830ca19278a2b619e92}\label{classbattleship_1_1game__server_1_1client_a0a95758fec7cd830ca19278a2b619e92}} 
+\index{battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}!is\+\_\+searching@{is\+\_\+searching}}
+\index{is\+\_\+searching@{is\+\_\+searching}!battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}}
+\subsubsection{\texorpdfstring{is\+\_\+searching()}{is\_searching()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool battleship\+::game\+\_\+server\+::client\+::is\+\_\+searching (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+true if the status of this client is busy, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1client_a6438e71d667d166f663d8d7e67ff7d38}\label{classbattleship_1_1game__server_1_1client_a6438e71d667d166f663d8d7e67ff7d38}} 
+\index{battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}!is\+\_\+searching@{is\+\_\+searching}}
+\index{is\+\_\+searching@{is\+\_\+searching}!battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}}
+\subsubsection{\texorpdfstring{is\+\_\+searching()}{is\_searching()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const bool battleship\+::game\+\_\+server\+::client\+::is\+\_\+searching (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+true if the status of this client is busy, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1client_a9824ce38f2f62979bd307487c862db9f}\label{classbattleship_1_1game__server_1_1client_a9824ce38f2f62979bd307487c862db9f}} 
+\index{battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}!receive@{receive}}
+\index{receive@{receive}!battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}}
+\subsubsection{\texorpdfstring{receive()}{receive()}}
+{\footnotesize\ttfamily \hyperlink{classbattleship_1_1network__message_1_1message}{message}$\ast$ battleship\+::game\+\_\+server\+::client\+::receive (\begin{DoxyParamCaption}\item[{const int}]{tout\+\_\+s = {\ttfamily 0},  }\item[{const int}]{tout\+\_\+us = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a pointer to a message that was created from the bytes sent by this client.
+
+Note\+: if both
+\begin{DoxyCode}
+tout\_s 
+\end{DoxyCode}
+ and
+\begin{DoxyCode}
+tout\_us 
+\end{DoxyCode}
+ are 0, the this method will block until data is received.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tout\+\_\+s} & -\/ the time to wait for data in seconds. \\
+\hline
+{\em tout\+\_\+us} & -\/ the time to wait for data in microseconds. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to a message constructed from the bytes this client sent. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1client_a8f594fcecac15941f7fee46a0340bfe4}\label{classbattleship_1_1game__server_1_1client_a8f594fcecac15941f7fee46a0340bfe4}} 
+\index{battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}!reset\+\_\+timeouts@{reset\+\_\+timeouts}}
+\index{reset\+\_\+timeouts@{reset\+\_\+timeouts}!battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}}
+\subsubsection{\texorpdfstring{reset\+\_\+timeouts()}{reset\_timeouts()}}
+{\footnotesize\ttfamily void battleship\+::game\+\_\+server\+::client\+::reset\+\_\+timeouts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Resets this client\textquotesingle{}s timeout count to zero. \mbox{\Hypertarget{classbattleship_1_1game__server_1_1client_a9595ac710bf75e615afeee2a463a0872}\label{classbattleship_1_1game__server_1_1client_a9595ac710bf75e615afeee2a463a0872}} 
+\index{battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}!send@{send}}
+\index{send@{send}!battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}}
+\subsubsection{\texorpdfstring{send()}{send()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily ssize\+\_\+t battleship\+::game\+\_\+server\+::client\+::send (\begin{DoxyParamCaption}\item[{const \hyperlink{classbattleship_1_1network__message_1_1message}{network\+\_\+message\+::message} $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sends a message over the network to a client.
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & -\/ a pointer to the message to send to the client.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of bytes sent to the client, or if negative, an error value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1client_a53b00e5370ae2f161784172eab1a9fdc}\label{classbattleship_1_1game__server_1_1client_a53b00e5370ae2f161784172eab1a9fdc}} 
+\index{battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}!send@{send}}
+\index{send@{send}!battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}}
+\subsubsection{\texorpdfstring{send()}{send()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily ssize\+\_\+t battleship\+::game\+\_\+server\+::client\+::send (\begin{DoxyParamCaption}\item[{const \hyperlink{classbattleship_1_1network__message_1_1message}{network\+\_\+message\+::message} \&\&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sends a message over the network to a client.
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & -\/ the message to send to the client.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of bytes sent to the client, or if negative, an error value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1client_a1aec51b5386354c5acd2b7a45486f7cc}\label{classbattleship_1_1game__server_1_1client_a1aec51b5386354c5acd2b7a45486f7cc}} 
+\index{battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}!send@{send}}
+\index{send@{send}!battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}}
+\subsubsection{\texorpdfstring{send()}{send()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily ssize\+\_\+t battleship\+::game\+\_\+server\+::client\+::send (\begin{DoxyParamCaption}\item[{const \hyperlink{classbattleship_1_1network__message_1_1message}{network\+\_\+message\+::message} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sends a message over the network to a client.
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & -\/ the message to send to the client.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of bytes sent to the client, or if negative, an error value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1client_a106984508ae941fa5a88dbe066214ad4}\label{classbattleship_1_1game__server_1_1client_a106984508ae941fa5a88dbe066214ad4}} 
+\index{battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}!set\+\_\+idle@{set\+\_\+idle}}
+\index{set\+\_\+idle@{set\+\_\+idle}!battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}}
+\subsubsection{\texorpdfstring{set\+\_\+idle()}{set\_idle()}}
+{\footnotesize\ttfamily void battleship\+::game\+\_\+server\+::client\+::set\+\_\+idle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the status of this client to idle. \mbox{\Hypertarget{classbattleship_1_1game__server_1_1client_adfd1858da78c5ad2aba9a5528190882b}\label{classbattleship_1_1game__server_1_1client_adfd1858da78c5ad2aba9a5528190882b}} 
+\index{battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}!set\+\_\+in\+\_\+game@{set\+\_\+in\+\_\+game}}
+\index{set\+\_\+in\+\_\+game@{set\+\_\+in\+\_\+game}!battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}}
+\subsubsection{\texorpdfstring{set\+\_\+in\+\_\+game()}{set\_in\_game()}}
+{\footnotesize\ttfamily void battleship\+::game\+\_\+server\+::client\+::set\+\_\+in\+\_\+game (\begin{DoxyParamCaption}\item[{const char}]{g\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the status of this client to in-\/game. \mbox{\Hypertarget{classbattleship_1_1game__server_1_1client_abee4c579c35854d0a79a1f0dbc712006}\label{classbattleship_1_1game__server_1_1client_abee4c579c35854d0a79a1f0dbc712006}} 
+\index{battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}!set\+\_\+searching@{set\+\_\+searching}}
+\index{set\+\_\+searching@{set\+\_\+searching}!battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}}
+\subsubsection{\texorpdfstring{set\+\_\+searching()}{set\_searching()}}
+{\footnotesize\ttfamily void battleship\+::game\+\_\+server\+::client\+::set\+\_\+searching (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the status of this client to busy. \mbox{\Hypertarget{classbattleship_1_1game__server_1_1client_a3975d4198aa55bdf690e2268b3f76080}\label{classbattleship_1_1game__server_1_1client_a3975d4198aa55bdf690e2268b3f76080}} 
+\index{battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}!timed\+\_\+out@{timed\+\_\+out}}
+\index{timed\+\_\+out@{timed\+\_\+out}!battleship\+::game\+\_\+server\+::client@{battleship\+::game\+\_\+server\+::client}}
+\subsubsection{\texorpdfstring{timed\+\_\+out()}{timed\_out()}}
+{\footnotesize\ttfamily bool battleship\+::game\+\_\+server\+::client\+::timed\+\_\+out (\begin{DoxyParamCaption}\item[{const int}]{max\+\_\+touts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+\_\+touts} & -\/ the number of allowed timeouts before action should be taken. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if this client\textquotesingle{}s timeout count is greater than 
+\begin{DoxyCode}
+max\_touts 
+\end{DoxyCode}
+ , otherwise false. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inc/client.\+h\end{DoxyCompactItemize}

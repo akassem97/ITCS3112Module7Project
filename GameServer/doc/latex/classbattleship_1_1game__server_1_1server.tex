@@ -1,0 +1,154 @@
+\hypertarget{classbattleship_1_1game__server_1_1server}{}\section{battleship\+:\+:game\+\_\+server\+:\+:server Class Reference}
+\label{classbattleship_1_1game__server_1_1server}\index{battleship\+::game\+\_\+server\+::server@{battleship\+::game\+\_\+server\+::server}}
+
+
+Battleship server implementation that handles multiple client connections and one-\/on-\/one games.  
+
+
+
+
+{\ttfamily \#include $<$server.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{classbattleship_1_1game__server_1_1server_a65e83301c83373edf5d10cbf6d16bf18a1ac8cde70fcc3e1fc9379b7bba6c5833}{S\+E\+R\+V\+E\+R\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+R\+U\+N\+N\+I\+NG} = -\/1, 
+\hyperlink{classbattleship_1_1game__server_1_1server_a65e83301c83373edf5d10cbf6d16bf18adbf1fba50d1b1b3e22d8e33da6266ec4}{C\+O\+U\+L\+D\+\_\+\+N\+O\+T\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+C\+O\+N\+S\+U\+M\+E\+R\+\_\+\+T\+H\+R\+E\+A\+DS} = -\/2, 
+\hyperlink{classbattleship_1_1game__server_1_1server_a65e83301c83373edf5d10cbf6d16bf18aa83ea1931d9c62e8a5f2073a01b35ed8}{C\+O\+U\+L\+D\+\_\+\+N\+O\+T\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+C\+O\+N\+\_\+\+A\+C\+C\+E\+P\+T\+OR} = -\/3
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classbattleship_1_1game__server_1_1server_a2701536460afe0c69a7472e563041f8a}{server} (const unsigned char max\+\_\+conns, const int port, const std\+::string ip=\char`\"{}\char`\"{})
+\item 
+int \hyperlink{classbattleship_1_1game__server_1_1server_a07a7f97a9b7a5c1bcb0a4730a5e92745}{start} ()
+\item 
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1server_a396027c2491c294d4934037da1a27341}\label{classbattleship_1_1game__server_1_1server_a396027c2491c294d4934037da1a27341}} 
+void {\bfseries shutdown} ()
+\item 
+unsigned char \hyperlink{classbattleship_1_1game__server_1_1server_a654d346dfec64a6b0563337312f0ee37}{get\+\_\+max\+\_\+connections} () const
+\item 
+int \hyperlink{classbattleship_1_1game__server_1_1server_afdcbafb3a745a64dc3ca05d6f4589656}{get\+\_\+port} () const
+\item 
+std\+::string \hyperlink{classbattleship_1_1game__server_1_1server_a877b2f81e0bcd08311f1e7c1410c9de4}{get\+\_\+ip} () const
+\item 
+unsigned char \hyperlink{classbattleship_1_1game__server_1_1server_a935ce9f2b8c774ff4f3904aac5c09b91}{get\+\_\+connection\+\_\+count} () const
+\item 
+bool \hyperlink{classbattleship_1_1game__server_1_1server_a5d740941b4dd0bd5a1773ac623b72a84}{is\+\_\+running} () const
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Battleship server implementation that handles multiple client connections and one-\/on-\/one games. 
+
+\begin{DoxyAuthor}{Author}
+Adham Kassem 
+
+Jonathan Henly 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+11-\/27-\/2018 
+\end{DoxyVersion}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1server_a65e83301c83373edf5d10cbf6d16bf18}\label{classbattleship_1_1game__server_1_1server_a65e83301c83373edf5d10cbf6d16bf18}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+E\+R\+V\+E\+R\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+R\+U\+N\+N\+I\+NG@{S\+E\+R\+V\+E\+R\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+R\+U\+N\+N\+I\+NG}!battleship\+::game\+\_\+server\+::server@{battleship\+::game\+\_\+server\+::server}}\index{battleship\+::game\+\_\+server\+::server@{battleship\+::game\+\_\+server\+::server}!S\+E\+R\+V\+E\+R\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+R\+U\+N\+N\+I\+NG@{S\+E\+R\+V\+E\+R\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+R\+U\+N\+N\+I\+NG}}}\mbox{\Hypertarget{classbattleship_1_1game__server_1_1server_a65e83301c83373edf5d10cbf6d16bf18a1ac8cde70fcc3e1fc9379b7bba6c5833}\label{classbattleship_1_1game__server_1_1server_a65e83301c83373edf5d10cbf6d16bf18a1ac8cde70fcc3e1fc9379b7bba6c5833}} 
+S\+E\+R\+V\+E\+R\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+R\+U\+N\+N\+I\+NG&S\+E\+R\+V\+E\+R\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+R\+U\+N\+N\+I\+NG. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+U\+L\+D\+\_\+\+N\+O\+T\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+C\+O\+N\+S\+U\+M\+E\+R\+\_\+\+T\+H\+R\+E\+A\+DS@{C\+O\+U\+L\+D\+\_\+\+N\+O\+T\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+C\+O\+N\+S\+U\+M\+E\+R\+\_\+\+T\+H\+R\+E\+A\+DS}!battleship\+::game\+\_\+server\+::server@{battleship\+::game\+\_\+server\+::server}}\index{battleship\+::game\+\_\+server\+::server@{battleship\+::game\+\_\+server\+::server}!C\+O\+U\+L\+D\+\_\+\+N\+O\+T\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+C\+O\+N\+S\+U\+M\+E\+R\+\_\+\+T\+H\+R\+E\+A\+DS@{C\+O\+U\+L\+D\+\_\+\+N\+O\+T\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+C\+O\+N\+S\+U\+M\+E\+R\+\_\+\+T\+H\+R\+E\+A\+DS}}}\mbox{\Hypertarget{classbattleship_1_1game__server_1_1server_a65e83301c83373edf5d10cbf6d16bf18adbf1fba50d1b1b3e22d8e33da6266ec4}\label{classbattleship_1_1game__server_1_1server_a65e83301c83373edf5d10cbf6d16bf18adbf1fba50d1b1b3e22d8e33da6266ec4}} 
+C\+O\+U\+L\+D\+\_\+\+N\+O\+T\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+C\+O\+N\+S\+U\+M\+E\+R\+\_\+\+T\+H\+R\+E\+A\+DS&C\+O\+U\+L\+D\+\_\+\+N\+O\+T\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+C\+O\+N\+S\+U\+M\+E\+R\+\_\+\+T\+H\+R\+E\+A\+DS. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+U\+L\+D\+\_\+\+N\+O\+T\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+C\+O\+N\+\_\+\+A\+C\+C\+E\+P\+T\+OR@{C\+O\+U\+L\+D\+\_\+\+N\+O\+T\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+C\+O\+N\+\_\+\+A\+C\+C\+E\+P\+T\+OR}!battleship\+::game\+\_\+server\+::server@{battleship\+::game\+\_\+server\+::server}}\index{battleship\+::game\+\_\+server\+::server@{battleship\+::game\+\_\+server\+::server}!C\+O\+U\+L\+D\+\_\+\+N\+O\+T\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+C\+O\+N\+\_\+\+A\+C\+C\+E\+P\+T\+OR@{C\+O\+U\+L\+D\+\_\+\+N\+O\+T\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+C\+O\+N\+\_\+\+A\+C\+C\+E\+P\+T\+OR}}}\mbox{\Hypertarget{classbattleship_1_1game__server_1_1server_a65e83301c83373edf5d10cbf6d16bf18aa83ea1931d9c62e8a5f2073a01b35ed8}\label{classbattleship_1_1game__server_1_1server_a65e83301c83373edf5d10cbf6d16bf18aa83ea1931d9c62e8a5f2073a01b35ed8}} 
+C\+O\+U\+L\+D\+\_\+\+N\+O\+T\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+C\+O\+N\+\_\+\+A\+C\+C\+E\+P\+T\+OR&C\+O\+U\+L\+D\+\_\+\+N\+O\+T\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+C\+O\+N\+\_\+\+A\+C\+C\+E\+P\+T\+OR. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1server_a2701536460afe0c69a7472e563041f8a}\label{classbattleship_1_1game__server_1_1server_a2701536460afe0c69a7472e563041f8a}} 
+\index{battleship\+::game\+\_\+server\+::server@{battleship\+::game\+\_\+server\+::server}!server@{server}}
+\index{server@{server}!battleship\+::game\+\_\+server\+::server@{battleship\+::game\+\_\+server\+::server}}
+\subsubsection{\texorpdfstring{server()}{server()}}
+{\footnotesize\ttfamily battleship\+::game\+\_\+server\+::server\+::server (\begin{DoxyParamCaption}\item[{const unsigned char}]{max\+\_\+connections,  }\item[{const int}]{port,  }\item[{const std\+::string}]{ip = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Connections} & \\
+\hline
+{\em port} & \\
+\hline
+{\em ip} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1server_a935ce9f2b8c774ff4f3904aac5c09b91}\label{classbattleship_1_1game__server_1_1server_a935ce9f2b8c774ff4f3904aac5c09b91}} 
+\index{battleship\+::game\+\_\+server\+::server@{battleship\+::game\+\_\+server\+::server}!get\+\_\+connection\+\_\+count@{get\+\_\+connection\+\_\+count}}
+\index{get\+\_\+connection\+\_\+count@{get\+\_\+connection\+\_\+count}!battleship\+::game\+\_\+server\+::server@{battleship\+::game\+\_\+server\+::server}}
+\subsubsection{\texorpdfstring{get\+\_\+connection\+\_\+count()}{get\_connection\_count()}}
+{\footnotesize\ttfamily unsigned char battleship\+::game\+\_\+server\+::server\+::get\+\_\+connection\+\_\+count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the current number of connected clients. \begin{DoxyReturn}{Returns}
+the current number of connected clients. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1server_a877b2f81e0bcd08311f1e7c1410c9de4}\label{classbattleship_1_1game__server_1_1server_a877b2f81e0bcd08311f1e7c1410c9de4}} 
+\index{battleship\+::game\+\_\+server\+::server@{battleship\+::game\+\_\+server\+::server}!get\+\_\+ip@{get\+\_\+ip}}
+\index{get\+\_\+ip@{get\+\_\+ip}!battleship\+::game\+\_\+server\+::server@{battleship\+::game\+\_\+server\+::server}}
+\subsubsection{\texorpdfstring{get\+\_\+ip()}{get\_ip()}}
+{\footnotesize\ttfamily std\+::string battleship\+::game\+\_\+server\+::server\+::get\+\_\+ip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets this server\textquotesingle{}s IP address. \begin{DoxyReturn}{Returns}
+this server\textquotesingle{}s IP address. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1server_a654d346dfec64a6b0563337312f0ee37}\label{classbattleship_1_1game__server_1_1server_a654d346dfec64a6b0563337312f0ee37}} 
+\index{battleship\+::game\+\_\+server\+::server@{battleship\+::game\+\_\+server\+::server}!get\+\_\+max\+\_\+connections@{get\+\_\+max\+\_\+connections}}
+\index{get\+\_\+max\+\_\+connections@{get\+\_\+max\+\_\+connections}!battleship\+::game\+\_\+server\+::server@{battleship\+::game\+\_\+server\+::server}}
+\subsubsection{\texorpdfstring{get\+\_\+max\+\_\+connections()}{get\_max\_connections()}}
+{\footnotesize\ttfamily unsigned char battleship\+::game\+\_\+server\+::server\+::get\+\_\+max\+\_\+connections (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the maximum number of client connections for this server. \begin{DoxyReturn}{Returns}
+the maximum number of client connections. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1server_afdcbafb3a745a64dc3ca05d6f4589656}\label{classbattleship_1_1game__server_1_1server_afdcbafb3a745a64dc3ca05d6f4589656}} 
+\index{battleship\+::game\+\_\+server\+::server@{battleship\+::game\+\_\+server\+::server}!get\+\_\+port@{get\+\_\+port}}
+\index{get\+\_\+port@{get\+\_\+port}!battleship\+::game\+\_\+server\+::server@{battleship\+::game\+\_\+server\+::server}}
+\subsubsection{\texorpdfstring{get\+\_\+port()}{get\_port()}}
+{\footnotesize\ttfamily int battleship\+::game\+\_\+server\+::server\+::get\+\_\+port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the port this server is listening on. \begin{DoxyReturn}{Returns}
+the port this server is listening on. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1server_a5d740941b4dd0bd5a1773ac623b72a84}\label{classbattleship_1_1game__server_1_1server_a5d740941b4dd0bd5a1773ac623b72a84}} 
+\index{battleship\+::game\+\_\+server\+::server@{battleship\+::game\+\_\+server\+::server}!is\+\_\+running@{is\+\_\+running}}
+\index{is\+\_\+running@{is\+\_\+running}!battleship\+::game\+\_\+server\+::server@{battleship\+::game\+\_\+server\+::server}}
+\subsubsection{\texorpdfstring{is\+\_\+running()}{is\_running()}}
+{\footnotesize\ttfamily bool battleship\+::game\+\_\+server\+::server\+::is\+\_\+running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks if this server is running, that is, checks whether this server is accepting connections or not. \begin{DoxyReturn}{Returns}
+true if this server is running, otherwise false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1server_a07a7f97a9b7a5c1bcb0a4730a5e92745}\label{classbattleship_1_1game__server_1_1server_a07a7f97a9b7a5c1bcb0a4730a5e92745}} 
+\index{battleship\+::game\+\_\+server\+::server@{battleship\+::game\+\_\+server\+::server}!start@{start}}
+\index{start@{start}!battleship\+::game\+\_\+server\+::server@{battleship\+::game\+\_\+server\+::server}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily int battleship\+::game\+\_\+server\+::server\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+inc/server.\+h\item 
+src/server.\+cpp\end{DoxyCompactItemize}

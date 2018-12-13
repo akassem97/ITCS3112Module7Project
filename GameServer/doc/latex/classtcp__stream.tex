@@ -1,0 +1,146 @@
+\hypertarget{classtcp__stream}{}\section{tcp\+\_\+stream Class Reference}
+\label{classtcp__stream}\index{tcp\+\_\+stream@{tcp\+\_\+stream}}
+
+
+{\ttfamily \#include $<$tcpstream.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classtcp__stream_a1654b581bd89eacae6c5c00bf44bd303}{stream\+\_\+error} \{ \hyperlink{classtcp__stream_a1654b581bd89eacae6c5c00bf44bd303af56262b6dafb79a22137a3459fc8e6c1}{C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+C\+L\+O\+S\+ED} = 0, 
+\hyperlink{classtcp__stream_a1654b581bd89eacae6c5c00bf44bd303ab63bfd071e8d91d93ef8723b79563f0e}{C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+O\+UT} = -\/1, 
+\hyperlink{classtcp__stream_a1654b581bd89eacae6c5c00bf44bd303a4d1f1bf6e8aa323d3de6ab6254af5e1c}{C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+R\+E\+S\+ET} = -\/2
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classtcp__stream_a5053337af64329d01e1c78cca9d5633e}{$\sim$tcp\+\_\+stream} ()
+\item 
+ssize\+\_\+t \hyperlink{classtcp__stream_a647c576fed72122b5dc3b6e23c36e210}{send} (const char $\ast$buffer, const size\+\_\+t len)
+\item 
+ssize\+\_\+t \hyperlink{classtcp__stream_a061ef2188c1cf0eebc7290dbc908f06e}{receive} (char $\ast$buffer, const size\+\_\+t len, const int tout\+\_\+s=0, const int tout\+\_\+us=0)
+\item 
+std\+::string \hyperlink{classtcp__stream_ac9afe2de961bc45ffb1b614e5718b353}{get\+\_\+peer\+\_\+ip} () const
+\item 
+int \hyperlink{classtcp__stream_a5562bfad5ec43e358b6bc63386166a50}{get\+\_\+peer\+\_\+port} () const
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtcp__stream_ac753a6c4530e663615a7b160569a446f}\label{classtcp__stream_ac753a6c4530e663615a7b160569a446f}} 
+class {\bfseries tcp\+\_\+acceptor}
+\item 
+\mbox{\Hypertarget{classtcp__stream_a35780d6902edba55e3d463e00117657d}\label{classtcp__stream_a35780d6902edba55e3d463e00117657d}} 
+class {\bfseries tcp\+\_\+connector}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classtcp__stream}{tcp\+\_\+stream} class provides methods to transfer data between peers over a T\+C\+P/\+IP connection.
+
+To\+Do give attribution to original source of T\+CP classes
+
+\begin{DoxyAuthor}{Author}
+Jonathan Henly 
+
+Adham Kassem 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+11-\/25-\/2018 
+\end{DoxyVersion}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classtcp__stream_a1654b581bd89eacae6c5c00bf44bd303}\label{classtcp__stream_a1654b581bd89eacae6c5c00bf44bd303}} 
+\index{tcp\+\_\+stream@{tcp\+\_\+stream}!stream\+\_\+error@{stream\+\_\+error}}
+\index{stream\+\_\+error@{stream\+\_\+error}!tcp\+\_\+stream@{tcp\+\_\+stream}}
+\subsubsection{\texorpdfstring{stream\+\_\+error}{stream\_error}}
+{\footnotesize\ttfamily enum \hyperlink{classtcp__stream_a1654b581bd89eacae6c5c00bf44bd303}{tcp\+\_\+stream\+::stream\+\_\+error}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+C\+L\+O\+S\+ED@{C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+C\+L\+O\+S\+ED}!tcp\+\_\+stream@{tcp\+\_\+stream}}\index{tcp\+\_\+stream@{tcp\+\_\+stream}!C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+C\+L\+O\+S\+ED@{C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+C\+L\+O\+S\+ED}}}\mbox{\Hypertarget{classtcp__stream_a1654b581bd89eacae6c5c00bf44bd303af56262b6dafb79a22137a3459fc8e6c1}\label{classtcp__stream_a1654b581bd89eacae6c5c00bf44bd303af56262b6dafb79a22137a3459fc8e6c1}} 
+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+C\+L\+O\+S\+ED&C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+C\+L\+O\+S\+ED. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+O\+UT@{C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+O\+UT}!tcp\+\_\+stream@{tcp\+\_\+stream}}\index{tcp\+\_\+stream@{tcp\+\_\+stream}!C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+O\+UT@{C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+O\+UT}}}\mbox{\Hypertarget{classtcp__stream_a1654b581bd89eacae6c5c00bf44bd303ab63bfd071e8d91d93ef8723b79563f0e}\label{classtcp__stream_a1654b581bd89eacae6c5c00bf44bd303ab63bfd071e8d91d93ef8723b79563f0e}} 
+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+O\+UT&C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+D\+O\+UT. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+R\+E\+S\+ET@{C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+R\+E\+S\+ET}!tcp\+\_\+stream@{tcp\+\_\+stream}}\index{tcp\+\_\+stream@{tcp\+\_\+stream}!C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+R\+E\+S\+ET@{C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+R\+E\+S\+ET}}}\mbox{\Hypertarget{classtcp__stream_a1654b581bd89eacae6c5c00bf44bd303a4d1f1bf6e8aa323d3de6ab6254af5e1c}\label{classtcp__stream_a1654b581bd89eacae6c5c00bf44bd303a4d1f1bf6e8aa323d3de6ab6254af5e1c}} 
+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+R\+E\+S\+ET&C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+R\+E\+S\+ET. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtcp__stream_a5053337af64329d01e1c78cca9d5633e}\label{classtcp__stream_a5053337af64329d01e1c78cca9d5633e}} 
+\index{tcp\+\_\+stream@{tcp\+\_\+stream}!````~tcp\+\_\+stream@{$\sim$tcp\+\_\+stream}}
+\index{````~tcp\+\_\+stream@{$\sim$tcp\+\_\+stream}!tcp\+\_\+stream@{tcp\+\_\+stream}}
+\subsubsection{\texorpdfstring{$\sim$tcp\+\_\+stream()}{~tcp\_stream()}}
+{\footnotesize\ttfamily tcp\+\_\+stream\+::$\sim$tcp\+\_\+stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor that closes the socket descriptor associated with this T\+CP stream. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classtcp__stream_ac9afe2de961bc45ffb1b614e5718b353}\label{classtcp__stream_ac9afe2de961bc45ffb1b614e5718b353}} 
+\index{tcp\+\_\+stream@{tcp\+\_\+stream}!get\+\_\+peer\+\_\+ip@{get\+\_\+peer\+\_\+ip}}
+\index{get\+\_\+peer\+\_\+ip@{get\+\_\+peer\+\_\+ip}!tcp\+\_\+stream@{tcp\+\_\+stream}}
+\subsubsection{\texorpdfstring{get\+\_\+peer\+\_\+ip()}{get\_peer\_ip()}}
+{\footnotesize\ttfamily std\+::string tcp\+\_\+stream\+::get\+\_\+peer\+\_\+ip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+the IP address this stream is connected to. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtcp__stream_a5562bfad5ec43e358b6bc63386166a50}\label{classtcp__stream_a5562bfad5ec43e358b6bc63386166a50}} 
+\index{tcp\+\_\+stream@{tcp\+\_\+stream}!get\+\_\+peer\+\_\+port@{get\+\_\+peer\+\_\+port}}
+\index{get\+\_\+peer\+\_\+port@{get\+\_\+peer\+\_\+port}!tcp\+\_\+stream@{tcp\+\_\+stream}}
+\subsubsection{\texorpdfstring{get\+\_\+peer\+\_\+port()}{get\_peer\_port()}}
+{\footnotesize\ttfamily int tcp\+\_\+stream\+::get\+\_\+peer\+\_\+port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+the port this stream is connected to. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtcp__stream_a061ef2188c1cf0eebc7290dbc908f06e}\label{classtcp__stream_a061ef2188c1cf0eebc7290dbc908f06e}} 
+\index{tcp\+\_\+stream@{tcp\+\_\+stream}!receive@{receive}}
+\index{receive@{receive}!tcp\+\_\+stream@{tcp\+\_\+stream}}
+\subsubsection{\texorpdfstring{receive()}{receive()}}
+{\footnotesize\ttfamily ssize\+\_\+t tcp\+\_\+stream\+::receive (\begin{DoxyParamCaption}\item[{char $\ast$}]{buffer,  }\item[{const size\+\_\+t}]{len,  }\item[{const int}]{tout\+\_\+s = {\ttfamily 0},  }\item[{const int}]{tout\+\_\+us = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & -\/ a pointer to a char arrays to store the read in bytes. \\
+\hline
+{\em len} & -\/ the number of bytes to read into buffer. \\
+\hline
+{\em tout\+\_\+s} & -\/ timeout in seconds, default is 0. \\
+\hline
+{\em tout\+\_\+us} & -\/ timeout in microseconds, default is 0. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtcp__stream_a647c576fed72122b5dc3b6e23c36e210}\label{classtcp__stream_a647c576fed72122b5dc3b6e23c36e210}} 
+\index{tcp\+\_\+stream@{tcp\+\_\+stream}!send@{send}}
+\index{send@{send}!tcp\+\_\+stream@{tcp\+\_\+stream}}
+\subsubsection{\texorpdfstring{send()}{send()}}
+{\footnotesize\ttfamily ssize\+\_\+t tcp\+\_\+stream\+::send (\begin{DoxyParamCaption}\item[{const char $\ast$}]{buffer,  }\item[{const size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & \\
+\hline
+{\em len} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+shared/inc/tcpstream.\+h\item 
+shared/src/tcpstream.\+cpp\end{DoxyCompactItemize}

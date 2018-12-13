@@ -1,0 +1,112 @@
+\hypertarget{classThread}{}\section{Thread Class Reference}
+\label{classThread}\index{Thread@{Thread}}
+
+
+A pthread wrapper implementation.  
+
+
+
+
+{\ttfamily \#include $<$thread.\+h$>$}
+
+
+
+Inheritance diagram for Thread\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{classThread__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classThread_a95c703fb8f2f27cb64f475a8c940864a}{Thread} ()
+\item 
+virtual \hyperlink{classThread_a37d9edd3a1a776cbc27dedff949c9726}{$\sim$\+Thread} ()
+\item 
+int \hyperlink{classThread_a7d563f3201d081af8cc24ea552c6a4e4}{start} ()
+\item 
+int \hyperlink{classThread_a7c3b04b32b4327923cc4c9553a403e32}{join} ()
+\item 
+int \hyperlink{classThread_a2a08036a4598cfc554114fee9d0e8485}{detach} ()
+\item 
+pthread\+\_\+t \hyperlink{classThread_ad4242a739c70bd1fe6b9c6e208714310}{self} ()
+\item 
+\mbox{\Hypertarget{classThread_a0ceaa28981eacf1051845542053d82b6}\label{classThread_a0ceaa28981eacf1051845542053d82b6}} 
+virtual void $\ast$ {\bfseries run} ()=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A pthread wrapper implementation. 
+
+\begin{DoxyAuthor}{Author}
+Jonathan Henly 
+
+Adham Kassem 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+11-\/27-\/2018 
+\end{DoxyVersion}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classThread_a95c703fb8f2f27cb64f475a8c940864a}\label{classThread_a95c703fb8f2f27cb64f475a8c940864a}} 
+\index{Thread@{Thread}!Thread@{Thread}}
+\index{Thread@{Thread}!Thread@{Thread}}
+\subsubsection{\texorpdfstring{Thread()}{Thread()}}
+{\footnotesize\ttfamily Thread\+::\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+To\+Do document \mbox{\Hypertarget{classThread_a37d9edd3a1a776cbc27dedff949c9726}\label{classThread_a37d9edd3a1a776cbc27dedff949c9726}} 
+\index{Thread@{Thread}!````~Thread@{$\sim$\+Thread}}
+\index{````~Thread@{$\sim$\+Thread}!Thread@{Thread}}
+\subsubsection{\texorpdfstring{$\sim$\+Thread()}{~Thread()}}
+{\footnotesize\ttfamily Thread\+::$\sim$\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+To\+Do document 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classThread_a2a08036a4598cfc554114fee9d0e8485}\label{classThread_a2a08036a4598cfc554114fee9d0e8485}} 
+\index{Thread@{Thread}!detach@{detach}}
+\index{detach@{detach}!Thread@{Thread}}
+\subsubsection{\texorpdfstring{detach()}{detach()}}
+{\footnotesize\ttfamily int Thread\+::detach (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Separates the thread of execution from the thread object, allowing execution to continue independently. \begin{DoxyReturn}{Returns}
+0 if this thread detaches, otherwise a non-\/zero value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classThread_a7c3b04b32b4327923cc4c9553a403e32}\label{classThread_a7c3b04b32b4327923cc4c9553a403e32}} 
+\index{Thread@{Thread}!join@{join}}
+\index{join@{join}!Thread@{Thread}}
+\subsubsection{\texorpdfstring{join()}{join()}}
+{\footnotesize\ttfamily int Thread\+::join (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Blocks the current thread until this thread finishes its execution. \begin{DoxyReturn}{Returns}
+0 if this thread joins, otherwise a non-\/zero value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classThread_ad4242a739c70bd1fe6b9c6e208714310}\label{classThread_ad4242a739c70bd1fe6b9c6e208714310}} 
+\index{Thread@{Thread}!self@{self}}
+\index{self@{self}!Thread@{Thread}}
+\subsubsection{\texorpdfstring{self()}{self()}}
+{\footnotesize\ttfamily pthread\+\_\+t Thread\+::self (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+this thread\textquotesingle{}s id. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classThread_a7d563f3201d081af8cc24ea552c6a4e4}\label{classThread_a7d563f3201d081af8cc24ea552c6a4e4}} 
+\index{Thread@{Thread}!start@{start}}
+\index{start@{start}!Thread@{Thread}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily int Thread\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+0 if this thread successfully starts, otherwise a non-\/zero value. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+inc/thread.\+h\item 
+src/thread.\+cpp\end{DoxyCompactItemize}

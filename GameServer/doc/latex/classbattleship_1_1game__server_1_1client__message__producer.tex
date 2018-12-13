@@ -1,0 +1,76 @@
+\hypertarget{classbattleship_1_1game__server_1_1client__message__producer}{}\section{battleship\+:\+:game\+\_\+server\+:\+:client\+\_\+message\+\_\+producer Class Reference}
+\label{classbattleship_1_1game__server_1_1client__message__producer}\index{battleship\+::game\+\_\+server\+::client\+\_\+message\+\_\+producer@{battleship\+::game\+\_\+server\+::client\+\_\+message\+\_\+producer}}
+
+
+Handles the connections between clients and the server.  
+
+
+
+
+{\ttfamily \#include $<$msgproducer.\+h$>$}
+
+
+
+Inheritance diagram for battleship\+:\+:game\+\_\+server\+:\+:client\+\_\+message\+\_\+producer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classbattleship_1_1game__server_1_1client__message__producer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for battleship\+:\+:game\+\_\+server\+:\+:client\+\_\+message\+\_\+producer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classbattleship_1_1game__server_1_1client__message__producer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classbattleship_1_1game__server_1_1client__message__producer_a5f2a0bfac369d551954a77c58c2abad2}{client\+\_\+message\+\_\+producer} (\hyperlink{classbattleship_1_1ts__queue}{ts\+\_\+queue}$<$ std\+::weak\+\_\+ptr$<$ \hyperlink{classbattleship_1_1game__server_1_1client}{client} $>$$>$ \&c\+\_\+queue, \hyperlink{classbattleship_1_1game__server_1_1client__pool}{client\+\_\+pool} \&c\+\_\+pool, \hyperlink{classbattleship_1_1ts__queue}{ts\+\_\+queue}$<$ \hyperlink{classbattleship_1_1network__message_1_1message}{message} $\ast$$>$ \&m\+\_\+queue, const unsigned int num\+\_\+timeout\+\_\+limit=30000)
+\item 
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1client__message__producer_af3f501bb1e23993e7958d990e44219ed}\label{classbattleship_1_1game__server_1_1client__message__producer_af3f501bb1e23993e7958d990e44219ed}} 
+void $\ast$ {\bfseries run} () override
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Handles the connections between clients and the server. 
+
+\begin{DoxyAuthor}{Author}
+Jonathan Henly 
+
+Adham Kassem 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+12-\/4-\/2018 
+\end{DoxyVersion}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1client__message__producer_a5f2a0bfac369d551954a77c58c2abad2}\label{classbattleship_1_1game__server_1_1client__message__producer_a5f2a0bfac369d551954a77c58c2abad2}} 
+\index{battleship\+::game\+\_\+server\+::client\+\_\+message\+\_\+producer@{battleship\+::game\+\_\+server\+::client\+\_\+message\+\_\+producer}!client\+\_\+message\+\_\+producer@{client\+\_\+message\+\_\+producer}}
+\index{client\+\_\+message\+\_\+producer@{client\+\_\+message\+\_\+producer}!battleship\+::game\+\_\+server\+::client\+\_\+message\+\_\+producer@{battleship\+::game\+\_\+server\+::client\+\_\+message\+\_\+producer}}
+\subsubsection{\texorpdfstring{client\+\_\+message\+\_\+producer()}{client\_message\_producer()}}
+{\footnotesize\ttfamily battleship\+::game\+\_\+server\+::client\+\_\+message\+\_\+producer\+::client\+\_\+message\+\_\+producer (\begin{DoxyParamCaption}\item[{\hyperlink{classbattleship_1_1ts__queue}{ts\+\_\+queue}$<$ std\+::weak\+\_\+ptr$<$ \hyperlink{classbattleship_1_1game__server_1_1client}{client} $>$$>$ \&}]{c\+\_\+queue,  }\item[{\hyperlink{classbattleship_1_1game__server_1_1client__pool}{client\+\_\+pool} \&}]{c\+\_\+pool,  }\item[{\hyperlink{classbattleship_1_1ts__queue}{ts\+\_\+queue}$<$ \hyperlink{classbattleship_1_1network__message_1_1message}{message} $\ast$$>$ \&}]{m\+\_\+queue,  }\item[{const unsigned int}]{num\+\_\+timeout\+\_\+limit = {\ttfamily 30000} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em c\+\_\+queue} & \\
+\hline
+{\em pool} & \\
+\hline
+{\em msg\+\_\+queue} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+inc/msgproducer.\+h\item 
+src/msgproducer.\+cpp\end{DoxyCompactItemize}

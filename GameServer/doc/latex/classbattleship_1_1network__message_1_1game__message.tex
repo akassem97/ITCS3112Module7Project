@@ -1,0 +1,160 @@
+\hypertarget{classbattleship_1_1network__message_1_1game__message}{}\section{battleship\+:\+:network\+\_\+message\+:\+:game\+\_\+message Class Reference}
+\label{classbattleship_1_1network__message_1_1game__message}\index{battleship\+::network\+\_\+message\+::game\+\_\+message@{battleship\+::network\+\_\+message\+::game\+\_\+message}}
+
+
+Game network message class.  
+
+
+
+
+{\ttfamily \#include $<$message.\+h$>$}
+
+
+
+Inheritance diagram for battleship\+:\+:network\+\_\+message\+:\+:game\+\_\+message\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{classbattleship_1_1network__message_1_1game__message__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for battleship\+:\+:network\+\_\+message\+:\+:game\+\_\+message\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{classbattleship_1_1network__message_1_1game__message__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classbattleship_1_1network__message_1_1game__message_ab3ceb7bc3b5fae4b4cf4ebd96fd6110f}{$\sim$game\+\_\+message} ()
+\item 
+const unsigned char \hyperlink{classbattleship_1_1network__message_1_1game__message_af64b2d72181dd2444616980c67d43581}{game\+\_\+id} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classbattleship_1_1network__message_1_1game__message}{game\+\_\+message} $\ast$ \hyperlink{classbattleship_1_1network__message_1_1game__message_a75f29d2d7fddfe52eb7755857a61aec6}{parse\+\_\+message} (const char $\ast$msg, const unsigned char len)
+\item 
+static \hyperlink{classbattleship_1_1network__message_1_1game__message}{game\+\_\+message} $\ast$ \hyperlink{classbattleship_1_1network__message_1_1game__message_aa1694088084ed2b07b6c06ba9fb2cb03}{create\+\_\+message} (const network\+\_\+message\+::signal msg\+\_\+signal, const unsigned char \hyperlink{classbattleship_1_1network__message_1_1message_af2ebed25f82de46c947a2241c6952563}{from}, const unsigned char \hyperlink{classbattleship_1_1network__message_1_1message_a36145cf7dfc9102da280adfad5d1a972}{to}, const unsigned char \hyperlink{classbattleship_1_1network__message_1_1game__message_af64b2d72181dd2444616980c67d43581}{game\+\_\+id}, const char $\ast$\hyperlink{classbattleship_1_1network__message_1_1message_ab42ddf52012135284f65641702459912}{payload}=nullptr, const unsigned char \hyperlink{classbattleship_1_1network__message_1_1message_ac4a236888d40ffbdd8572660a3f34b1e}{payload\+\_\+length}=0)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbattleship_1_1network__message_1_1game__message_ae79588b4a84657987030ec8903b70338}\label{classbattleship_1_1network__message_1_1game__message_ae79588b4a84657987030ec8903b70338}} 
+{\bfseries game\+\_\+message} (const char $\ast$msg, const unsigned char len)
+\item 
+\mbox{\Hypertarget{classbattleship_1_1network__message_1_1game__message_a6ec5d82b622c47f37ac0e81507eb7bdd}\label{classbattleship_1_1network__message_1_1game__message_a6ec5d82b622c47f37ac0e81507eb7bdd}} 
+virtual unsigned char {\bfseries next\+\_\+available\+\_\+offset} () const
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Game network message class. 
+
+\begin{DoxyAuthor}{Author}
+Jonathan Henly 
+
+Adham Kassem 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+12-\/03-\/2018 
+\end{DoxyVersion}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbattleship_1_1network__message_1_1game__message_ab3ceb7bc3b5fae4b4cf4ebd96fd6110f}\label{classbattleship_1_1network__message_1_1game__message_ab3ceb7bc3b5fae4b4cf4ebd96fd6110f}} 
+\index{battleship\+::network\+\_\+message\+::game\+\_\+message@{battleship\+::network\+\_\+message\+::game\+\_\+message}!````~game\+\_\+message@{$\sim$game\+\_\+message}}
+\index{````~game\+\_\+message@{$\sim$game\+\_\+message}!battleship\+::network\+\_\+message\+::game\+\_\+message@{battleship\+::network\+\_\+message\+::game\+\_\+message}}
+\subsubsection{\texorpdfstring{$\sim$game\+\_\+message()}{~game\_message()}}
+{\footnotesize\ttfamily virtual battleship\+::network\+\_\+message\+::game\+\_\+message\+::$\sim$game\+\_\+message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Calls
+\begin{DoxyCode}
+\textcolor{keyword}{virtual} \hyperlink{classbattleship_1_1network__message_1_1message_a89d002562fcc64e39f35782e92c4d6e2}{~message}() 
+\end{DoxyCode}
+ . 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbattleship_1_1network__message_1_1game__message_aa1694088084ed2b07b6c06ba9fb2cb03}\label{classbattleship_1_1network__message_1_1game__message_aa1694088084ed2b07b6c06ba9fb2cb03}} 
+\index{battleship\+::network\+\_\+message\+::game\+\_\+message@{battleship\+::network\+\_\+message\+::game\+\_\+message}!create\+\_\+message@{create\+\_\+message}}
+\index{create\+\_\+message@{create\+\_\+message}!battleship\+::network\+\_\+message\+::game\+\_\+message@{battleship\+::network\+\_\+message\+::game\+\_\+message}}
+\subsubsection{\texorpdfstring{create\+\_\+message()}{create\_message()}}
+{\footnotesize\ttfamily static \hyperlink{classbattleship_1_1network__message_1_1game__message}{game\+\_\+message}$\ast$ battleship\+::network\+\_\+message\+::game\+\_\+message\+::create\+\_\+message (\begin{DoxyParamCaption}\item[{const network\+\_\+message\+::signal}]{msg\+\_\+signal,  }\item[{const unsigned char}]{from,  }\item[{const unsigned char}]{to,  }\item[{const unsigned char}]{game\+\_\+id,  }\item[{const char $\ast$}]{payload = {\ttfamily nullptr},  }\item[{const unsigned char}]{payload\+\_\+length = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg\+\_\+signal} & -\/ \\
+\hline
+{\em from} & -\/ \\
+\hline
+{\em to} & -\/ \\
+\hline
+{\em game\+\_\+id} & -\/ \\
+\hline
+{\em payload} & -\/ \\
+\hline
+{\em payload\+\_\+length} & -\/ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1network__message_1_1game__message_af64b2d72181dd2444616980c67d43581}\label{classbattleship_1_1network__message_1_1game__message_af64b2d72181dd2444616980c67d43581}} 
+\index{battleship\+::network\+\_\+message\+::game\+\_\+message@{battleship\+::network\+\_\+message\+::game\+\_\+message}!game\+\_\+id@{game\+\_\+id}}
+\index{game\+\_\+id@{game\+\_\+id}!battleship\+::network\+\_\+message\+::game\+\_\+message@{battleship\+::network\+\_\+message\+::game\+\_\+message}}
+\subsubsection{\texorpdfstring{game\+\_\+id()}{game\_id()}}
+{\footnotesize\ttfamily const unsigned char battleship\+::network\+\_\+message\+::game\+\_\+message\+::game\+\_\+id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+this message\textquotesingle{}s game ID. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1network__message_1_1game__message_a75f29d2d7fddfe52eb7755857a61aec6}\label{classbattleship_1_1network__message_1_1game__message_a75f29d2d7fddfe52eb7755857a61aec6}} 
+\index{battleship\+::network\+\_\+message\+::game\+\_\+message@{battleship\+::network\+\_\+message\+::game\+\_\+message}!parse\+\_\+message@{parse\+\_\+message}}
+\index{parse\+\_\+message@{parse\+\_\+message}!battleship\+::network\+\_\+message\+::game\+\_\+message@{battleship\+::network\+\_\+message\+::game\+\_\+message}}
+\subsubsection{\texorpdfstring{parse\+\_\+message()}{parse\_message()}}
+{\footnotesize\ttfamily static \hyperlink{classbattleship_1_1network__message_1_1game__message}{game\+\_\+message}$\ast$ battleship\+::network\+\_\+message\+::game\+\_\+message\+::parse\+\_\+message (\begin{DoxyParamCaption}\item[{const char $\ast$}]{msg,  }\item[{const unsigned char}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Parses a message from a passed in \{ array\} of length
+\begin{DoxyCode}
+len 
+\end{DoxyCode}
+ .
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & -\/ a correctly coded
+\begin{DoxyCode}
+\textcolor{keywordtype}{char} 
+\end{DoxyCode}
+ array. \\
+\hline
+{\em len} & -\/ the byte length of
+\begin{DoxyCode}
+msg 
+\end{DoxyCode}
+ .\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a smart pointer to a new message created from a passed in 
+\begin{DoxyCode}
+\textcolor{keywordtype}{char} 
+\end{DoxyCode}
+ array of length
+\begin{DoxyCode}
+len 
+\end{DoxyCode}
+ . 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+shared/inc/message.\+h\end{DoxyCompactItemize}

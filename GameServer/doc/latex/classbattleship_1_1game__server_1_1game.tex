@@ -1,0 +1,120 @@
+\hypertarget{classbattleship_1_1game__server_1_1game}{}\section{battleship\+:\+:game\+\_\+server\+:\+:game Class Reference}
+\label{classbattleship_1_1game__server_1_1game}\index{battleship\+::game\+\_\+server\+::game@{battleship\+::game\+\_\+server\+::game}}
+
+
+Represents a game of battleship between two clients.  
+
+
+
+
+{\ttfamily \#include $<$game.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classbattleship_1_1game__server_1_1game_a17582f2a51f16538e3bc2a821676e153}{game} (const unsigned char game\+\_\+id, const std\+::weak\+\_\+ptr$<$ \hyperlink{classbattleship_1_1game__server_1_1client}{client} $>$ one, const std\+::weak\+\_\+ptr$<$ \hyperlink{classbattleship_1_1game__server_1_1client}{client} $>$ two)
+\item 
+void \hyperlink{classbattleship_1_1game__server_1_1game_aa1a53bc008c83a9f21f60565a49fc56e}{broadcast\+\_\+message} (\hyperlink{classbattleship_1_1network__message_1_1game__message}{game\+\_\+message} msg)
+\item 
+void \hyperlink{classbattleship_1_1game__server_1_1game_abff5647f203e7690ac2ac1cd1c1b21a5}{broadcast\+\_\+message} (network\+\_\+message\+::signal sig, const char $\ast$payload=nullptr, const unsigned char pload\+\_\+len=0)
+\item 
+virtual \hyperlink{classbattleship_1_1game__server_1_1game_a49674bd20bc7bf09660a2aaa0287c5e6}{$\sim$game} ()
+\item 
+const unsigned char \hyperlink{classbattleship_1_1game__server_1_1game_ace88cc824634bc6b4ba27bdc5084ca91}{get\+\_\+game\+\_\+id} ()
+\item 
+void \hyperlink{classbattleship_1_1game__server_1_1game_ace7a4f5c9bbd5968869ff37763a3b7eb}{handle\+\_\+message} (const \hyperlink{classbattleship_1_1network__message_1_1game__message}{network\+\_\+message\+::game\+\_\+message} $\ast$msg)
+\item 
+void \hyperlink{classbattleship_1_1game__server_1_1game_a986ce2178cc21dd78bd74de2f234e9d5}{handle\+\_\+error\+\_\+message} (const \hyperlink{classbattleship_1_1network__message_1_1game__message}{network\+\_\+message\+::game\+\_\+message} $\ast$msg)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a game of battleship between two clients. 
+
+\begin{DoxyAuthor}{Author}
+Adham Kassem 
+
+Jonathan Henly 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+12-\/4-\/2018 
+\end{DoxyVersion}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1game_a17582f2a51f16538e3bc2a821676e153}\label{classbattleship_1_1game__server_1_1game_a17582f2a51f16538e3bc2a821676e153}} 
+\index{battleship\+::game\+\_\+server\+::game@{battleship\+::game\+\_\+server\+::game}!game@{game}}
+\index{game@{game}!battleship\+::game\+\_\+server\+::game@{battleship\+::game\+\_\+server\+::game}}
+\subsubsection{\texorpdfstring{game()}{game()}}
+{\footnotesize\ttfamily battleship\+::game\+\_\+server\+::game\+::game (\begin{DoxyParamCaption}\item[{const unsigned char}]{game\+\_\+id,  }\item[{const std\+::weak\+\_\+ptr$<$ \hyperlink{classbattleship_1_1game__server_1_1client}{client} $>$}]{one,  }\item[{const std\+::weak\+\_\+ptr$<$ \hyperlink{classbattleship_1_1game__server_1_1client}{client} $>$}]{two }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a battleship game between two passed in weak pointers to clients.
+
+
+\begin{DoxyParams}{Parameters}
+{\em one} & -\/ a weak pointer to the first client. \\
+\hline
+{\em two} & -\/ a weak pointer to the second client. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1game_a49674bd20bc7bf09660a2aaa0287c5e6}\label{classbattleship_1_1game__server_1_1game_a49674bd20bc7bf09660a2aaa0287c5e6}} 
+\index{battleship\+::game\+\_\+server\+::game@{battleship\+::game\+\_\+server\+::game}!````~game@{$\sim$game}}
+\index{````~game@{$\sim$game}!battleship\+::game\+\_\+server\+::game@{battleship\+::game\+\_\+server\+::game}}
+\subsubsection{\texorpdfstring{$\sim$game()}{~game()}}
+{\footnotesize\ttfamily virtual battleship\+::game\+\_\+server\+::game\+::$\sim$game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Resets the both client weak pointers. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1game_aa1a53bc008c83a9f21f60565a49fc56e}\label{classbattleship_1_1game__server_1_1game_aa1a53bc008c83a9f21f60565a49fc56e}} 
+\index{battleship\+::game\+\_\+server\+::game@{battleship\+::game\+\_\+server\+::game}!broadcast\+\_\+message@{broadcast\+\_\+message}}
+\index{broadcast\+\_\+message@{broadcast\+\_\+message}!battleship\+::game\+\_\+server\+::game@{battleship\+::game\+\_\+server\+::game}}
+\subsubsection{\texorpdfstring{broadcast\+\_\+message()}{broadcast\_message()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void battleship\+::game\+\_\+server\+::game\+::broadcast\+\_\+message (\begin{DoxyParamCaption}\item[{\hyperlink{classbattleship_1_1network__message_1_1game__message}{game\+\_\+message}}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Broadcasts a game message to both clients. \mbox{\Hypertarget{classbattleship_1_1game__server_1_1game_abff5647f203e7690ac2ac1cd1c1b21a5}\label{classbattleship_1_1game__server_1_1game_abff5647f203e7690ac2ac1cd1c1b21a5}} 
+\index{battleship\+::game\+\_\+server\+::game@{battleship\+::game\+\_\+server\+::game}!broadcast\+\_\+message@{broadcast\+\_\+message}}
+\index{broadcast\+\_\+message@{broadcast\+\_\+message}!battleship\+::game\+\_\+server\+::game@{battleship\+::game\+\_\+server\+::game}}
+\subsubsection{\texorpdfstring{broadcast\+\_\+message()}{broadcast\_message()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void battleship\+::game\+\_\+server\+::game\+::broadcast\+\_\+message (\begin{DoxyParamCaption}\item[{network\+\_\+message\+::signal}]{sig,  }\item[{const char $\ast$}]{payload = {\ttfamily nullptr},  }\item[{const unsigned char}]{pload\+\_\+len = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Broadcasts a game message to both clients. \mbox{\Hypertarget{classbattleship_1_1game__server_1_1game_ace88cc824634bc6b4ba27bdc5084ca91}\label{classbattleship_1_1game__server_1_1game_ace88cc824634bc6b4ba27bdc5084ca91}} 
+\index{battleship\+::game\+\_\+server\+::game@{battleship\+::game\+\_\+server\+::game}!get\+\_\+game\+\_\+id@{get\+\_\+game\+\_\+id}}
+\index{get\+\_\+game\+\_\+id@{get\+\_\+game\+\_\+id}!battleship\+::game\+\_\+server\+::game@{battleship\+::game\+\_\+server\+::game}}
+\subsubsection{\texorpdfstring{get\+\_\+game\+\_\+id()}{get\_game\_id()}}
+{\footnotesize\ttfamily const unsigned char battleship\+::game\+\_\+server\+::game\+::get\+\_\+game\+\_\+id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the unique ID of this game instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1game_a986ce2178cc21dd78bd74de2f234e9d5}\label{classbattleship_1_1game__server_1_1game_a986ce2178cc21dd78bd74de2f234e9d5}} 
+\index{battleship\+::game\+\_\+server\+::game@{battleship\+::game\+\_\+server\+::game}!handle\+\_\+error\+\_\+message@{handle\+\_\+error\+\_\+message}}
+\index{handle\+\_\+error\+\_\+message@{handle\+\_\+error\+\_\+message}!battleship\+::game\+\_\+server\+::game@{battleship\+::game\+\_\+server\+::game}}
+\subsubsection{\texorpdfstring{handle\+\_\+error\+\_\+message()}{handle\_error\_message()}}
+{\footnotesize\ttfamily void battleship\+::game\+\_\+server\+::game\+::handle\+\_\+error\+\_\+message (\begin{DoxyParamCaption}\item[{const \hyperlink{classbattleship_1_1network__message_1_1game__message}{network\+\_\+message\+::game\+\_\+message} $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Handles network message producing and receiving between this game instance\textquotesingle{}s two clients.
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & -\/ the network message to handle. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1game_ace7a4f5c9bbd5968869ff37763a3b7eb}\label{classbattleship_1_1game__server_1_1game_ace7a4f5c9bbd5968869ff37763a3b7eb}} 
+\index{battleship\+::game\+\_\+server\+::game@{battleship\+::game\+\_\+server\+::game}!handle\+\_\+message@{handle\+\_\+message}}
+\index{handle\+\_\+message@{handle\+\_\+message}!battleship\+::game\+\_\+server\+::game@{battleship\+::game\+\_\+server\+::game}}
+\subsubsection{\texorpdfstring{handle\+\_\+message()}{handle\_message()}}
+{\footnotesize\ttfamily void battleship\+::game\+\_\+server\+::game\+::handle\+\_\+message (\begin{DoxyParamCaption}\item[{const \hyperlink{classbattleship_1_1network__message_1_1game__message}{network\+\_\+message\+::game\+\_\+message} $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Handles network message producing and receiving between this game instance\textquotesingle{}s two clients.
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & -\/ the network message to handle. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inc/game.\+h\end{DoxyCompactItemize}

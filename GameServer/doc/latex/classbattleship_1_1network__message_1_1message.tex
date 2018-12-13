@@ -1,0 +1,307 @@
+\hypertarget{classbattleship_1_1network__message_1_1message}{}\section{battleship\+:\+:network\+\_\+message\+:\+:message Class Reference}
+\label{classbattleship_1_1network__message_1_1message}\index{battleship\+::network\+\_\+message\+::message@{battleship\+::network\+\_\+message\+::message}}
+
+
+Base network messaging class.  
+
+
+
+
+{\ttfamily \#include $<$message.\+h$>$}
+
+
+
+Inheritance diagram for battleship\+:\+:network\+\_\+message\+:\+:message\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{classbattleship_1_1network__message_1_1message__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classbattleship_1_1network__message_1_1message_a89d002562fcc64e39f35782e92c4d6e2}{$\sim$message} ()
+\item 
+const char $\ast$ \hyperlink{classbattleship_1_1network__message_1_1message_aa0c2c52cb41c9c524e9e785a8240c60c}{msg} () const
+\item 
+const size\+\_\+t \hyperlink{classbattleship_1_1network__message_1_1message_a522b961254d0359c6c68bd32875a5626}{length} () const
+\item 
+const network\+\_\+message\+::type \hyperlink{classbattleship_1_1network__message_1_1message_a19cd4318b0e70831ddbf340597d040a4}{type} () const
+\item 
+const network\+\_\+message\+::signal \hyperlink{classbattleship_1_1network__message_1_1message_a5709b3059dfb73e135dca1c6f248f797}{signal} () const
+\item 
+const unsigned char \hyperlink{classbattleship_1_1network__message_1_1message_af2ebed25f82de46c947a2241c6952563}{from} () const
+\item 
+const unsigned char \hyperlink{classbattleship_1_1network__message_1_1message_a36145cf7dfc9102da280adfad5d1a972}{to} () const
+\item 
+const bool \hyperlink{classbattleship_1_1network__message_1_1message_a2232a3db5d5244e5487968908c04b9f9}{has\+\_\+payload} () const
+\item 
+const char $\ast$ \hyperlink{classbattleship_1_1network__message_1_1message_ab42ddf52012135284f65641702459912}{payload} () const
+\item 
+const unsigned char \hyperlink{classbattleship_1_1network__message_1_1message_ac4a236888d40ffbdd8572660a3f34b1e}{payload\+\_\+length} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classbattleship_1_1network__message_1_1message}{message} $\ast$ \hyperlink{classbattleship_1_1network__message_1_1message_a8f87e24d9328257a0f76278a0802f86c}{parse\+\_\+message} (const char $\ast$msg, const unsigned char len)
+\item 
+static \hyperlink{classbattleship_1_1network__message_1_1message}{message} $\ast$ \hyperlink{classbattleship_1_1network__message_1_1message_aa50f58d9553f3532071c9acda7b1f031}{create\+\_\+message} (const network\+\_\+message\+::type m\+\_\+type, const network\+\_\+message\+::signal m\+\_\+signal, const unsigned char \hyperlink{classbattleship_1_1network__message_1_1message_af2ebed25f82de46c947a2241c6952563}{from}, const unsigned char \hyperlink{classbattleship_1_1network__message_1_1message_a36145cf7dfc9102da280adfad5d1a972}{to}, const char $\ast$\hyperlink{classbattleship_1_1network__message_1_1message_ab42ddf52012135284f65641702459912}{payload}=nullptr, const unsigned char \hyperlink{classbattleship_1_1network__message_1_1message_ac4a236888d40ffbdd8572660a3f34b1e}{payload\+\_\+length}=0)
+\item 
+static \hyperlink{classbattleship_1_1network__message_1_1message}{message} $\ast$ \hyperlink{classbattleship_1_1network__message_1_1message_aa55c4377f51cfd59e1d0c6abd4295d4f}{create\+\_\+message} (const network\+\_\+message\+::type m\+\_\+type, const network\+\_\+message\+::signal m\+\_\+signal, const unsigned char \hyperlink{classbattleship_1_1network__message_1_1message_af2ebed25f82de46c947a2241c6952563}{from}, const unsigned char \hyperlink{classbattleship_1_1network__message_1_1message_a36145cf7dfc9102da280adfad5d1a972}{to}, const std\+::string \hyperlink{classbattleship_1_1network__message_1_1message_ab42ddf52012135284f65641702459912}{payload})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbattleship_1_1network__message_1_1message_a8648ab9741e0a2617e79a2a33b816597}\label{classbattleship_1_1network__message_1_1message_a8648ab9741e0a2617e79a2a33b816597}} 
+{\bfseries message} (const char $\ast$msg, const unsigned char len)
+\item 
+\mbox{\Hypertarget{classbattleship_1_1network__message_1_1message_a4cc5125a5a6f24e1bc31db2b9457d0f9}\label{classbattleship_1_1network__message_1_1message_a4cc5125a5a6f24e1bc31db2b9457d0f9}} 
+{\bfseries message} (const network\+\_\+message\+::type m\+\_\+type, const network\+\_\+message\+::signal m\+\_\+signal, const unsigned char \hyperlink{classbattleship_1_1network__message_1_1message_af2ebed25f82de46c947a2241c6952563}{from}, const unsigned char \hyperlink{classbattleship_1_1network__message_1_1message_a36145cf7dfc9102da280adfad5d1a972}{to}, const char $\ast$\hyperlink{classbattleship_1_1network__message_1_1message_ab42ddf52012135284f65641702459912}{payload}=nullptr, const unsigned char \hyperlink{classbattleship_1_1network__message_1_1message_ac4a236888d40ffbdd8572660a3f34b1e}{payload\+\_\+length}=0)
+\item 
+\mbox{\Hypertarget{classbattleship_1_1network__message_1_1message_a8e025f494428c0e498341dcac119155e}\label{classbattleship_1_1network__message_1_1message_a8e025f494428c0e498341dcac119155e}} 
+const char {\bfseries message\+\_\+terminator} ()
+\item 
+\mbox{\Hypertarget{classbattleship_1_1network__message_1_1message_ac410b96d54dffc60f16c459b7d4ecc94}\label{classbattleship_1_1network__message_1_1message_ac410b96d54dffc60f16c459b7d4ecc94}} 
+virtual unsigned char {\bfseries next\+\_\+available\+\_\+offset} () const
+\item 
+\mbox{\Hypertarget{classbattleship_1_1network__message_1_1message_a390532050b2c6e513a3b3aa666878f37}\label{classbattleship_1_1network__message_1_1message_a390532050b2c6e513a3b3aa666878f37}} 
+char $\ast$ {\bfseries msg} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbattleship_1_1network__message_1_1message_af14888193de7e2a1fc8309301ae903bd}\label{classbattleship_1_1network__message_1_1message_af14888193de7e2a1fc8309301ae903bd}} 
+static const unsigned char {\bfseries T\+Y\+P\+E\+\_\+\+O\+F\+F\+S\+ET} = 0
+\item 
+\mbox{\Hypertarget{classbattleship_1_1network__message_1_1message_a3b8b9ed0e5af5e4af3182d4380d7e13f}\label{classbattleship_1_1network__message_1_1message_a3b8b9ed0e5af5e4af3182d4380d7e13f}} 
+static const unsigned char {\bfseries S\+I\+G\+N\+A\+L\+\_\+\+O\+F\+F\+S\+ET} = 1
+\item 
+\mbox{\Hypertarget{classbattleship_1_1network__message_1_1message_ac5e61619d74437ba3debfd7eac03b1d6}\label{classbattleship_1_1network__message_1_1message_ac5e61619d74437ba3debfd7eac03b1d6}} 
+static const unsigned char {\bfseries F\+R\+O\+M\+\_\+\+O\+F\+F\+S\+ET} = 2
+\item 
+\mbox{\Hypertarget{classbattleship_1_1network__message_1_1message_a692694320d13692d056e7c859758d38f}\label{classbattleship_1_1network__message_1_1message_a692694320d13692d056e7c859758d38f}} 
+static const unsigned char {\bfseries T\+O\+\_\+\+O\+F\+F\+S\+ET} = 3
+\item 
+\mbox{\Hypertarget{classbattleship_1_1network__message_1_1message_aa44f97189eacff487d14b54b469e40d7}\label{classbattleship_1_1network__message_1_1message_aa44f97189eacff487d14b54b469e40d7}} 
+static const unsigned char {\bfseries H\+A\+S\+\_\+\+P\+A\+Y\+L\+O\+A\+D\+\_\+\+O\+F\+F\+S\+ET} = 4
+\item 
+\mbox{\Hypertarget{classbattleship_1_1network__message_1_1message_adbbec67faaa06ff9bbb8defbff091f44}\label{classbattleship_1_1network__message_1_1message_adbbec67faaa06ff9bbb8defbff091f44}} 
+static const unsigned char {\bfseries P\+A\+Y\+L\+O\+A\+D\+\_\+\+O\+F\+F\+S\+ET} = 5
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base network messaging class. 
+
+\begin{DoxyAuthor}{Author}
+Jonathan Henly 
+
+Adham Kassem 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+12-\/03-\/2018 
+\end{DoxyVersion}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbattleship_1_1network__message_1_1message_a89d002562fcc64e39f35782e92c4d6e2}\label{classbattleship_1_1network__message_1_1message_a89d002562fcc64e39f35782e92c4d6e2}} 
+\index{battleship\+::network\+\_\+message\+::message@{battleship\+::network\+\_\+message\+::message}!````~message@{$\sim$message}}
+\index{````~message@{$\sim$message}!battleship\+::network\+\_\+message\+::message@{battleship\+::network\+\_\+message\+::message}}
+\subsubsection{\texorpdfstring{$\sim$message()}{~message()}}
+{\footnotesize\ttfamily virtual battleship\+::network\+\_\+message\+::message\+::$\sim$message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Deletes this message\textquotesingle{}s underlying
+\begin{DoxyCode}
+\textcolor{keywordtype}{char} 
+\end{DoxyCode}
+ array. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbattleship_1_1network__message_1_1message_aa50f58d9553f3532071c9acda7b1f031}\label{classbattleship_1_1network__message_1_1message_aa50f58d9553f3532071c9acda7b1f031}} 
+\index{battleship\+::network\+\_\+message\+::message@{battleship\+::network\+\_\+message\+::message}!create\+\_\+message@{create\+\_\+message}}
+\index{create\+\_\+message@{create\+\_\+message}!battleship\+::network\+\_\+message\+::message@{battleship\+::network\+\_\+message\+::message}}
+\subsubsection{\texorpdfstring{create\+\_\+message()}{create\_message()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \hyperlink{classbattleship_1_1network__message_1_1message}{message}$\ast$ battleship\+::network\+\_\+message\+::message\+::create\+\_\+message (\begin{DoxyParamCaption}\item[{const network\+\_\+message\+::type}]{m\+\_\+type,  }\item[{const network\+\_\+message\+::signal}]{m\+\_\+signal,  }\item[{const unsigned char}]{from,  }\item[{const unsigned char}]{to,  }\item[{const char $\ast$}]{payload = {\ttfamily nullptr},  }\item[{const unsigned char}]{payload\+\_\+length = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Create a message from the specified arguments.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+type} & -\/ the type of message. \\
+\hline
+{\em m\+\_\+signal} & -\/ what the message signals. \\
+\hline
+{\em from} & -\/ the ID of the sender. \\
+\hline
+{\em to} & -\/ the ID of the recipient. \\
+\hline
+{\em payload} & -\/ this message\textquotesingle{}s optional payload. \\
+\hline
+{\em payload\+\_\+length} & -\/ length of optional payload.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a smart pointer holding this newly created message. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1network__message_1_1message_aa55c4377f51cfd59e1d0c6abd4295d4f}\label{classbattleship_1_1network__message_1_1message_aa55c4377f51cfd59e1d0c6abd4295d4f}} 
+\index{battleship\+::network\+\_\+message\+::message@{battleship\+::network\+\_\+message\+::message}!create\+\_\+message@{create\+\_\+message}}
+\index{create\+\_\+message@{create\+\_\+message}!battleship\+::network\+\_\+message\+::message@{battleship\+::network\+\_\+message\+::message}}
+\subsubsection{\texorpdfstring{create\+\_\+message()}{create\_message()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{classbattleship_1_1network__message_1_1message}{message}$\ast$ battleship\+::network\+\_\+message\+::message\+::create\+\_\+message (\begin{DoxyParamCaption}\item[{const network\+\_\+message\+::type}]{m\+\_\+type,  }\item[{const network\+\_\+message\+::signal}]{m\+\_\+signal,  }\item[{const unsigned char}]{from,  }\item[{const unsigned char}]{to,  }\item[{const std\+::string}]{payload }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Create a message from the specified arguments.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+type} & -\/ the type of message. \\
+\hline
+{\em m\+\_\+signal} & -\/ what the message signals. \\
+\hline
+{\em from} & -\/ the ID of the sender. \\
+\hline
+{\em to} & -\/ the ID of the recipient. \\
+\hline
+{\em payload} & -\/ the body of this messsage.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a smart pointer holding this newly created message. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1network__message_1_1message_af2ebed25f82de46c947a2241c6952563}\label{classbattleship_1_1network__message_1_1message_af2ebed25f82de46c947a2241c6952563}} 
+\index{battleship\+::network\+\_\+message\+::message@{battleship\+::network\+\_\+message\+::message}!from@{from}}
+\index{from@{from}!battleship\+::network\+\_\+message\+::message@{battleship\+::network\+\_\+message\+::message}}
+\subsubsection{\texorpdfstring{from()}{from()}}
+{\footnotesize\ttfamily const unsigned char battleship\+::network\+\_\+message\+::message\+::from (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the sender ID of this message. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1network__message_1_1message_a2232a3db5d5244e5487968908c04b9f9}\label{classbattleship_1_1network__message_1_1message_a2232a3db5d5244e5487968908c04b9f9}} 
+\index{battleship\+::network\+\_\+message\+::message@{battleship\+::network\+\_\+message\+::message}!has\+\_\+payload@{has\+\_\+payload}}
+\index{has\+\_\+payload@{has\+\_\+payload}!battleship\+::network\+\_\+message\+::message@{battleship\+::network\+\_\+message\+::message}}
+\subsubsection{\texorpdfstring{has\+\_\+payload()}{has\_payload()}}
+{\footnotesize\ttfamily const bool battleship\+::network\+\_\+message\+::message\+::has\+\_\+payload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+true if this message has a payload, otherwise false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1network__message_1_1message_a522b961254d0359c6c68bd32875a5626}\label{classbattleship_1_1network__message_1_1message_a522b961254d0359c6c68bd32875a5626}} 
+\index{battleship\+::network\+\_\+message\+::message@{battleship\+::network\+\_\+message\+::message}!length@{length}}
+\index{length@{length}!battleship\+::network\+\_\+message\+::message@{battleship\+::network\+\_\+message\+::message}}
+\subsubsection{\texorpdfstring{length()}{length()}}
+{\footnotesize\ttfamily const size\+\_\+t battleship\+::network\+\_\+message\+::message\+::length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the length of this message. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1network__message_1_1message_aa0c2c52cb41c9c524e9e785a8240c60c}\label{classbattleship_1_1network__message_1_1message_aa0c2c52cb41c9c524e9e785a8240c60c}} 
+\index{battleship\+::network\+\_\+message\+::message@{battleship\+::network\+\_\+message\+::message}!msg@{msg}}
+\index{msg@{msg}!battleship\+::network\+\_\+message\+::message@{battleship\+::network\+\_\+message\+::message}}
+\subsubsection{\texorpdfstring{msg()}{msg()}}
+{\footnotesize\ttfamily const char$\ast$ battleship\+::network\+\_\+message\+::message\+::msg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the underlying message
+\begin{DoxyCode}
+\textcolor{keywordtype}{char} 
+\end{DoxyCode}
+ array. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1network__message_1_1message_a8f87e24d9328257a0f76278a0802f86c}\label{classbattleship_1_1network__message_1_1message_a8f87e24d9328257a0f76278a0802f86c}} 
+\index{battleship\+::network\+\_\+message\+::message@{battleship\+::network\+\_\+message\+::message}!parse\+\_\+message@{parse\+\_\+message}}
+\index{parse\+\_\+message@{parse\+\_\+message}!battleship\+::network\+\_\+message\+::message@{battleship\+::network\+\_\+message\+::message}}
+\subsubsection{\texorpdfstring{parse\+\_\+message()}{parse\_message()}}
+{\footnotesize\ttfamily static \hyperlink{classbattleship_1_1network__message_1_1message}{message}$\ast$ battleship\+::network\+\_\+message\+::message\+::parse\+\_\+message (\begin{DoxyParamCaption}\item[{const char $\ast$}]{msg,  }\item[{const unsigned char}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Parses a message from a passed in
+\begin{DoxyCode}
+\textcolor{keywordtype}{char} 
+\end{DoxyCode}
+ array of length 
+\begin{DoxyCode}
+len 
+\end{DoxyCode}
+ .
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & -\/ a correctly coded
+\begin{DoxyCode}
+\textcolor{keywordtype}{char} 
+\end{DoxyCode}
+ array. \\
+\hline
+{\em len} & -\/ the byte length of
+\begin{DoxyCode}
+msg 
+\end{DoxyCode}
+ .\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a smart pointer holding a newly created message from a passed in 
+\begin{DoxyCode}
+\textcolor{keywordtype}{char} 
+\end{DoxyCode}
+ array of length
+\begin{DoxyCode}
+len 
+\end{DoxyCode}
+ . 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1network__message_1_1message_ab42ddf52012135284f65641702459912}\label{classbattleship_1_1network__message_1_1message_ab42ddf52012135284f65641702459912}} 
+\index{battleship\+::network\+\_\+message\+::message@{battleship\+::network\+\_\+message\+::message}!payload@{payload}}
+\index{payload@{payload}!battleship\+::network\+\_\+message\+::message@{battleship\+::network\+\_\+message\+::message}}
+\subsubsection{\texorpdfstring{payload()}{payload()}}
+{\footnotesize\ttfamily const char$\ast$ battleship\+::network\+\_\+message\+::message\+::payload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+a pointer to this message\textquotesingle{}s payload. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1network__message_1_1message_ac4a236888d40ffbdd8572660a3f34b1e}\label{classbattleship_1_1network__message_1_1message_ac4a236888d40ffbdd8572660a3f34b1e}} 
+\index{battleship\+::network\+\_\+message\+::message@{battleship\+::network\+\_\+message\+::message}!payload\+\_\+length@{payload\+\_\+length}}
+\index{payload\+\_\+length@{payload\+\_\+length}!battleship\+::network\+\_\+message\+::message@{battleship\+::network\+\_\+message\+::message}}
+\subsubsection{\texorpdfstring{payload\+\_\+length()}{payload\_length()}}
+{\footnotesize\ttfamily const unsigned char battleship\+::network\+\_\+message\+::message\+::payload\+\_\+length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the byte length of this message\textquotesingle{}s payload. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1network__message_1_1message_a5709b3059dfb73e135dca1c6f248f797}\label{classbattleship_1_1network__message_1_1message_a5709b3059dfb73e135dca1c6f248f797}} 
+\index{battleship\+::network\+\_\+message\+::message@{battleship\+::network\+\_\+message\+::message}!signal@{signal}}
+\index{signal@{signal}!battleship\+::network\+\_\+message\+::message@{battleship\+::network\+\_\+message\+::message}}
+\subsubsection{\texorpdfstring{signal()}{signal()}}
+{\footnotesize\ttfamily const network\+\_\+message\+::signal battleship\+::network\+\_\+message\+::message\+::signal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+what this message is signaling. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1network__message_1_1message_a36145cf7dfc9102da280adfad5d1a972}\label{classbattleship_1_1network__message_1_1message_a36145cf7dfc9102da280adfad5d1a972}} 
+\index{battleship\+::network\+\_\+message\+::message@{battleship\+::network\+\_\+message\+::message}!to@{to}}
+\index{to@{to}!battleship\+::network\+\_\+message\+::message@{battleship\+::network\+\_\+message\+::message}}
+\subsubsection{\texorpdfstring{to()}{to()}}
+{\footnotesize\ttfamily const unsigned char battleship\+::network\+\_\+message\+::message\+::to (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the recipient ID of this message. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1network__message_1_1message_a19cd4318b0e70831ddbf340597d040a4}\label{classbattleship_1_1network__message_1_1message_a19cd4318b0e70831ddbf340597d040a4}} 
+\index{battleship\+::network\+\_\+message\+::message@{battleship\+::network\+\_\+message\+::message}!type@{type}}
+\index{type@{type}!battleship\+::network\+\_\+message\+::message@{battleship\+::network\+\_\+message\+::message}}
+\subsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily const network\+\_\+message\+::type battleship\+::network\+\_\+message\+::message\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the
+\begin{DoxyCode}
+\hyperlink{classbattleship_1_1network__message_1_1message_a19cd4318b0e70831ddbf340597d040a4}{type} 
+\end{DoxyCode}
+ of this message. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+shared/inc/message.\+h\end{DoxyCompactItemize}

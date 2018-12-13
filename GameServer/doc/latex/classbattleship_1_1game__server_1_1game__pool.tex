@@ -1,0 +1,225 @@
+\hypertarget{classbattleship_1_1game__server_1_1game__pool}{}\section{battleship\+:\+:game\+\_\+server\+:\+:game\+\_\+pool Class Reference}
+\label{classbattleship_1_1game__server_1_1game__pool}\index{battleship\+::game\+\_\+server\+::game\+\_\+pool@{battleship\+::game\+\_\+server\+::game\+\_\+pool}}
+
+
+A thread safe game pool for holding server games.  
+
+
+
+
+{\ttfamily \#include $<$gamepool.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classbattleship_1_1game__server_1_1game__pool_a8f1683759e6491fe84b55409873c8163}{game\+\_\+pool} (const unsigned char max\+\_\+size)
+\item 
+\hyperlink{classbattleship_1_1game__server_1_1game__pool_a595c7d278fc0163b37780d90663663a2}{$\sim$game\+\_\+pool} ()
+\item 
+std\+::weak\+\_\+ptr$<$ \hyperlink{classbattleship_1_1game__server_1_1game}{game} $>$ \hyperlink{classbattleship_1_1game__server_1_1game__pool_a6d460991bba52fc0d04bd1ee65989ba2}{add\+\_\+ready\+\_\+client} (std\+::weak\+\_\+ptr$<$ \hyperlink{classbattleship_1_1game__server_1_1client}{client} $>$ r\+\_\+client)
+\item 
+bool \hyperlink{classbattleship_1_1game__server_1_1game__pool_a49cca84e56ae8a98559a6345d147511d}{remove} (const unsigned char game\+\_\+id)
+\item 
+const std\+::weak\+\_\+ptr$<$ \hyperlink{classbattleship_1_1game__server_1_1game}{game} $>$ \hyperlink{classbattleship_1_1game__server_1_1game__pool_ad6c1392c3842f1a37c762d1c27eba7d2}{get} (const unsigned char game\+\_\+id) const
+\item 
+std\+::unique\+\_\+lock$<$ std\+::mutex $>$ \hyperlink{classbattleship_1_1game__server_1_1game__pool_ae87384fc2dbf34f7f2769e8763c142b3}{get\+\_\+lock} ()
+\item 
+const std\+::shared\+\_\+ptr$<$ \hyperlink{classbattleship_1_1game__server_1_1game}{game} $>$ \hyperlink{classbattleship_1_1game__server_1_1game__pool_a47ebc8c0b2d4280ce0d02e0d808230e3}{get\+\_\+with\+\_\+lock} (std\+::unique\+\_\+lock$<$ std\+::mutex $>$ \&lock, const unsigned char game\+\_\+id)
+\item 
+unsigned char \hyperlink{classbattleship_1_1game__server_1_1game__pool_a4082a1a43dc489fae1d537126c7024c5}{get\+\_\+max\+\_\+game\+\_\+count} () const
+\item 
+unsigned char \hyperlink{classbattleship_1_1game__server_1_1game__pool_ae35839994dec4bd94fb1dc7134c1e1ff}{size} () const
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A thread safe game pool for holding server games. 
+
+\begin{DoxyAuthor}{Author}
+Jonathan Henly 
+
+Adham Kassem 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+11-\/27-\/2018 
+\end{DoxyVersion}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1game__pool_a8f1683759e6491fe84b55409873c8163}\label{classbattleship_1_1game__server_1_1game__pool_a8f1683759e6491fe84b55409873c8163}} 
+\index{battleship\+::game\+\_\+server\+::game\+\_\+pool@{battleship\+::game\+\_\+server\+::game\+\_\+pool}!game\+\_\+pool@{game\+\_\+pool}}
+\index{game\+\_\+pool@{game\+\_\+pool}!battleship\+::game\+\_\+server\+::game\+\_\+pool@{battleship\+::game\+\_\+server\+::game\+\_\+pool}}
+\subsubsection{\texorpdfstring{game\+\_\+pool()}{game\_pool()}}
+{\footnotesize\ttfamily battleship\+::game\+\_\+server\+::game\+\_\+pool\+::game\+\_\+pool (\begin{DoxyParamCaption}\item[{const unsigned char}]{max\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Creates a client pool with a maximum number of allowed clients.
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+\_\+size} & -\/ the maximum number of clients allowed in this pool. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1game__pool_a595c7d278fc0163b37780d90663663a2}\label{classbattleship_1_1game__server_1_1game__pool_a595c7d278fc0163b37780d90663663a2}} 
+\index{battleship\+::game\+\_\+server\+::game\+\_\+pool@{battleship\+::game\+\_\+server\+::game\+\_\+pool}!````~game\+\_\+pool@{$\sim$game\+\_\+pool}}
+\index{````~game\+\_\+pool@{$\sim$game\+\_\+pool}!battleship\+::game\+\_\+server\+::game\+\_\+pool@{battleship\+::game\+\_\+server\+::game\+\_\+pool}}
+\subsubsection{\texorpdfstring{$\sim$game\+\_\+pool()}{~game\_pool()}}
+{\footnotesize\ttfamily battleship\+::game\+\_\+server\+::game\+\_\+pool\+::$\sim$game\+\_\+pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default destructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1game__pool_a6d460991bba52fc0d04bd1ee65989ba2}\label{classbattleship_1_1game__server_1_1game__pool_a6d460991bba52fc0d04bd1ee65989ba2}} 
+\index{battleship\+::game\+\_\+server\+::game\+\_\+pool@{battleship\+::game\+\_\+server\+::game\+\_\+pool}!add\+\_\+ready\+\_\+client@{add\+\_\+ready\+\_\+client}}
+\index{add\+\_\+ready\+\_\+client@{add\+\_\+ready\+\_\+client}!battleship\+::game\+\_\+server\+::game\+\_\+pool@{battleship\+::game\+\_\+server\+::game\+\_\+pool}}
+\subsubsection{\texorpdfstring{add\+\_\+ready\+\_\+client()}{add\_ready\_client()}}
+{\footnotesize\ttfamily std\+::weak\+\_\+ptr$<$ \hyperlink{classbattleship_1_1game__server_1_1game}{game} $>$ battleship\+::game\+\_\+server\+::game\+\_\+pool\+::add\+\_\+ready\+\_\+client (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ \hyperlink{classbattleship_1_1game__server_1_1client}{client} $>$}]{r\+\_\+client }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em client\+\_\+id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1game__pool_ad6c1392c3842f1a37c762d1c27eba7d2}\label{classbattleship_1_1game__server_1_1game__pool_ad6c1392c3842f1a37c762d1c27eba7d2}} 
+\index{battleship\+::game\+\_\+server\+::game\+\_\+pool@{battleship\+::game\+\_\+server\+::game\+\_\+pool}!get@{get}}
+\index{get@{get}!battleship\+::game\+\_\+server\+::game\+\_\+pool@{battleship\+::game\+\_\+server\+::game\+\_\+pool}}
+\subsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily const std\+::weak\+\_\+ptr$<$ \hyperlink{classbattleship_1_1game__server_1_1game}{game} $>$ battleship\+::game\+\_\+server\+::game\+\_\+pool\+::get (\begin{DoxyParamCaption}\item[{const unsigned char}]{game\+\_\+id }\end{DoxyParamCaption}) const}
+
+Gets the game, whose ID matches the passed in ID, from this game pool instance.
+
+This method is the reader version of
+\begin{DoxyCode}
+\hyperlink{classbattleship_1_1game__server_1_1game__pool_a47ebc8c0b2d4280ce0d02e0d808230e3}{game\_pool::get\_with\_lock} 
+\end{DoxyCode}
+ .
+
+Note\+: this method will return an empty
+\begin{DoxyCode}
+std::weak\_ptr<game> 
+\end{DoxyCode}
+ if the specified game ID is not found in this game pool.
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+\_\+id} & -\/ the ID of the game to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the game whose ID is
+\begin{DoxyCode}
+game\_id 
+\end{DoxyCode}
+ or
+\begin{DoxyCode}
+\textcolor{keyword}{nullptr} 
+\end{DoxyCode}
+ . 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1game__pool_ae87384fc2dbf34f7f2769e8763c142b3}\label{classbattleship_1_1game__server_1_1game__pool_ae87384fc2dbf34f7f2769e8763c142b3}} 
+\index{battleship\+::game\+\_\+server\+::game\+\_\+pool@{battleship\+::game\+\_\+server\+::game\+\_\+pool}!get\+\_\+lock@{get\+\_\+lock}}
+\index{get\+\_\+lock@{get\+\_\+lock}!battleship\+::game\+\_\+server\+::game\+\_\+pool@{battleship\+::game\+\_\+server\+::game\+\_\+pool}}
+\subsubsection{\texorpdfstring{get\+\_\+lock()}{get\_lock()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+lock$<$ std\+::mutex $>$ battleship\+::game\+\_\+server\+::game\+\_\+pool\+::get\+\_\+lock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Acquires and returns a lock on this pool\textquotesingle{}s mutex. This method blocks until the lock can be acquired.
+
+Note\+: if not manually released, the returned lock will release once the calling site goes out of scope.
+
+\begin{DoxyReturn}{Returns}
+a lock on this client pool\textquotesingle{}s mutex.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classbattleship_1_1game__server_1_1game__pool_a47ebc8c0b2d4280ce0d02e0d808230e3}{game\+\_\+pool\+::get\+\_\+with\+\_\+lock} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1game__pool_a4082a1a43dc489fae1d537126c7024c5}\label{classbattleship_1_1game__server_1_1game__pool_a4082a1a43dc489fae1d537126c7024c5}} 
+\index{battleship\+::game\+\_\+server\+::game\+\_\+pool@{battleship\+::game\+\_\+server\+::game\+\_\+pool}!get\+\_\+max\+\_\+game\+\_\+count@{get\+\_\+max\+\_\+game\+\_\+count}}
+\index{get\+\_\+max\+\_\+game\+\_\+count@{get\+\_\+max\+\_\+game\+\_\+count}!battleship\+::game\+\_\+server\+::game\+\_\+pool@{battleship\+::game\+\_\+server\+::game\+\_\+pool}}
+\subsubsection{\texorpdfstring{get\+\_\+max\+\_\+game\+\_\+count()}{get\_max\_game\_count()}}
+{\footnotesize\ttfamily unsigned char battleship\+::game\+\_\+server\+::game\+\_\+pool\+::get\+\_\+max\+\_\+game\+\_\+count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the maximum number of games allowed in this pool instance. \begin{DoxyReturn}{Returns}
+the max number of games allowed in this pool. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1game__pool_a47ebc8c0b2d4280ce0d02e0d808230e3}\label{classbattleship_1_1game__server_1_1game__pool_a47ebc8c0b2d4280ce0d02e0d808230e3}} 
+\index{battleship\+::game\+\_\+server\+::game\+\_\+pool@{battleship\+::game\+\_\+server\+::game\+\_\+pool}!get\+\_\+with\+\_\+lock@{get\+\_\+with\+\_\+lock}}
+\index{get\+\_\+with\+\_\+lock@{get\+\_\+with\+\_\+lock}!battleship\+::game\+\_\+server\+::game\+\_\+pool@{battleship\+::game\+\_\+server\+::game\+\_\+pool}}
+\subsubsection{\texorpdfstring{get\+\_\+with\+\_\+lock()}{get\_with\_lock()}}
+{\footnotesize\ttfamily const std\+::shared\+\_\+ptr$<$ \hyperlink{classbattleship_1_1game__server_1_1game}{game} $>$ battleship\+::game\+\_\+server\+::game\+\_\+pool\+::get\+\_\+with\+\_\+lock (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+lock$<$ std\+::mutex $>$ \&}]{lock,  }\item[{const unsigned char}]{game\+\_\+id }\end{DoxyParamCaption})}
+
+Gets the client with specified client ID, from this client pool instance, while owning this pool\textquotesingle{}s writer mutex lock.
+
+This method is the writer version of
+\begin{DoxyCode}
+\hyperlink{classbattleship_1_1game__server_1_1game__pool_ad6c1392c3842f1a37c762d1c27eba7d2}{game\_pool::get} 
+\end{DoxyCode}
+ . It is used in conjunction with
+\begin{DoxyCode}
+\hyperlink{classbattleship_1_1game__server_1_1game__pool_ae87384fc2dbf34f7f2769e8763c142b3}{game\_pool::get\_lock} 
+\end{DoxyCode}
+ to safely update the state of a client.
+
+Note\+: this method will return
+\begin{DoxyCode}
+\textcolor{keyword}{nullptr} 
+\end{DoxyCode}
+ if the specified client ID is not found in this client pool.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lock} & -\/ the writer lock obtained from
+\begin{DoxyCode}
+\hyperlink{classbattleship_1_1game__server_1_1game__pool_ae87384fc2dbf34f7f2769e8763c142b3}{game\_pool::get\_lock} 
+\end{DoxyCode}
+ . \\
+\hline
+{\em client\+Id} & -\/ the ID of the client to get.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a safe pointer with the client matching the specified client ID, or 
+\begin{DoxyCode}
+\textcolor{keyword}{nullptr} 
+\end{DoxyCode}
+ .
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classbattleship_1_1game__server_1_1game__pool_ae87384fc2dbf34f7f2769e8763c142b3}{game\+\_\+pool\+::get\+\_\+lock} 
+
+\hyperlink{classbattleship_1_1game__server_1_1game__pool_ad6c1392c3842f1a37c762d1c27eba7d2}{game\+\_\+pool\+::get} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1game__pool_a49cca84e56ae8a98559a6345d147511d}\label{classbattleship_1_1game__server_1_1game__pool_a49cca84e56ae8a98559a6345d147511d}} 
+\index{battleship\+::game\+\_\+server\+::game\+\_\+pool@{battleship\+::game\+\_\+server\+::game\+\_\+pool}!remove@{remove}}
+\index{remove@{remove}!battleship\+::game\+\_\+server\+::game\+\_\+pool@{battleship\+::game\+\_\+server\+::game\+\_\+pool}}
+\subsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily bool battleship\+::game\+\_\+server\+::game\+\_\+pool\+::remove (\begin{DoxyParamCaption}\item[{const unsigned char}]{game\+\_\+id }\end{DoxyParamCaption})}
+
+To\+Do finish documentation
+
+Finally, it makes the specified client ID available for re-\/use and decreases the game count by one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Id} & -\/ the ID of the game to remove. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the game with matching specified ID was removed from this pool, otherwise false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbattleship_1_1game__server_1_1game__pool_ae35839994dec4bd94fb1dc7134c1e1ff}\label{classbattleship_1_1game__server_1_1game__pool_ae35839994dec4bd94fb1dc7134c1e1ff}} 
+\index{battleship\+::game\+\_\+server\+::game\+\_\+pool@{battleship\+::game\+\_\+server\+::game\+\_\+pool}!size@{size}}
+\index{size@{size}!battleship\+::game\+\_\+server\+::game\+\_\+pool@{battleship\+::game\+\_\+server\+::game\+\_\+pool}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily unsigned char battleship\+::game\+\_\+server\+::game\+\_\+pool\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the number of games in this pool. \begin{DoxyReturn}{Returns}
+the number of games in this pool. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+inc/gamepool.\+h\item 
+src/gamepool.\+cpp\end{DoxyCompactItemize}

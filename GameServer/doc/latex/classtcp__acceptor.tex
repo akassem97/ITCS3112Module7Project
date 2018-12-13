@@ -1,0 +1,72 @@
+\hypertarget{classtcp__acceptor}{}\section{tcp\+\_\+acceptor Class Reference}
+\label{classtcp__acceptor}\index{tcp\+\_\+acceptor@{tcp\+\_\+acceptor}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classtcp__acceptor_acf72994db89d547554513076de9f2e66}{tcp\+\_\+acceptor} (int port, const char $\ast$address=\char`\"{}\char`\"{})
+\item 
+\hyperlink{classtcp__acceptor_a8110052284976750b47ec30b900956f2}{$\sim$tcp\+\_\+acceptor} ()
+\item 
+int \hyperlink{classtcp__acceptor_a15116195be2fa6d2b5f432cc0bdf0479}{start} ()
+\item 
+\hyperlink{classtcp__stream}{tcp\+\_\+stream} $\ast$ \hyperlink{classtcp__acceptor_a44b6f54d8d69d313091d3ae8991bf696}{accept} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtcp__acceptor_acf72994db89d547554513076de9f2e66}\label{classtcp__acceptor_acf72994db89d547554513076de9f2e66}} 
+\index{tcp\+\_\+acceptor@{tcp\+\_\+acceptor}!tcp\+\_\+acceptor@{tcp\+\_\+acceptor}}
+\index{tcp\+\_\+acceptor@{tcp\+\_\+acceptor}!tcp\+\_\+acceptor@{tcp\+\_\+acceptor}}
+\subsubsection{\texorpdfstring{tcp\+\_\+acceptor()}{tcp\_acceptor()}}
+{\footnotesize\ttfamily tcp\+\_\+acceptor\+::tcp\+\_\+acceptor (\begin{DoxyParamCaption}\item[{int}]{port,  }\item[{const char $\ast$}]{address = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & \\
+\hline
+{\em address} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtcp__acceptor_a8110052284976750b47ec30b900956f2}\label{classtcp__acceptor_a8110052284976750b47ec30b900956f2}} 
+\index{tcp\+\_\+acceptor@{tcp\+\_\+acceptor}!````~tcp\+\_\+acceptor@{$\sim$tcp\+\_\+acceptor}}
+\index{````~tcp\+\_\+acceptor@{$\sim$tcp\+\_\+acceptor}!tcp\+\_\+acceptor@{tcp\+\_\+acceptor}}
+\subsubsection{\texorpdfstring{$\sim$tcp\+\_\+acceptor()}{~tcp\_acceptor()}}
+{\footnotesize\ttfamily tcp\+\_\+acceptor\+::$\sim$tcp\+\_\+acceptor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Closes any listening sockets. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classtcp__acceptor_a44b6f54d8d69d313091d3ae8991bf696}\label{classtcp__acceptor_a44b6f54d8d69d313091d3ae8991bf696}} 
+\index{tcp\+\_\+acceptor@{tcp\+\_\+acceptor}!accept@{accept}}
+\index{accept@{accept}!tcp\+\_\+acceptor@{tcp\+\_\+acceptor}}
+\subsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily \hyperlink{classtcp__stream}{tcp\+\_\+stream} $\ast$ tcp\+\_\+acceptor\+::accept (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+a connection accepted by this
+\begin{DoxyCode}
+\hyperlink{classtcp__acceptor}{tcp\_acceptor} 
+\end{DoxyCode}
+ instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtcp__acceptor_a15116195be2fa6d2b5f432cc0bdf0479}\label{classtcp__acceptor_a15116195be2fa6d2b5f432cc0bdf0479}} 
+\index{tcp\+\_\+acceptor@{tcp\+\_\+acceptor}!start@{start}}
+\index{start@{start}!tcp\+\_\+acceptor@{tcp\+\_\+acceptor}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily int tcp\+\_\+acceptor\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Start listening for connections with this
+\begin{DoxyCode}
+\hyperlink{classtcp__acceptor}{tcp\_acceptor} 
+\end{DoxyCode}
+ instance.
+
+\begin{DoxyReturn}{Returns}
+0 on successful start, non-\/zero if an error occurred. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+shared/inc/tcpacceptor.\+h\item 
+shared/src/tcpacceptor.\+cpp\end{DoxyCompactItemize}
