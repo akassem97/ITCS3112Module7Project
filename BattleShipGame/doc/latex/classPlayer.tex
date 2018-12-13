@@ -1,0 +1,152 @@
+\hypertarget{classPlayer}{}\section{Player Class Reference}
+\label{classPlayer}\index{Player@{Player}}
+
+
+{\ttfamily \#include $<$Player.\+h$>$}
+
+
+
+Inheritance diagram for Player\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classPlayer__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPlayer_a50cb6ccb69ac1d1613ff619fe686f062}\label{classPlayer_a50cb6ccb69ac1d1613ff619fe686f062}} 
+{\bfseries Player} (int p)
+\item 
+\mbox{\Hypertarget{classPlayer_ad919a18f90221532a653a26f7233d3ab}\label{classPlayer_ad919a18f90221532a653a26f7233d3ab}} 
+\hyperlink{classShip}{Ship} $\ast$ {\bfseries get\+Ships} ()
+\item 
+bool \hyperlink{classPlayer_a23d8eb40ae25ece11ecca4edfeb51738}{check\+If\+Valid} (int y, int x, int d, int s)
+\item 
+void \hyperlink{classPlayer_ab567a03f1c8fd3f61afc1dd9a54a1744}{set\+Ships} (\hyperlink{classShip}{Ship} $\ast$s)
+\item 
+\hyperlink{classGrid}{Grid} \hyperlink{classPlayer_a23a7fbedccc9bb48a0011878c0822912}{get\+Grid} ()
+\item 
+void \hyperlink{classPlayer_a8c60f8670782ecca840ce92fc3893e95}{set\+Grid} (\hyperlink{classGrid}{Grid} g1)
+\item 
+bool \hyperlink{classPlayer_af57244c7ed15bcae73e2eab5ecb81178}{did\+Lose} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class implements \hyperlink{classPlayer}{Player} functionalities \begin{DoxyAuthor}{Author}
+Adham Kassem 
+
+Jonathon Henly 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPlayer_a23d8eb40ae25ece11ecca4edfeb51738}\label{classPlayer_a23d8eb40ae25ece11ecca4edfeb51738}} 
+\index{Player@{Player}!check\+If\+Valid@{check\+If\+Valid}}
+\index{check\+If\+Valid@{check\+If\+Valid}!Player@{Player}}
+\subsubsection{\texorpdfstring{check\+If\+Valid()}{checkIfValid()}}
+{\footnotesize\ttfamily bool Player\+::check\+If\+Valid (\begin{DoxyParamCaption}\item[{int}]{y,  }\item[{int}]{x,  }\item[{int}]{d,  }\item[{int}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks to see if ship placement is valid \begin{DoxyAuthor}{Author}
+Adham Kassem 
+
+Jonathon Henly 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em y} & coordinate int \\
+\hline
+{\em x} & coordinate int \\
+\hline
+{\em d} & direction int \\
+\hline
+{\em s} & size int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+is\+Valid boolean (returns whether or not the placement is valid) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_af57244c7ed15bcae73e2eab5ecb81178}\label{classPlayer_af57244c7ed15bcae73e2eab5ecb81178}} 
+\index{Player@{Player}!did\+Lose@{did\+Lose}}
+\index{did\+Lose@{did\+Lose}!Player@{Player}}
+\subsubsection{\texorpdfstring{did\+Lose()}{didLose()}}
+{\footnotesize\ttfamily bool Player\+::did\+Lose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a boolean value on whether or not the player lost. \begin{DoxyAuthor}{Author}
+Adham Kassem 
+
+Jonathon Henly 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+did\+Lose boolean 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_a23a7fbedccc9bb48a0011878c0822912}\label{classPlayer_a23a7fbedccc9bb48a0011878c0822912}} 
+\index{Player@{Player}!get\+Grid@{get\+Grid}}
+\index{get\+Grid@{get\+Grid}!Player@{Player}}
+\subsubsection{\texorpdfstring{get\+Grid()}{getGrid()}}
+{\footnotesize\ttfamily \hyperlink{classGrid}{Grid} Player\+::get\+Grid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+getter for grid \begin{DoxyAuthor}{Author}
+Adham Kassem 
+
+Jonathon Henly 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+g \hyperlink{classGrid}{Grid} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_a8c60f8670782ecca840ce92fc3893e95}\label{classPlayer_a8c60f8670782ecca840ce92fc3893e95}} 
+\index{Player@{Player}!set\+Grid@{set\+Grid}}
+\index{set\+Grid@{set\+Grid}!Player@{Player}}
+\subsubsection{\texorpdfstring{set\+Grid()}{setGrid()}}
+{\footnotesize\ttfamily void Player\+::set\+Grid (\begin{DoxyParamCaption}\item[{\hyperlink{classGrid}{Grid}}]{g1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+setter for grid \begin{DoxyAuthor}{Author}
+Adham Kassem 
+
+Jonathon Henly 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em g1} & \hyperlink{classGrid}{Grid} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_ab567a03f1c8fd3f61afc1dd9a54a1744}\label{classPlayer_ab567a03f1c8fd3f61afc1dd9a54a1744}} 
+\index{Player@{Player}!set\+Ships@{set\+Ships}}
+\index{set\+Ships@{set\+Ships}!Player@{Player}}
+\subsubsection{\texorpdfstring{set\+Ships()}{setShips()}}
+{\footnotesize\ttfamily void Player\+::set\+Ships (\begin{DoxyParamCaption}\item[{\hyperlink{classShip}{Ship} $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+setter for ships \begin{DoxyAuthor}{Author}
+Adham Kassem 
+
+Jonathon Henly 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \hyperlink{classShip}{Ship} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/Player.\+h\end{DoxyCompactItemize}

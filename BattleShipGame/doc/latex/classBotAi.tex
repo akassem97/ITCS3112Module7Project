@@ -1,0 +1,153 @@
+\hypertarget{classBotAi}{}\section{Bot\+Ai Class Reference}
+\label{classBotAi}\index{Bot\+Ai@{Bot\+Ai}}
+
+
+{\ttfamily \#include $<$Bot\+Ai.\+h$>$}
+
+
+
+Inheritance diagram for Bot\+Ai\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=124pt]{classBotAi__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bot\+Ai\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=124pt]{classBotAi__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBotAi_af1cef6cb4b7d04919265e073443e1fc9}{Bot\+Ai} (int p)
+\item 
+\hyperlink{classBotAi_aeb58b1fa5a7fcf2bd51a3242f21e8b09}{Bot\+Ai} ()
+\item 
+void \hyperlink{classBotAi_a26e701cc128abb1862c49e4cad249a12}{generate\+Ai\+Ships} ()
+\item 
+int $\ast$ \hyperlink{classBotAi_a27834ee25890a2c462fcd3d318ca976f}{drop\+Random\+Bomb} ()
+\item 
+int $\ast$ \hyperlink{classBotAi_a3ec71cf63ede0307d303cda7d003051b}{drop\+Bomb\+Ai} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class inherits all \hyperlink{classPlayer}{Player} methods and is used to create a bot \begin{DoxyAuthor}{Author}
+Adham Kassem 
+
+Jonathon Henly 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBotAi_af1cef6cb4b7d04919265e073443e1fc9}\label{classBotAi_af1cef6cb4b7d04919265e073443e1fc9}} 
+\index{Bot\+Ai@{Bot\+Ai}!Bot\+Ai@{Bot\+Ai}}
+\index{Bot\+Ai@{Bot\+Ai}!Bot\+Ai@{Bot\+Ai}}
+\subsubsection{\texorpdfstring{Bot\+Ai()}{BotAi()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Bot\+Ai\+::\+Bot\+Ai (\begin{DoxyParamCaption}\item[{int}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This is the constructor that instantiates a bot into the game \begin{DoxyAuthor}{Author}
+Adham Kassem 
+
+Jonathon Henly 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em p} & int (player number) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBotAi_aeb58b1fa5a7fcf2bd51a3242f21e8b09}\label{classBotAi_aeb58b1fa5a7fcf2bd51a3242f21e8b09}} 
+\index{Bot\+Ai@{Bot\+Ai}!Bot\+Ai@{Bot\+Ai}}
+\index{Bot\+Ai@{Bot\+Ai}!Bot\+Ai@{Bot\+Ai}}
+\subsubsection{\texorpdfstring{Bot\+Ai()}{BotAi()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Bot\+Ai\+::\+Bot\+Ai (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This is the constructor that instantiates a bot into the game \begin{DoxyAuthor}{Author}
+Adham Kassem 
+
+Jonathon Henly 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBotAi_a3ec71cf63ede0307d303cda7d003051b}\label{classBotAi_a3ec71cf63ede0307d303cda7d003051b}} 
+\index{Bot\+Ai@{Bot\+Ai}!drop\+Bomb\+Ai@{drop\+Bomb\+Ai}}
+\index{drop\+Bomb\+Ai@{drop\+Bomb\+Ai}!Bot\+Ai@{Bot\+Ai}}
+\subsubsection{\texorpdfstring{drop\+Bomb\+Ai()}{dropBombAi()}}
+{\footnotesize\ttfamily int$\ast$ Bot\+Ai\+::drop\+Bomb\+Ai (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This drops a bomb at random coordinates against the user. This is smarter and implements a hueristic to influence drop location. \begin{DoxyAuthor}{Author}
+Adham Kassem 
+
+Jonathon Henly 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+coordinates int$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBotAi_a27834ee25890a2c462fcd3d318ca976f}\label{classBotAi_a27834ee25890a2c462fcd3d318ca976f}} 
+\index{Bot\+Ai@{Bot\+Ai}!drop\+Random\+Bomb@{drop\+Random\+Bomb}}
+\index{drop\+Random\+Bomb@{drop\+Random\+Bomb}!Bot\+Ai@{Bot\+Ai}}
+\subsubsection{\texorpdfstring{drop\+Random\+Bomb()}{dropRandomBomb()}}
+{\footnotesize\ttfamily int$\ast$ Bot\+Ai\+::drop\+Random\+Bomb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This drops a bomb at random coordinates against the user. \begin{DoxyAuthor}{Author}
+Adham Kassem 
+
+Jonathon Henly 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+coordinates int$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBotAi_a26e701cc128abb1862c49e4cad249a12}\label{classBotAi_a26e701cc128abb1862c49e4cad249a12}} 
+\index{Bot\+Ai@{Bot\+Ai}!generate\+Ai\+Ships@{generate\+Ai\+Ships}}
+\index{generate\+Ai\+Ships@{generate\+Ai\+Ships}!Bot\+Ai@{Bot\+Ai}}
+\subsubsection{\texorpdfstring{generate\+Ai\+Ships()}{generateAiShips()}}
+{\footnotesize\ttfamily void Bot\+Ai\+::generate\+Ai\+Ships (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This randomly generates the ships for the bot. \begin{DoxyAuthor}{Author}
+Adham Kassem 
+
+Jonathon Henly 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/Bot\+Ai.\+h\end{DoxyCompactItemize}

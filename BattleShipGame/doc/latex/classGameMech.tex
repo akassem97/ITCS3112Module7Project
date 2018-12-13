@@ -1,0 +1,140 @@
+\hypertarget{classGameMech}{}\section{Game\+Mech Class Reference}
+\label{classGameMech}\index{Game\+Mech@{Game\+Mech}}
+
+
+{\ttfamily \#include $<$Game\+Mech.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGameMech_a73735ea1dac66c896fe3befb4425b1ee}{Game\+Mech} ()
+\item 
+void \hyperlink{classGameMech_acd8210b1f72b612ac0f1c3fad6d4a1da}{get\+Ships\+From\+User\+Console} ()
+\item 
+void \hyperlink{classGameMech_a2e6458b7b49afecdba3b1c2103d7875d}{start\+Pvp} ()
+\item 
+void \hyperlink{classGameMech_aceb6fd4797f93d9ffa9601a16b05eea6}{start\+Pv\+Bot} ()
+\item 
+void \hyperlink{classGameMech_a92543cf17b1dab64543d3d08c6ea621b}{get\+User\+Input} ()
+\item 
+\mbox{\Hypertarget{classGameMech_ae80d651eabb590b343ee548c68a1ac96}\label{classGameMech_ae80d651eabb590b343ee548c68a1ac96}} 
+int $\ast$ {\bfseries get\+Turn\+Input} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class implements the game mechanics \begin{DoxyAuthor}{Author}
+Adham Kassem 
+
+Jonathon Henly 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGameMech_a73735ea1dac66c896fe3befb4425b1ee}\label{classGameMech_a73735ea1dac66c896fe3befb4425b1ee}} 
+\index{Game\+Mech@{Game\+Mech}!Game\+Mech@{Game\+Mech}}
+\index{Game\+Mech@{Game\+Mech}!Game\+Mech@{Game\+Mech}}
+\subsubsection{\texorpdfstring{Game\+Mech()}{GameMech()}}
+{\footnotesize\ttfamily Game\+Mech\+::\+Game\+Mech (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor for game mechanics. \begin{DoxyAuthor}{Author}
+Adham Kassem 
+
+Jonathon Henly 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGameMech_acd8210b1f72b612ac0f1c3fad6d4a1da}\label{classGameMech_acd8210b1f72b612ac0f1c3fad6d4a1da}} 
+\index{Game\+Mech@{Game\+Mech}!get\+Ships\+From\+User\+Console@{get\+Ships\+From\+User\+Console}}
+\index{get\+Ships\+From\+User\+Console@{get\+Ships\+From\+User\+Console}!Game\+Mech@{Game\+Mech}}
+\subsubsection{\texorpdfstring{get\+Ships\+From\+User\+Console()}{getShipsFromUserConsole()}}
+{\footnotesize\ttfamily void Game\+Mech\+::get\+Ships\+From\+User\+Console (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This asks user for input in placing their ships on the \hyperlink{classGrid}{Grid}. The coordinates inputted correspond to the coordinates of the face of the ship. The size will be specified and the user will be able to choose the direction the ship faces.
+
+\begin{DoxyAuthor}{Author}
+Adham Kassem 
+
+Jonathon Henly 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameMech_a92543cf17b1dab64543d3d08c6ea621b}\label{classGameMech_a92543cf17b1dab64543d3d08c6ea621b}} 
+\index{Game\+Mech@{Game\+Mech}!get\+User\+Input@{get\+User\+Input}}
+\index{get\+User\+Input@{get\+User\+Input}!Game\+Mech@{Game\+Mech}}
+\subsubsection{\texorpdfstring{get\+User\+Input()}{getUserInput()}}
+{\footnotesize\ttfamily void Game\+Mech\+::get\+User\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This starts a \hyperlink{classPlayer}{Player} vs Bot game. All of the game mechanics and processing is done locally thru the client. \begin{DoxyAuthor}{Author}
+Adham Kassem 
+
+Jonathon Henly 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameMech_aceb6fd4797f93d9ffa9601a16b05eea6}\label{classGameMech_aceb6fd4797f93d9ffa9601a16b05eea6}} 
+\index{Game\+Mech@{Game\+Mech}!start\+Pv\+Bot@{start\+Pv\+Bot}}
+\index{start\+Pv\+Bot@{start\+Pv\+Bot}!Game\+Mech@{Game\+Mech}}
+\subsubsection{\texorpdfstring{start\+Pv\+Bot()}{startPvBot()}}
+{\footnotesize\ttfamily void Game\+Mech\+::start\+Pv\+Bot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This starts a \hyperlink{classPlayer}{Player} vs Bot game. All of the game mechanics and processing is done locally thru the client.
+
+\begin{DoxyAuthor}{Author}
+Adham Kassem 
+
+Jonathon Henly 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameMech_a2e6458b7b49afecdba3b1c2103d7875d}\label{classGameMech_a2e6458b7b49afecdba3b1c2103d7875d}} 
+\index{Game\+Mech@{Game\+Mech}!start\+Pvp@{start\+Pvp}}
+\index{start\+Pvp@{start\+Pvp}!Game\+Mech@{Game\+Mech}}
+\subsubsection{\texorpdfstring{start\+Pvp()}{startPvp()}}
+{\footnotesize\ttfamily void Game\+Mech\+::start\+Pvp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This starts a \hyperlink{classPlayer}{Player} vs \hyperlink{classPlayer}{Player} game. This calls client functionality that connects to the server and performs pvp functionality. \begin{DoxyAuthor}{Author}
+Adham Kassem 
+
+Jonathon Henly 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/Game\+Mech.\+h\end{DoxyCompactItemize}

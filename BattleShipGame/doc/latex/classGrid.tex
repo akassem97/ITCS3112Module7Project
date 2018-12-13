@@ -1,0 +1,231 @@
+\hypertarget{classGrid}{}\section{Grid Class Reference}
+\label{classGrid}\index{Grid@{Grid}}
+
+
+{\ttfamily \#include $<$Grid.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGrid_a2d8f94be7fddec75f8a5fcd39cfcf3cb}{Grid} (int p)
+\item 
+\hyperlink{classGrid_a4ac9ff4f63552b4c61ff90fcb35ad66c}{Grid} ()
+\item 
+void \hyperlink{classGrid_a713d836d20af92af9f88849406267ea0}{add\+Ship} (int s, int d, int y, int x)
+\item 
+int \hyperlink{classGrid_aecf93fb530503819997f56c8e9dc282c}{get\+Square} (int y, int x)
+\item 
+void \hyperlink{classGrid_a8d0393b3b893d201b4afd9062487a59f}{hit} (int x, int y)
+\item 
+string \hyperlink{classGrid_ac379e67e40e0cebc8d37dfba4147dfb0}{drop\+Bomb} (int x, int y)
+\item 
+unsigned char $\ast$ \hyperlink{classGrid_aeb14a686f7219799a7796fc4f270f5d9}{get\+Grid\+Stream} ()
+\item 
+string \hyperlink{classGrid_adde29f8454547c9e81ce2b3c2e95bc43}{to\+String} ()
+\item 
+void \hyperlink{classGrid_afffe02cb1a0511678d6fb20ff3db1236}{add\+Hit} (int x, int y)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class implements the grid and grid functionalities used in game \begin{DoxyAuthor}{Author}
+Adham Kassem 
+
+Jonathon Henly 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGrid_a2d8f94be7fddec75f8a5fcd39cfcf3cb}\label{classGrid_a2d8f94be7fddec75f8a5fcd39cfcf3cb}} 
+\index{Grid@{Grid}!Grid@{Grid}}
+\index{Grid@{Grid}!Grid@{Grid}}
+\subsubsection{\texorpdfstring{Grid()}{Grid()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Grid\+::\+Grid (\begin{DoxyParamCaption}\item[{int}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hyperlink{classGrid}{Grid} constructor that instantiates a players grid and add ships to the grid. \begin{DoxyAuthor}{Author}
+Adham Kassem 
+
+Jonathon Henly 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+player\+Num int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGrid_a4ac9ff4f63552b4c61ff90fcb35ad66c}\label{classGrid_a4ac9ff4f63552b4c61ff90fcb35ad66c}} 
+\index{Grid@{Grid}!Grid@{Grid}}
+\index{Grid@{Grid}!Grid@{Grid}}
+\subsubsection{\texorpdfstring{Grid()}{Grid()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Grid\+::\+Grid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hyperlink{classGrid}{Grid} constructor that instantiates a players grid which adds ships to the grid. \begin{DoxyAuthor}{Author}
+Adham Kassem 
+
+Jonathon Henly 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGrid_afffe02cb1a0511678d6fb20ff3db1236}\label{classGrid_afffe02cb1a0511678d6fb20ff3db1236}} 
+\index{Grid@{Grid}!add\+Hit@{add\+Hit}}
+\index{add\+Hit@{add\+Hit}!Grid@{Grid}}
+\subsubsection{\texorpdfstring{add\+Hit()}{addHit()}}
+{\footnotesize\ttfamily void Grid\+::add\+Hit (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This method is meant for user objects that represent the opponent user locally. When the server informs client that the clients turn was a hit, this method will change the local state of the grid for proper local visualization \begin{DoxyAuthor}{Author}
+Adham Kassem 
+
+Jonathon Henly 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em x} & int \\
+\hline
+{\em y} & int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGrid_a713d836d20af92af9f88849406267ea0}\label{classGrid_a713d836d20af92af9f88849406267ea0}} 
+\index{Grid@{Grid}!add\+Ship@{add\+Ship}}
+\index{add\+Ship@{add\+Ship}!Grid@{Grid}}
+\subsubsection{\texorpdfstring{add\+Ship()}{addShip()}}
+{\footnotesize\ttfamily void Grid\+::add\+Ship (\begin{DoxyParamCaption}\item[{int}]{s,  }\item[{int}]{d,  }\item[{int}]{y,  }\item[{int}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds a ship to the grid \begin{DoxyAuthor}{Author}
+Adham Kassem 
+
+Jonathon Henly 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em size} & int \\
+\hline
+{\em direction} & int \\
+\hline
+{\em y} & coordinate int \\
+\hline
+{\em x} & coordinate int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGrid_ac379e67e40e0cebc8d37dfba4147dfb0}\label{classGrid_ac379e67e40e0cebc8d37dfba4147dfb0}} 
+\index{Grid@{Grid}!drop\+Bomb@{drop\+Bomb}}
+\index{drop\+Bomb@{drop\+Bomb}!Grid@{Grid}}
+\subsubsection{\texorpdfstring{drop\+Bomb()}{dropBomb()}}
+{\footnotesize\ttfamily string Grid\+::drop\+Bomb (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Drops a bomb on this grid \begin{DoxyAuthor}{Author}
+Adham Kassem 
+
+Jonathon Henly 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em y} & coordinate int \\
+\hline
+{\em x} & coordinate int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+outcome string (returns a string representation of outcome of this move \char`\"{}hit\char`\"{} or \char`\"{}miss\char`\"{}) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGrid_aeb14a686f7219799a7796fc4f270f5d9}\label{classGrid_aeb14a686f7219799a7796fc4f270f5d9}} 
+\index{Grid@{Grid}!get\+Grid\+Stream@{get\+Grid\+Stream}}
+\index{get\+Grid\+Stream@{get\+Grid\+Stream}!Grid@{Grid}}
+\subsubsection{\texorpdfstring{get\+Grid\+Stream()}{getGridStream()}}
+{\footnotesize\ttfamily unsigned char$\ast$ Grid\+::get\+Grid\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a flat stream of unsigned char values that defines the grid state \begin{DoxyAuthor}{Author}
+Adham Kassem 
+
+Jonathon Henly 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+stream unsigned char$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGrid_aecf93fb530503819997f56c8e9dc282c}\label{classGrid_aecf93fb530503819997f56c8e9dc282c}} 
+\index{Grid@{Grid}!get\+Square@{get\+Square}}
+\index{get\+Square@{get\+Square}!Grid@{Grid}}
+\subsubsection{\texorpdfstring{get\+Square()}{getSquare()}}
+{\footnotesize\ttfamily int Grid\+::get\+Square (\begin{DoxyParamCaption}\item[{int}]{y,  }\item[{int}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+gets the square value of a specified coordinate in the grid. \begin{DoxyAuthor}{Author}
+Adham Kassem 
+
+Jonathon Henly 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em y} & coordinate int \\
+\hline
+{\em x} & coordinate int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGrid_a8d0393b3b893d201b4afd9062487a59f}\label{classGrid_a8d0393b3b893d201b4afd9062487a59f}} 
+\index{Grid@{Grid}!hit@{hit}}
+\index{hit@{hit}!Grid@{Grid}}
+\subsubsection{\texorpdfstring{hit()}{hit()}}
+{\footnotesize\ttfamily void Grid\+::hit (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+If a part of a ship is hit, this method sets the square value to hit aka 2. \begin{DoxyAuthor}{Author}
+Adham Kassem 
+
+Jonathon Henly 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em y} & coordinate int \\
+\hline
+{\em x} & coordinate int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGrid_adde29f8454547c9e81ce2b3c2e95bc43}\label{classGrid_adde29f8454547c9e81ce2b3c2e95bc43}} 
+\index{Grid@{Grid}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!Grid@{Grid}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily string Grid\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Drops a bomb on this grid \begin{DoxyAuthor}{Author}
+Adham Kassem 
+
+Jonathon Henly 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string (returns a string representation of the grid for visualization) 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/Grid.\+h\end{DoxyCompactItemize}
