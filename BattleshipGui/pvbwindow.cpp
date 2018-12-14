@@ -1042,7 +1042,7 @@ void PvbWindow::on_pushButton_e_1_3_released()
        ui->outcomeLabel->setText("Hit!!!!");
        ui->outcomeLabel->setStyleSheet("color: orange");
        ui->outcomeLabel->repaint();
-       ui->pushButton_e_1_1->setStyleSheet("background-color: red; border: 1px solid blue;");
+       ui->pushButton_e_1_3->setStyleSheet("background-color: red; border: 1px solid blue;");
    }
    qDebug() << "ha333i";
    sleep(2);
@@ -1422,7 +1422,7 @@ void PvbWindow::on_pushButton_e_1_4_released()
        ui->outcomeLabel->setText("Hit!!!!");
        ui->outcomeLabel->setStyleSheet("color: orange");
        ui->outcomeLabel->repaint();
-       ui->pushButton_e_1_1->setStyleSheet("background-color: red; border: 1px solid blue;");
+       ui->pushButton_e_1_4->setStyleSheet("background-color: red; border: 1px solid blue;");
    }
    qDebug() << "ha333i";
    sleep(2);
@@ -1802,7 +1802,7 @@ void PvbWindow::on_pushButton_e_1_5_released()
        ui->outcomeLabel->setText("Hit!!!!");
        ui->outcomeLabel->setStyleSheet("color: orange");
        ui->outcomeLabel->repaint();
-       ui->pushButton_e_1_1->setStyleSheet("background-color: red; border: 1px solid blue;");
+       ui->pushButton_e_1_5->setStyleSheet("background-color: red; border: 1px solid blue;");
    }
    qDebug() << "ha333i";
    sleep(2);
@@ -2182,7 +2182,7 @@ void PvbWindow::on_pushButton_e_1_6_released()
        ui->outcomeLabel->setText("Hit!!!!");
        ui->outcomeLabel->setStyleSheet("color: orange");
        ui->outcomeLabel->repaint();
-       ui->pushButton_e_1_1->setStyleSheet("background-color: red; border: 1px solid blue;");
+       ui->pushButton_e_1_6->setStyleSheet("background-color: red; border: 1px solid blue;");
    }
    qDebug() << "ha333i";
    sleep(2);
@@ -2562,7 +2562,7 @@ void PvbWindow::on_pushButton_e_1_7_released()
        ui->outcomeLabel->setText("Hit!!!!");
        ui->outcomeLabel->setStyleSheet("color: orange");
        ui->outcomeLabel->repaint();
-       ui->pushButton_e_1_1->setStyleSheet("background-color: red; border: 1px solid blue;");
+       ui->pushButton_e_1_7->setStyleSheet("background-color: red; border: 1px solid blue;");
    }
    qDebug() << "ha333i";
    sleep(2);
